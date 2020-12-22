@@ -92,7 +92,6 @@ class WantVC: UIViewController, VCDelegate {
         self.wantsTableView.reloadData()
     }
     
-    // This function is called before the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SHOW_WANT_DETAILS_SEGUE {
             let destNavCtrl = segue.destination as! UINavigationController
