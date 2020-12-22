@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class WantDataSource: WantRealmSource, UITableViewDataSource {
+class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
     private final let WANT_TABLE_VIEW_CELL = "wantTVCell"
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,9 +21,8 @@ class WantDataSource: WantRealmSource, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of WantTVCell.")
         }
         let results = findAllWants()
-        let want = results[indexPath.row]
-        cell.wantName.text = want.getName()
-        cell.pointsLabel.text = String(want.getPoints())
+        let wantViewModel = results[indexPath.row]
+        wantViewModel.configureTableViewCell(cell: cell)
         return cell
     }
 }

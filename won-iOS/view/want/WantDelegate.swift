@@ -8,31 +8,28 @@
 
 import UIKit
 
-class WantDelegate : WantRealmSource, UITableViewDelegate {
+class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     private let SHOW_WANT_DETAILS_SEGUE = "showWantDetails"
     
     weak var delegate: VCDelegate?
     
-    private var wantViewModel: WantViewModel?
-    
     // #2
-    init(withDelegate delegate: VCDelegate, wantViewModel: WantViewModel) {
+    init(withDelegate delegate: VCDelegate) {
         self.delegate = delegate
-        self.wantViewModel = wantViewModel
     }
     
     // #3
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if delegate != nil {
-            let presentedWants = findAllWants()
-            self.delegate?.selectedCell(sender: presentedWants[indexPath.row])
+            let presentedWantViewModels = findAllWants()
+            self.delegate?.selectedCell(sender: presentedWantViewModels[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let presentedWants = findAllWants()
         if editingStyle == .delete {
-            wantViewModel?.deleteWant(want: presentedWants[indexPath.row])
+            deleteWantAsViewModel(viewModel: presentedWants[indexPath.row])
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

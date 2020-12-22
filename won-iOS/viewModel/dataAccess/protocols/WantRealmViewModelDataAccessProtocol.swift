@@ -6,7 +6,7 @@
 //  Copyright © 2020 EllyRichardson. All rights reserved.
 //
 
-protocol WantRealmSourceProtocol {
-    func findAllWants() -> [Want]
+protocol WantRealmViewModelDataAccessProtocol {
+    func findAllWants() -> [WantViewModel]
 }
 
