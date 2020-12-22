@@ -11,13 +11,19 @@ import UIKit
 class WantDetailsVC: UIViewController {
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
     
-    private var WantRealmManager: WantRealmManager?
+    private var wantViewModel: WantViewModel?
     
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var optionsButton: UIButton!
     
-    func setWantRealmManager(WantRealmManager: WantRealmManager) {
-        self.WantRealmManager = WantRealmManager
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //doneButton.addTarget(self, action: #selector(self.doneButtonPressed(_:)), for: .touchUpInside)
+        //self.performSegue(withIdentifier: DETAILS_TABLE_VIEW_SEGUE, sender: self)
+    }
+    
+    func setWantViewModel(wantViewModel: WantViewModel) {
+        self.wantViewModel = wantViewModel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,7 +31,7 @@ class WantDetailsVC: UIViewController {
         
         if (segue.identifier == DETAILS_TABLE_VIEW_SEGUE) {
             let detailsTVC = segue.destination as! WantDetailsTableVC
-            detailsTVC.setWantRealmManager(WantRealmManager: WantRealmManager!)
+            detailsTVC.setWantViewModel(wantViewModel: wantViewModel!)
             // Now you have a pointer to the child view controller.
             // You can save the reference to it, or pass data to it.
         }

@@ -13,10 +13,10 @@ class WantDetailsTableVC: UITableViewController {
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var detailsTableView: UIView!
-    private var WantRealmManager: WantRealmManager?
+    private var wantViewModel: WantViewModel?
     
-    func setWantRealmManager(WantRealmManager: WantRealmManager) {
-        self.WantRealmManager = WantRealmManager
+    func setWantViewModel(wantViewModel: WantViewModel) {
+        self.wantViewModel = wantViewModel
     }
     
     private lazy var wantExactDetailsTableVC: WantExactDetailsTableVC = {
@@ -33,6 +33,7 @@ class WantDetailsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //doneButton.addTarget(self, action: #selector(self.doneButtonPressed(_:)), for: .touchUpInside)
+        wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
         add(asChildViewController: wantExactDetailsTableVC)
     }
     
@@ -51,14 +52,15 @@ class WantDetailsTableVC: UITableViewController {
         viewController.didMove(toParent: self)
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
         if (segue.identifier == DETAILS_TABLE_VIEW_SEGUE) {
             let exactDetailsTVC = segue.destination as! WantExactDetailsTableVC
-            exactDetailsTVC.setWantRealmManager(WantRealmManager: WantRealmManager!)
+            exactDetailsTVC.setWantViewModel(wantViewModel: wantViewModel!)
             // Now you have a pointer to the child view controller.
             // You can save the reference to it, or pass data to it.
         }
-    }
+    }*/
 }
