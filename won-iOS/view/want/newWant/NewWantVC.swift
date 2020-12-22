@@ -17,11 +17,13 @@ class NewWantVC: UIViewController {
     
     private var wantName: String?
     private var wantInterestPoints: String?
+    private var wantRealmViewModelDataAccess: WantRealmViewModelDataAccess?
     
-    lazy var viewModel: WantViewModel = {
-        let viewModel = WantViewModel(dataSource: WantDataSource())
-        return viewModel
-    }()
+    /*
+    lazy var wantRealmManager: WantRealmManager = {
+        let controller = WantRealmManager(dataSource: WantDataSource())
+        return controller
+    }()*/
     
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
@@ -51,13 +53,13 @@ class NewWantVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //doneButton.addTarget(self, action: #selector(self.doneButtonPressed(_:)), for: .touchUpInside)
+        self.wantRealmViewModelDataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: newWantAttributesTableVC)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     @IBAction func doneButtonPressed(_ sender: CircleButton) {
-        let wantBuilder = WantBuilder()
-        let want = wantBuilder.withId(id: UUID.init().uuidString).withName(name: self.wantName!).withPoints(points: Int(self.wantInterestPoints!)!).build()
-        viewModel.addNewWant(want: want)
+        let wantViewModel = WantViewModel(id: UUID.init().uuidString, owner: "DUMMY", name: self.wantName!, points: Int(self.wantInterestPoints!)!, notes: "NOTEZZZZ")
+        self.wantRealmViewModelDataAccess!.saveWantAsViewModel(viewModel: wantViewModel)
         self.dismiss(animated: true, completion: nil)
         /*
         DispatchQueue.main.async {

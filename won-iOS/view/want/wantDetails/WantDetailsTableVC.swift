@@ -13,10 +13,10 @@ class WantDetailsTableVC: UITableViewController {
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var detailsTableView: UIView!
-    private var wantViewModel: WantViewModel?
+    private var WantRealmManager: WantRealmManager?
     
-    func setWantViewModel(wantViewModel: WantViewModel) {
-        self.wantViewModel = wantViewModel
+    func setWantRealmManager(WantRealmManager: WantRealmManager) {
+        self.WantRealmManager = WantRealmManager
     }
     
     private lazy var wantExactDetailsTableVC: WantExactDetailsTableVC = {
@@ -56,7 +56,7 @@ class WantDetailsTableVC: UITableViewController {
         
         if (segue.identifier == DETAILS_TABLE_VIEW_SEGUE) {
             let exactDetailsTVC = segue.destination as! WantExactDetailsTableVC
-            exactDetailsTVC.setWantViewModel(wantViewModel: wantViewModel!)
+            exactDetailsTVC.setWantRealmManager(WantRealmManager: WantRealmManager!)
             // Now you have a pointer to the child view controller.
             // You can save the reference to it, or pass data to it.
         }

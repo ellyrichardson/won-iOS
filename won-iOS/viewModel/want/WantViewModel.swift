@@ -2,57 +2,64 @@
 //  WantViewModel.swift
 //  won-iOS
 //
-//  Created by Elly Richardson on 11/23/20.
+//  Created by Elly Richardson on 12/21/20.
 //  Copyright © 2020 EllyRichardson. All rights reserved.
 //
 
-import RealmSwift
+import Foundation
 
-struct WantViewModel: ViewModel {
-    typealias PrimaryActionHandler = ([Int], [Int], [Int]) -> Void
-    typealias InitialActionHandler = () -> Void
+class WantViewModel {
+    private var id: String
+    private var owner: String
+    private var name: String
+    private var points: Int
+    private var notes: String
     
-    var dataSource: WantRealmSource?
-    
-    // TODO: FIGURE OUT WHERE TO PUT REALM INSTANCE
-    
-    init(dataSource : WantRealmSource?) {
-        self.dataSource = dataSource
+    public init (id: String, owner: String, name: String, points: Int, notes: String) {
+        self.id = id
+        self.owner = owner
+        self.name = name
+        self.points = points
+        self.notes = notes
     }
     
-    func addNewWant(want: Want) {
-        dataSource?.saveObject(object: want)
+    public func setOwner(owner: String) {
+        self.owner = owner
     }
     
-    func addWatcherToWant(want: Want, watcher: String) {
-        var watchers = want.getSocialStatus().getWatchers()
-        watchers.insert(watcher)
-        want.getSocialStatus().setWatchers(watchers: watchers)
+    public func getOwner() -> String {
+        return owner
     }
     
-    func deleteWant(want: Want) {
-        dataSource?.deleteObject(object: want)
+    public func setName(name: String) {
+        self.name = name
     }
     
-    func createNotificationToken(initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
-        let results = dataSource?.findResultsOfType(type: getModelType())
-        let token = results!.observe { (changes: RealmCollectionChange) in
-            switch changes {
-            case .initial(_):
-                initialAction()
-            case .update(_, let deletions, let insertions, let modifications):
-                primaryAction(deletions, insertions, modifications)
-            case .error(let error):
-                // An error occurred while opening the Realm file on the background worker thread
-                fatalError("\(error)")
-            }
-        }
-        return token
+    public func getName() -> String {
+        return name
     }
     
-    func getModelType() -> Want.Type {
-        return (dataSource?.getType())!
+    public func setPoints(points: String) {
+        self.points = Int(points)!
     }
     
-    //TODO: Add a loader from Realm DB
+    public func getPoints() -> String {
+        return String(points)
+    }
+    
+    public func setNotes(notes: String) {
+        self.notes = notes
+    }
+    
+    public func getNotes() -> String {
+        return notes
+    }
+    
+    public func setId(id: String) {
+        self.id = id
+    }
+    
+    public func getId() -> String {
+        return id
+    }
 }

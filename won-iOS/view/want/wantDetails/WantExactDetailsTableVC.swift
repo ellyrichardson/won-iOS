@@ -17,10 +17,10 @@ class WantExactDetailsTableVC: UITableViewController {
     @IBOutlet weak var dateModifiedValueLabel: UILabel!
     @IBOutlet weak var obtainedAtValueLabel: UILabel!
     
-    private var wantViewModel: WantViewModel?
+    private var WantRealmManager: WantRealmManager?
     
-    func setWantViewModel(wantViewModel: WantViewModel) {
-        self.wantViewModel = wantViewModel
+    func setWantRealmManager(WantRealmManager: WantRealmManager) {
+        self.WantRealmManager = WantRealmManager
     }
     
     override func viewDidLoad() {

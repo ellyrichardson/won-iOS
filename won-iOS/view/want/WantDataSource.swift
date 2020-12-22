@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class WantDataSource: WantRealmSource, UITableViewDataSource {
+class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
     private final let WANT_TABLE_VIEW_CELL = "wantTVCell"
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +23,7 @@ class WantDataSource: WantRealmSource, UITableViewDataSource {
         let results = findAllWants()
         let want = results[indexPath.row]
         cell.wantName.text = want.getName()
-        cell.pointsLabel.text = String(want.getPoints())
+        cell.pointsLabel.text = want.getPoints()
         return cell
     }
 }

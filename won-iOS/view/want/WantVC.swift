@@ -22,9 +22,10 @@ class WantVC: UIViewController, VCDelegate {
     
     // TEMPorarily removed: private weak var selectedWant: Want?
     
-    lazy var viewModel: WantViewModel = {
-        let viewModel = WantViewModel(dataSource: dataSource)
-        return viewModel
+    
+    lazy var wantRealmManager: WantRealmManager = {
+        let manager = WantRealmManager(dataSource: dataSource)
+        return manager
     }()
     
     /*
@@ -36,13 +37,13 @@ class WantVC: UIViewController, VCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.delegate = WantDelegate(withDelegate: self, wantViewModel: viewModel)
+        self.delegate = WantDelegate(withDelegate: self, wantRealmManager: wantRealmManager)
         self.wantsTableView.dataSource = self.dataSource
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        notificationToken = viewModel.createNotificationToken(initialAction: {
+        notificationToken = wantRealmManager.createNotificationToken(initialAction: {
             self.wantsTableView.reloadData()
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
@@ -96,7 +97,7 @@ class WantVC: UIViewController, VCDelegate {
         if segue.identifier == SHOW_WANT_DETAILS_SEGUE {
             let destNavCtrl = segue.destination as! UINavigationController
             let wantDetailsVC = destNavCtrl.topViewController as! WantDetailsVC
-            wantDetailsVC.setWantViewModel(wantViewModel: self.viewModel)
+            wantDetailsVC.setWantRealmManager(WantRealmManager: self.wantRealmManager)
         }
     }
 }

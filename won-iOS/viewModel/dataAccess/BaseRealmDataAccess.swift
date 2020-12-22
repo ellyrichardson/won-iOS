@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class RealmGenericSource<T>: NSObject {
+class BaseRealmDataAccess<T>: NSObject {
     private let realm = try! Realm()
     func findAll<T: Object>() -> [T] {
         return realm.objects(T.self).map { $0 }
