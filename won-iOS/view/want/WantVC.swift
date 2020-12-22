@@ -96,7 +96,7 @@ class WantVC: UIViewController, VCDelegate {
         if segue.identifier == SHOW_WANT_DETAILS_SEGUE {
             let destNavCtrl = segue.destination as! UINavigationController
             let wantDetailsVC = destNavCtrl.topViewController as! WantDetailsVC
-            wantDetailsVC.setWantRealmManager(WantRealmManager: self.wantRealmManager)
+            wantDetailsVC.setWantViewModel(wantViewModel: sender as! WantViewModel)
         }
     }
 }

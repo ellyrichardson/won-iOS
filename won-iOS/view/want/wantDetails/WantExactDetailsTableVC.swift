@@ -17,20 +17,30 @@ class WantExactDetailsTableVC: UITableViewController {
     @IBOutlet weak var dateModifiedValueLabel: UILabel!
     @IBOutlet weak var obtainedAtValueLabel: UILabel!
     
-    private var WantRealmManager: WantRealmManager?
+    private var wantViewModel: WantViewModel?
     
-    func setWantRealmManager(WantRealmManager: WantRealmManager) {
-        self.WantRealmManager = WantRealmManager
+    func setWantViewModel(wantViewModel: WantViewModel) {
+        self.wantViewModel = wantViewModel
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //configureLabels()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureLabels()
+    }
+    
+    private func configureLabels() {
+        wantViewModel?.configureWanterestPointsValueLabel(label: interestPointsValueLabel)
     }
 
     // MARK: - Table view data source
