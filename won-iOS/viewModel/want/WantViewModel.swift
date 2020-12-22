@@ -6,7 +6,7 @@
 //  Copyright © 2020 EllyRichardson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WantViewModel {
     private var id: String
@@ -26,6 +26,10 @@ class WantViewModel {
     public func configureTableViewCell(cell: WantTVCell) {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
+    }
+    
+    public func configureWanterestPointsValueLabel(label: UILabel) {
+        label.text = String(self.points)
     }
     
     public func setOwner(owner: String) {
