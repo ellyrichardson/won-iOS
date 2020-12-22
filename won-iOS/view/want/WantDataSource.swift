@@ -21,9 +21,8 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of WantTVCell.")
         }
         let results = findAllWants()
-        let want = results[indexPath.row]
-        cell.wantName.text = want.getName()
-        cell.pointsLabel.text = want.getPoints()
+        let wantViewModel = results[indexPath.row]
+        wantViewModel.configureTableViewCell(cell: cell)
         return cell
     }
 }

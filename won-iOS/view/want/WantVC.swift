@@ -37,7 +37,7 @@ class WantVC: UIViewController, VCDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.delegate = WantDelegate(withDelegate: self, wantRealmManager: wantRealmManager)
+        self.delegate = WantDelegate(withDelegate: self)
         self.wantsTableView.dataSource = self.dataSource
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
@@ -83,8 +83,8 @@ class WantVC: UIViewController, VCDelegate {
         notificationToken?.invalidate()
     }
     
+    // Sender is expected to be a WantViewModel
     func selectedCell(sender: AnyObject) {
-        // -- TEMPorarily removed: self.selectedWant = (sender as! Want)
         self.performSegue(withIdentifier: SHOW_WANT_DETAILS_SEGUE, sender: sender)
     }
     

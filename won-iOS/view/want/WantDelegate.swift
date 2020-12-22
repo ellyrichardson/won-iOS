@@ -13,19 +13,16 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     
     weak var delegate: VCDelegate?
     
-    private var wantRealmManager: WantRealmManager?
-    
     // #2
-    init(withDelegate delegate: VCDelegate, wantRealmManager: WantRealmManager) {
+    init(withDelegate delegate: VCDelegate) {
         self.delegate = delegate
-        self.wantRealmManager = wantRealmManager
     }
     
     // #3
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if delegate != nil {
-            let presentedWants = findAllWants()
-            self.delegate?.selectedCell(sender: presentedWants[indexPath.row])
+            let presentedWantViewModels = findAllWants()
+            self.delegate?.selectedCell(sender: presentedWantViewModels[indexPath.row])
         }
     }
     

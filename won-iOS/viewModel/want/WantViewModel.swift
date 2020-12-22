@@ -23,6 +23,11 @@ class WantViewModel {
         self.notes = notes
     }
     
+    public func configureTableViewCell(cell: WantTVCell) {
+        cell.wantName.text = self.name
+        cell.pointsLabel.text = String(self.points)
+    }
+    
     public func setOwner(owner: String) {
         self.owner = owner
     }
