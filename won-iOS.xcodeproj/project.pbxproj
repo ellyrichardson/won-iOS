@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */; };
+		215F19A52570194200C556D0 /* RealmGenericSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A42570194200C556D0 /* RealmGenericSource.swift */; };
+		215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A92578796800C556D0 /* NewWantVC.swift */; };
+		215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AB25787C1600C556D0 /* WantDetailsVC.swift */; };
+		215F19AE2578844400C556D0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AD2578844400C556D0 /* ViewModel.swift */; };
+		215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AF2579DC6100C556D0 /* WantDetailsTableVC.swift */; };
+		215F19B3257B2F8B00C556D0 /* WantRealmSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B2257B2F8B00C556D0 /* WantRealmSource.swift */; };
+		215F19B6257B30F000C556D0 /* WantRealmSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B5257B30F000C556D0 /* WantRealmSourceProtocol.swift */; };
+		215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B7257C7AB600C556D0 /* WantDelegate.swift */; };
+		215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19BB257C8C1300C556D0 /* VCDelegate.swift */; };
 		217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B32558873C00E0AAD6 /* AppDelegate.swift */; };
 		217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B52558873C00E0AAD6 /* SceneDelegate.swift */; };
 		217832B82558873C00E0AAD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B72558873C00E0AAD6 /* ViewController.swift */; };
@@ -16,6 +26,21 @@
 		217832C32558874100E0AAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217832C12558874100E0AAD6 /* LaunchScreen.storyboard */; };
 		217832CE2558874100E0AAD6 /* won_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832CD2558874100E0AAD6 /* won_iOSTests.swift */; };
 		217832D92558874100E0AAD6 /* won_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832D82558874100E0AAD6 /* won_iOSUITests.swift */; };
+		217832E92562360500E0AAD6 /* WantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832E82562360500E0AAD6 /* WantVC.swift */; };
+		217832F225698C7100E0AAD6 /* Want.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832F125698C7100E0AAD6 /* Want.swift */; };
+		217832F42569C69600E0AAD6 /* WantHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832F32569C69600E0AAD6 /* WantHistory.swift */; };
+		217832F82569CAF600E0AAD6 /* WantBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832F72569CAF600E0AAD6 /* WantBuilder.swift */; };
+		217832FA2569CB7100E0AAD6 /* WantSocialStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832F92569CB7100E0AAD6 /* WantSocialStatus.swift */; };
+		217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832FB2569CF6500E0AAD6 /* WantHistoryBuilder.swift */; };
+		217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832FF2569D46800E0AAD6 /* WantTVCell.swift */; };
+		21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783302256B37D000E0AAD6 /* CircleButton.swift */; };
+		21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783304256B455800E0AAD6 /* WantDataSource.swift */; };
+		21783307256CC88400E0AAD6 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783306256CC88400E0AAD6 /* DynamicValue.swift */; };
+		21783309256CC90100E0AAD6 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783308256CC90100E0AAD6 /* GenericDataSource.swift */; };
+		2178330C256CCAFB00E0AAD6 /* WantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2178330B256CCAFB00E0AAD6 /* WantViewModel.swift */; };
+		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
+		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
+		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +61,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.release.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		215F19A42570194200C556D0 /* RealmGenericSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenericSource.swift; sourceTree = "<group>"; };
+		215F19A92578796800C556D0 /* NewWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantVC.swift; sourceTree = "<group>"; };
+		215F19AB25787C1600C556D0 /* WantDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsVC.swift; sourceTree = "<group>"; };
+		215F19AD2578844400C556D0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		215F19AF2579DC6100C556D0 /* WantDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsTableVC.swift; sourceTree = "<group>"; };
+		215F19B2257B2F8B00C556D0 /* WantRealmSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmSource.swift; sourceTree = "<group>"; };
+		215F19B5257B30F000C556D0 /* WantRealmSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmSourceProtocol.swift; sourceTree = "<group>"; };
+		215F19B7257C7AB600C556D0 /* WantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDelegate.swift; sourceTree = "<group>"; };
+		215F19BB257C8C1300C556D0 /* VCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDelegate.swift; sourceTree = "<group>"; };
 		217832B02558873C00E0AAD6 /* won-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "won-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		217832B32558873C00E0AAD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217832B52558873C00E0AAD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +86,23 @@
 		217832D42558874100E0AAD6 /* won-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "won-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		217832D82558874100E0AAD6 /* won_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = won_iOSUITests.swift; sourceTree = "<group>"; };
 		217832DA2558874100E0AAD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		217832E82562360500E0AAD6 /* WantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantVC.swift; sourceTree = "<group>"; };
+		217832F125698C7100E0AAD6 /* Want.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Want.swift; sourceTree = "<group>"; };
+		217832F32569C69600E0AAD6 /* WantHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantHistory.swift; sourceTree = "<group>"; };
+		217832F72569CAF600E0AAD6 /* WantBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantBuilder.swift; sourceTree = "<group>"; };
+		217832F92569CB7100E0AAD6 /* WantSocialStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantSocialStatus.swift; sourceTree = "<group>"; };
+		217832FB2569CF6500E0AAD6 /* WantHistoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantHistoryBuilder.swift; sourceTree = "<group>"; };
+		217832FF2569D46800E0AAD6 /* WantTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTVCell.swift; sourceTree = "<group>"; };
+		21783302256B37D000E0AAD6 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		21783304256B455800E0AAD6 /* WantDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDataSource.swift; sourceTree = "<group>"; };
+		21783306256CC88400E0AAD6 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		21783308256CC90100E0AAD6 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
+		2178330B256CCAFB00E0AAD6 /* WantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModel.swift; sourceTree = "<group>"; };
+		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
+		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
+		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
+		6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.debug.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_won_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +131,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215F19A625701BB400C556D0 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				21783306256CC88400E0AAD6 /* DynamicValue.swift */,
+				21783308256CC90100E0AAD6 /* GenericDataSource.swift */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
+		215F19B1257B2F6C00C556D0 /* dataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				215F19B4257B30DA00C556D0 /* protocols */,
+				215F19A42570194200C556D0 /* RealmGenericSource.swift */,
+				215F19B2257B2F8B00C556D0 /* WantRealmSource.swift */,
+			);
+			path = dataAccess;
+			sourceTree = "<group>";
+		};
+		215F19B4257B30DA00C556D0 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				215F19B5257B30F000C556D0 /* WantRealmSourceProtocol.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		215F19B9257C7BB400C556D0 /* wantDetails */ = {
+			isa = PBXGroup;
+			children = (
+				215F19AF2579DC6100C556D0 /* WantDetailsTableVC.swift */,
+				215F19AB25787C1600C556D0 /* WantDetailsVC.swift */,
+				21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */,
+			);
+			path = wantDetails;
+			sourceTree = "<group>";
+		};
+		215F19BA257C7BCE00C556D0 /* newWant */ = {
+			isa = PBXGroup;
+			children = (
+				215F19A92578796800C556D0 /* NewWantVC.swift */,
+				21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */,
+				21A66929258058D600A75F2C /* NewWantNotesVC.swift */,
+			);
+			path = newWant;
+			sourceTree = "<group>";
+		};
 		217832A72558873C00E0AAD6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +185,8 @@
 				217832CC2558874100E0AAD6 /* won-iOSTests */,
 				217832D72558874100E0AAD6 /* won-iOSUITests */,
 				217832B12558873C00E0AAD6 /* Products */,
+				30032227BC9F9242450F02F8 /* Pods */,
+				BBC09695B5CF6F70F3A9F033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +203,10 @@
 		217832B22558873C00E0AAD6 /* won-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				217832EF25698C3800E0AAD6 /* uicomponents */,
+				217832EC25698B8B00E0AAD6 /* viewModel */,
+				217832EB25698B8400E0AAD6 /* view */,
+				217832EA25698B7800E0AAD6 /* model */,
 				217832B32558873C00E0AAD6 /* AppDelegate.swift */,
 				217832B52558873C00E0AAD6 /* SceneDelegate.swift */,
 				217832B72558873C00E0AAD6 /* ViewController.swift */,
@@ -131,6 +237,132 @@
 			path = "won-iOSUITests";
 			sourceTree = "<group>";
 		};
+		217832EA25698B7800E0AAD6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				217832F52569CAE000E0AAD6 /* builder */,
+				217832ED25698BB400E0AAD6 /* want */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		217832EB25698B8400E0AAD6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				217832FD2569D2F800E0AAD6 /* want */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		217832EC25698B8B00E0AAD6 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				215F19B1257B2F6C00C556D0 /* dataAccess */,
+				215F19A625701BB400C556D0 /* temp */,
+				2178330A256CCAEA00E0AAD6 /* want */,
+				215F19AD2578844400C556D0 /* ViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		217832ED25698BB400E0AAD6 /* want */ = {
+			isa = PBXGroup;
+			children = (
+				217832F125698C7100E0AAD6 /* Want.swift */,
+				217832F32569C69600E0AAD6 /* WantHistory.swift */,
+				217832F92569CB7100E0AAD6 /* WantSocialStatus.swift */,
+			);
+			path = want;
+			sourceTree = "<group>";
+		};
+		217832EF25698C3800E0AAD6 /* uicomponents */ = {
+			isa = PBXGroup;
+			children = (
+				217832FE2569D30000E0AAD6 /* tableViewCell */,
+				217832F025698C4300E0AAD6 /* buttons */,
+			);
+			path = uicomponents;
+			sourceTree = "<group>";
+		};
+		217832F025698C4300E0AAD6 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				21783301256B37BF00E0AAD6 /* stateless */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		217832F52569CAE000E0AAD6 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				217832F62569CAE700E0AAD6 /* want */,
+			);
+			path = builder;
+			sourceTree = "<group>";
+		};
+		217832F62569CAE700E0AAD6 /* want */ = {
+			isa = PBXGroup;
+			children = (
+				217832F72569CAF600E0AAD6 /* WantBuilder.swift */,
+				217832FB2569CF6500E0AAD6 /* WantHistoryBuilder.swift */,
+			);
+			path = want;
+			sourceTree = "<group>";
+		};
+		217832FD2569D2F800E0AAD6 /* want */ = {
+			isa = PBXGroup;
+			children = (
+				215F19BA257C7BCE00C556D0 /* newWant */,
+				215F19B9257C7BB400C556D0 /* wantDetails */,
+				21783304256B455800E0AAD6 /* WantDataSource.swift */,
+				217832E82562360500E0AAD6 /* WantVC.swift */,
+				215F19B7257C7AB600C556D0 /* WantDelegate.swift */,
+				215F19BB257C8C1300C556D0 /* VCDelegate.swift */,
+			);
+			path = want;
+			sourceTree = "<group>";
+		};
+		217832FE2569D30000E0AAD6 /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				217832FF2569D46800E0AAD6 /* WantTVCell.swift */,
+			);
+			path = tableViewCell;
+			sourceTree = "<group>";
+		};
+		21783301256B37BF00E0AAD6 /* stateless */ = {
+			isa = PBXGroup;
+			children = (
+				21783302256B37D000E0AAD6 /* CircleButton.swift */,
+			);
+			path = stateless;
+			sourceTree = "<group>";
+		};
+		2178330A256CCAEA00E0AAD6 /* want */ = {
+			isa = PBXGroup;
+			children = (
+				2178330B256CCAFB00E0AAD6 /* WantViewModel.swift */,
+			);
+			path = want;
+			sourceTree = "<group>";
+		};
+		30032227BC9F9242450F02F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */,
+				054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BBC09695B5CF6F70F3A9F033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 217832DD2558874100E0AAD6 /* Build configuration list for PBXNativeTarget "won-iOS" */;
 			buildPhases = (
+				26E3249FDBB9D9DA22C8297C /* [CP] Check Pods Manifest.lock */,
 				217832AC2558873C00E0AAD6 /* Sources */,
 				217832AD2558873C00E0AAD6 /* Frameworks */,
 				217832AE2558873C00E0AAD6 /* Resources */,
+				7D30C466ABA91ADE76BA3FB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,15 +491,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26E3249FDBB9D9DA22C8297C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-won-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D30C466ABA91ADE76BA3FB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-won-iOS/Pods-won-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-won-iOS/Pods-won-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-won-iOS/Pods-won-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		217832AC2558873C00E0AAD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				217832B82558873C00E0AAD6 /* ViewController.swift in Sources */,
+				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
+				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
+				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
+				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
+				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
+				21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */,
+				2178330C256CCAFB00E0AAD6 /* WantViewModel.swift in Sources */,
+				215F19B6257B30F000C556D0 /* WantRealmSourceProtocol.swift in Sources */,
+				217832F42569C69600E0AAD6 /* WantHistory.swift in Sources */,
+				21783309256CC90100E0AAD6 /* GenericDataSource.swift in Sources */,
+				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
+				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
+				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
+				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
 				217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */,
+				217832F82569CAF600E0AAD6 /* WantBuilder.swift in Sources */,
+				215F19B3257B2F8B00C556D0 /* WantRealmSource.swift in Sources */,
+				217832FA2569CB7100E0AAD6 /* WantSocialStatus.swift in Sources */,
 				217832BE2558873C00E0AAD6 /* won_iOS.xcdatamodeld in Sources */,
+				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
+				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
+				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
+				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,
+				215F19A52570194200C556D0 /* RealmGenericSource.swift in Sources */,
+				21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */,
+				21783307256CC88400E0AAD6 /* DynamicValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +736,7 @@
 		};
 		217832DE2558874100E0AAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +755,7 @@
 		};
 		217832DF2558874100E0AAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

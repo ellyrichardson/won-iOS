@@ -1,0 +1,6 @@
+framework module Pods_won_iOS {
+  umbrella header "Pods-won-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
