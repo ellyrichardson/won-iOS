@@ -15,16 +15,21 @@ class Want: Object {
     @objc dynamic var points: Int = 0
     @objc dynamic var notes: String = ""
     @objc dynamic var socialStatus: WantSocialStatus?
+    @objc dynamic var obtained: Bool = false
+    @objc dynamic var obtainedDate: Date?
+    @objc dynamic var dateCreated: Date = Date()
+    @objc dynamic var dateModified: Date = Date()
+    
     //private var privacy: PrivacyType
     // private var timeSpan: TimeSpan
     //private var notification: Notification
-    private dynamic var history: WantHistory?
+    //@objc dynamic var history: WantHistory?
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    convenience init(id: String, owner: String, name: String, points: Int, notes: String, socialStatus: WantSocialStatus, history: WantHistory) {
+    convenience init(id: String, owner: String, name: String, points: Int, notes: String, obtained: Bool, obtainedDate: Date, dateCreated: Date, dateModified: Date, socialStatus: WantSocialStatus) {
         self.init()
         self.id = id
         self.owner = owner
@@ -32,7 +37,11 @@ class Want: Object {
         self.points = points
         self.notes = notes
         self.socialStatus = socialStatus
-        self.history = history
+        self.obtained = obtained
+        self.obtainedDate = obtainedDate
+        self.dateCreated = dateCreated
+        self.dateModified = dateModified
+        //self.history = history
     }
  
     public func getId() -> String {
@@ -83,11 +92,35 @@ class Want: Object {
         self.socialStatus = socialStatus
     }
     
-    public func getHistory() -> WantHistory {
-        return history!
+    public func isObtained() -> Bool {
+        return obtained
     }
     
-    public func setHistory(history: WantHistory) {
-        self.history = history
+    public func setObtained(obtained: Bool) {
+        self.obtained = obtained
+    }
+    
+    public func getObtainedDate() -> Date {
+        return obtainedDate!
+    }
+    
+    public func setObtainedDate(obtainedDate: Date) {
+        self.obtainedDate = obtainedDate
+    }
+    
+    public func getDateCreated() -> Date {
+        return dateCreated
+    }
+    
+    public func setDateCreated(dateCreated: Date) {
+        self.dateCreated = dateCreated
+    }
+    
+    public func getDateModified() -> Date {
+        return dateModified
+    }
+    
+    public func setDateModified(dateModified: Date) {
+        self.dateModified = dateModified
     }
 }

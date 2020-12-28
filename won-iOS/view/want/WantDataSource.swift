@@ -16,6 +16,10 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
         return findAllWants().count
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WANT_TABLE_VIEW_CELL, for: indexPath) as? WantTVCell else {
             fatalError("The dequeued cell is not an instance of WantTVCell.")

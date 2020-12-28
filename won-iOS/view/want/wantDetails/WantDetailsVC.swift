@@ -11,6 +11,7 @@ import UIKit
 class WantDetailsVC: UIViewController {
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
     
+    @IBOutlet weak var wantNameLabel: UILabel!
     private var wantViewModel: WantViewModel?
     
     @IBOutlet weak var detailsView: UIView!
@@ -18,8 +19,8 @@ class WantDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //doneButton.addTarget(self, action: #selector(self.doneButtonPressed(_:)), for: .touchUpInside)
-        //self.performSegue(withIdentifier: DETAILS_TABLE_VIEW_SEGUE, sender: self)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        wantViewModel?.configureWantNameValueLabel(label: wantNameLabel)
     }
     
     func setWantViewModel(wantViewModel: WantViewModel) {

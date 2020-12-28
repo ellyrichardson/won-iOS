@@ -39,6 +39,7 @@ class WantVC: UIViewController, VCDelegate {
         
         self.delegate = WantDelegate(withDelegate: self)
         self.wantsTableView.dataSource = self.dataSource
+        //self.dataSource.deleteAll()
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
         self.navigationController?.setNavigationBarHidden(true, animated: true)

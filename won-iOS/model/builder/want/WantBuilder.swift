@@ -45,8 +45,29 @@ class WantBuilder {
         return self
     }
     
+    /*
     func withHistory(history: WantHistory) -> WantBuilder {
         want.setHistory(history: history)
+        return self
+    }*/
+    
+    func withObtained(obtained: Bool) -> WantBuilder {
+        want.setObtained(obtained: obtained)
+        return self
+    }
+    
+    func withObtainedDate(obtainedDate: Date) -> WantBuilder {
+        want.setObtainedDate(obtainedDate: obtainedDate)
+        return self
+    }
+    
+    func withDateCreated(dateCreated: Date) -> WantBuilder {
+        want.setDateCreated(dateCreated: dateCreated)
+        return self
+    }
+    
+    func withDateModified(dateModified: Date) -> WantBuilder {
+        want.setDateModified(dateModified: dateModified)
         return self
     }
     

@@ -19,13 +19,6 @@ class NewWantVC: UIViewController {
     private var wantInterestPoints: String?
     private var wantRealmViewModelDataAccess: WantRealmViewModelDataAccess?
     
-    /*
-    lazy var wantRealmManager: WantRealmManager = {
-        let controller = WantRealmManager(dataSource: WantDataSource())
-        return controller
-    }()*/
-    
-    
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -52,40 +45,24 @@ class NewWantVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //doneButton.addTarget(self, action: #selector(self.doneButtonPressed(_:)), for: .touchUpInside)
         self.wantRealmViewModelDataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: newWantAttributesTableVC)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
     @IBAction func doneButtonPressed(_ sender: CircleButton) {
-        let wantViewModel = WantViewModel(id: UUID.init().uuidString, owner: "DUMMY", name: self.wantName!, points: Int(self.wantInterestPoints!)!, notes: "NOTEZZZZ")
+        let wantViewModelBuilder = WantViewModelBuilder()
+        let wantViewModel = wantViewModelBuilder.withId(id: UUID.init().uuidString)
+            .withName(name: self.wantName!)
+            .withOwner(owner: "DUMMY")
+            .withNotes(notes: "NOTEZZZ")
+            .withPoints(points: Int(self.wantInterestPoints!)!)
+            .withDateCreated(dateCreated: Date())
+            .withDateModified(dateModified: Date())
+            .build()
         self.wantRealmViewModelDataAccess!.saveWantAsViewModel(viewModel: wantViewModel)
         self.dismiss(animated: true, completion: nil)
-        /*
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: self.UNWIND_SEGUE_TO_WANTS, sender: self)
-        }*/
     }
-    
-    /*
-    @IBAction func unwindSegueToWants( _ seg: UIStoryboardSegue) {
-        if (seg.identifier == UNWIND_SEGUE_TO_WANTS) {
-            let wantVC = seg.destination as! WantVC
-            // do stuff here
-            wantVC.reloadWantsTableViewData()
-        }
-    }*/
-    
-    /*
-    @objc func doneButtonPressed(_ button: CircleButton) {
-        let wantBuilder = WantBuilder()
-        let want = wantBuilder.withId(id: UUID.init().uuidString).withName(name: self.wantName!).withPoints(points: Int(self.wantInterestPoints!)!).build()
-        viewModel.addNewWant(want: want)
-        self.dismiss(animated: true, completion: nil)
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: self.UNWIND_SEGUE_TO_WANTS, sender: self)
-        }
-    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

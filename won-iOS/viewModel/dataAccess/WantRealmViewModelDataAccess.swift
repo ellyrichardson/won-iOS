@@ -15,7 +15,16 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         var wantViewModels = [WantViewModel]()
         let wants: [Want] = findAll()
         for want in wants {
-            wantViewModels.append(WantViewModel(id: want.getId(), owner: want.getOwner(), name: want.getName(), points: want.getPoints(), notes: want.getNotes()))
+            let wantViewModelBuilder = WantViewModelBuilder()
+            let wantViewModel = wantViewModelBuilder.withId(id: want.getId())
+                .withOwner(owner: want.getOwner())
+                .withName(name: want.getName())
+                .withNotes(notes: want.getNotes())
+                .withPoints(points: want.getPoints())
+                .withDateCreated(dateCreated: want.getDateCreated())
+                .withDateModified(dateModified: want.getDateModified())
+                .build()
+            wantViewModels.append(wantViewModel)
         }
         return wantViewModels
     }
@@ -26,7 +35,12 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     
     private func convertWantViewModelToModel(viewModel: WantViewModel) -> Want {
         let wantBuilder = WantBuilder()
-        return wantBuilder.withId(id: viewModel.getId()).withName(name: viewModel.getName()).withPoints(points: Int(viewModel.getPoints())!).build()
+        return wantBuilder.withId(id: viewModel.getId())
+            .withName(name: viewModel.getName())
+            .withPoints(points: Int(viewModel.getPoints())!)
+            .withDateCreated(dateCreated: viewModel.getDateCreated())
+            .withDateModified(dateModified: viewModel.getDateModified())
+            .build()
     }
     
     public func saveWantAsViewModel(viewModel: WantViewModel) {

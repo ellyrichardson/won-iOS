@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 class WantHistoryBuilder {
     private var wantHistory: WantHistory
     
@@ -38,4 +39,4 @@ class WantHistoryBuilder {
     func build() -> WantHistory {
         return wantHistory  
     }
-}
+}*/
