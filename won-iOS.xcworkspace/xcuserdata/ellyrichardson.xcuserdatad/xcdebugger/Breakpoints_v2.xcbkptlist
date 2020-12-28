@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D38A3788-95F5-4C50-9FB9-E2222EA5FF37"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F651496D-723F-4EFC-A742-BBB97A4BDCC1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "81761EED-E4A6-4CF3-A087-EF8723409581"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DCA1E21A-952F-41C8-A797-2350E34065F6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -158,57 +110,9 @@
             filePath = "won-iOS/viewModel/want/WantViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "setOwner(owner:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "308E6AA1-9A49-4932-A44E-92CA61BB7FC5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1220ED40-B666-4C83-A30C-51F1956E6623"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1EDB4EEB-FDC8-42C7-B1C0-D46F5A47A22E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/viewModel/want/WantViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "init(id:owner:name:points:notes:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "configureWanterestPointsValueLabel(label:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,133 +126,42 @@
             filePath = "won-iOS/viewModel/want/WantViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "WantViewModel"
-            landmarkType = "3">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "configureWanterestPointsValueLabel(label:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264"
-            shouldBeEnabled = "No"
+            uuid = "90642231-5B6F-4D9F-9482-FCF23BF1A9F9"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantVC.swift"
+            filePath = "won-iOS/view/want/WantDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "NewWantVC"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 80c1eaeda92eb2a4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.viewModel.getter : won_iOS.WantViewModel"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "263">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 6495ddb7874b5843"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; won_iOS.WantViewModel in won_iOS.NewWantVC.viewModel.getter : won_iOS.WantViewModel"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 396a0715dc2416a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.viewModel.setter : won_iOS.WantViewModel"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "153">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 4ad02f010e35f599"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.viewModel.modify : won_iOS.WantViewModel"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 3508ed5a2929d3a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.viewModel.modify : won_iOS.WantViewModel with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "10">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - 41e4a1b24d5c7ab1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; won_iOS.NewWantVC"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "843">
-               </Location>
-               <Location
-                  uuid = "266BF1E8-CDD5-43D0-925C-D7D5BEF1F264 - b2fe339284a437d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "won_iOS.NewWantVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;won_iOS.NewWantVC&gt;"
-                  moduleName = "won-iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ellyrichardson/Desktop/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/newWant/NewWantVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "778">
-               </Location>
-            </Locations>
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "842DBFF6-A655-4055-9316-B8749F7076A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "won-iOS/view/want/WantDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

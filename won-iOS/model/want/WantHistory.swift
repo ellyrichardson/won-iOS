@@ -8,6 +8,7 @@
 
 import RealmSwift
 
+/*
 class WantHistory {
     private dynamic var obtained: Bool = false
     private dynamic var obtainedDate: Date?
@@ -53,4 +54,4 @@ class WantHistory {
     public func setDateModified(dateModified: Date) {
         self.dateModified = dateModified
     }
-}
+}*/

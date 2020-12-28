@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */; };
+		212F3283259A86B8006218B4 /* DateTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3282259A86B8006218B4 /* DateTimeFunctions.swift */; };
+		212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */; };
 		215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */; };
 		215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A92578796800C556D0 /* NewWantVC.swift */; };
 		215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AB25787C1600C556D0 /* WantDetailsVC.swift */; };
@@ -35,8 +37,6 @@
 		217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832FF2569D46800E0AAD6 /* WantTVCell.swift */; };
 		21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783302256B37D000E0AAD6 /* CircleButton.swift */; };
 		21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783304256B455800E0AAD6 /* WantDataSource.swift */; };
-		21783307256CC88400E0AAD6 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783306256CC88400E0AAD6 /* DynamicValue.swift */; };
-		21783309256CC90100E0AAD6 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783308256CC90100E0AAD6 /* GenericDataSource.swift */; };
 		2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
@@ -63,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.release.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		212F3282259A86B8006218B4 /* DateTimeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFunctions.swift; sourceTree = "<group>"; };
+		212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModelBuilder.swift; sourceTree = "<group>"; };
 		215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmDataAccess.swift; sourceTree = "<group>"; };
 		215F19A92578796800C556D0 /* NewWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantVC.swift; sourceTree = "<group>"; };
 		215F19AB25787C1600C556D0 /* WantDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsVC.swift; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		217832FF2569D46800E0AAD6 /* WantTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantTVCell.swift; sourceTree = "<group>"; };
 		21783302256B37D000E0AAD6 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		21783304256B455800E0AAD6 /* WantDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDataSource.swift; sourceTree = "<group>"; };
-		21783306256CC88400E0AAD6 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
-		21783308256CC90100E0AAD6 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmManager.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
@@ -133,13 +133,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		215F19A625701BB400C556D0 /* temp */ = {
+		212F3280259A8692006218B4 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				21783306256CC88400E0AAD6 /* DynamicValue.swift */,
-				21783308256CC90100E0AAD6 /* GenericDataSource.swift */,
+				212F3281259A869B006218B4 /* date */,
 			);
-			path = temp;
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		212F3281259A869B006218B4 /* date */ = {
+			isa = PBXGroup;
+			children = (
+				212F3282259A86B8006218B4 /* DateTimeFunctions.swift */,
+			);
+			path = date;
+			sourceTree = "<group>";
+		};
+		212F3284259A95C4006218B4 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */,
+			);
+			path = builder;
 			sourceTree = "<group>";
 		};
 		215F19B1257B2F6C00C556D0 /* dataAccess */ = {
@@ -205,6 +220,7 @@
 		217832B22558873C00E0AAD6 /* won-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				212F3280259A8692006218B4 /* utilities */,
 				217832EF25698C3800E0AAD6 /* uicomponents */,
 				217832EC25698B8B00E0AAD6 /* viewModel */,
 				217832EB25698B8400E0AAD6 /* view */,
@@ -259,8 +275,8 @@
 		217832EC25698B8B00E0AAD6 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				212F3284259A95C4006218B4 /* builder */,
 				215F19B1257B2F6C00C556D0 /* dataAccess */,
-				215F19A625701BB400C556D0 /* temp */,
 				2178330A256CCAEA00E0AAD6 /* want */,
 				215F19AD2578844400C556D0 /* ViewModel.swift */,
 			);
@@ -545,6 +561,7 @@
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
+				212F3283259A86B8006218B4 /* DateTimeFunctions.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
@@ -552,7 +569,6 @@
 				2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */,
 				215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */,
 				217832F42569C69600E0AAD6 /* WantHistory.swift in Sources */,
-				21783309256CC90100E0AAD6 /* GenericDataSource.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
@@ -566,10 +582,10 @@
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
+				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,
 				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,
 				215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */,
 				21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */,
-				21783307256CC88400E0AAD6 /* DynamicValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

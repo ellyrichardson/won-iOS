@@ -20,6 +20,12 @@ class BaseRealmDataAccess<T>: NSObject {
         }
     }
     
+    func deleteAll() {
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+    
     func deleteObject<T: Object>(object: T) {
         try! realm.write {
             realm.delete(object)
