@@ -29,8 +29,8 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         return wantViewModels
     }
     
-    public func deleteWantAsViewModel(viewModel: WantViewModel) {
-        deleteObject(object: convertWantViewModelToModel(viewModel: viewModel))
+    public func deleteAsViewModel(viewModel: WantViewModel) {
+        delete(object: convertWantViewModelToModel(viewModel: viewModel))
     }
     
     private func convertWantViewModelToModel(viewModel: WantViewModel) -> Want {
@@ -43,7 +43,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .build()
     }
     
-    public func saveWantAsViewModel(viewModel: WantViewModel) {
-        saveObject(object: convertWantViewModelToModel(viewModel: viewModel))
+    public func saveAsViewModel(viewModel: WantViewModel) {
+        save(object: convertWantViewModelToModel(viewModel: viewModel))
     }
 }

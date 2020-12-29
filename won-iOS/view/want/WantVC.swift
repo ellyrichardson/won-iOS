@@ -43,17 +43,22 @@ class WantVC: UIViewController, VCDelegate {
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
         notificationToken = wantRealmManager.createNotificationToken(initialAction: {
             self.wantsTableView.reloadData()
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
         })
+        runInitialDaysLeftChecking()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.wantsTableView.reloadData()
+    }
+    
+    func runInitialDaysLeftChecking() {
+        let wantDaysLeftManager = WantDaysLeftManager(dataAccess: self.dataSource)
+        wantDaysLeftManager.checkWantsForDaysLeft(wantViewModels: self.dataSource.findAllWants())
     }
     
     /*

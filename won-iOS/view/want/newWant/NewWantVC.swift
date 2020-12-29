@@ -60,7 +60,7 @@ class NewWantVC: UIViewController {
             .withDateCreated(dateCreated: Date())
             .withDateModified(dateModified: Date())
             .build()
-        self.wantRealmViewModelDataAccess!.saveWantAsViewModel(viewModel: wantViewModel)
+        self.wantRealmViewModelDataAccess!.saveAsViewModel(viewModel: wantViewModel)
         self.dismiss(animated: true, completion: nil)
     }
     

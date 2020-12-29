@@ -13,6 +13,7 @@ class Want: Object {
     @objc dynamic var owner: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var points: Int = 0
+    @objc dynamic var daysLeft: Int = 0
     @objc dynamic var notes: String = ""
     @objc dynamic var socialStatus: WantSocialStatus?
     @objc dynamic var obtained: Bool = false
@@ -34,6 +35,7 @@ class Want: Object {
         self.id = id
         self.owner = owner
         self.name = name
+        self.daysLeft = getPreparedDaysLeft()
         self.points = points
         self.notes = notes
         self.socialStatus = socialStatus
@@ -42,6 +44,11 @@ class Want: Object {
         self.dateCreated = dateCreated
         self.dateModified = dateModified
         //self.history = history
+    }
+    
+    private func getPreparedDaysLeft() -> Int {
+        let wantDueDate = DateUtils.addDayToDate(date: self.dateCreated, days: 30.0)
+        return DateUtils.daysBetweenTwoDates(earlyDate: self.dateCreated, laterDate: wantDueDate)
     }
  
     public func getId() -> String {
@@ -74,6 +81,14 @@ class Want: Object {
     
     public func setPoints(points: Int) {
         self.points = points
+    }
+    
+    public func setDaysLeft(daysLeft: Int) {
+        self.daysLeft = daysLeft
+    }
+    
+    public func getDaysLeft() -> Int {
+        return daysLeft
     }
     
     public func getNotes() -> String {

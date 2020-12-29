@@ -14,7 +14,11 @@ class BaseRealmDataAccess<T>: NSObject {
         return realm.objects(T.self).map { $0 }
     }
     
-    func saveObject<T: Object>(object: T) {
+    func findById<T: Object>(id: String) -> T {
+        return realm.object(ofType: T.self, forPrimaryKey: id)!
+    }
+    
+    func save<T: Object>(object: T) {
         try! realm.write {
             realm.add(object, update: .modified)
         }
@@ -26,7 +30,7 @@ class BaseRealmDataAccess<T>: NSObject {
         }
     }
     
-    func deleteObject<T: Object>(object: T) {
+    func delete<T: Object>(object: T) {
         try! realm.write {
             realm.delete(object)
         }
