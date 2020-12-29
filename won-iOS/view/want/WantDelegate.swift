@@ -29,7 +29,7 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let presentedWants = findAllWants()
         if editingStyle == .delete {
-            deleteWantAsViewModel(viewModel: presentedWants[indexPath.row])
+            deleteAsViewModel(viewModel: presentedWants[indexPath.row])
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

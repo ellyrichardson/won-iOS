@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */; };
-		212F3283259A86B8006218B4 /* DateTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3282259A86B8006218B4 /* DateTimeFunctions.swift */; };
 		212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */; };
 		215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */; };
 		215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A92578796800C556D0 /* NewWantVC.swift */; };
@@ -19,6 +18,8 @@
 		215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B5257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift */; };
 		215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B7257C7AB600C556D0 /* WantDelegate.swift */; };
 		215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19BB257C8C1300C556D0 /* VCDelegate.swift */; };
+		21713C2C259AB7BD00E4A503 /* WantDaysLeftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */; };
+		21713C2E259AC48200E4A503 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21713C2D259AC48200E4A503 /* DateUtils.swift */; };
 		217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B32558873C00E0AAD6 /* AppDelegate.swift */; };
 		217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B52558873C00E0AAD6 /* SceneDelegate.swift */; };
 		217832B82558873C00E0AAD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B72558873C00E0AAD6 /* ViewController.swift */; };
@@ -63,7 +64,6 @@
 
 /* Begin PBXFileReference section */
 		054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.release.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		212F3282259A86B8006218B4 /* DateTimeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFunctions.swift; sourceTree = "<group>"; };
 		212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModelBuilder.swift; sourceTree = "<group>"; };
 		215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmDataAccess.swift; sourceTree = "<group>"; };
 		215F19A92578796800C556D0 /* NewWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantVC.swift; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 		215F19B5257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmViewModelDataAccessProtocol.swift; sourceTree = "<group>"; };
 		215F19B7257C7AB600C556D0 /* WantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDelegate.swift; sourceTree = "<group>"; };
 		215F19BB257C8C1300C556D0 /* VCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDelegate.swift; sourceTree = "<group>"; };
+		21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDaysLeftManager.swift; sourceTree = "<group>"; };
+		21713C2D259AC48200E4A503 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		217832B02558873C00E0AAD6 /* won-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "won-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		217832B32558873C00E0AAD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217832B52558873C00E0AAD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,17 +138,9 @@
 		212F3280259A8692006218B4 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
-				212F3281259A869B006218B4 /* date */,
+				21713C2D259AC48200E4A503 /* DateUtils.swift */,
 			);
 			path = utilities;
-			sourceTree = "<group>";
-		};
-		212F3281259A869B006218B4 /* date */ = {
-			isa = PBXGroup;
-			children = (
-				212F3282259A86B8006218B4 /* DateTimeFunctions.swift */,
-			);
-			path = date;
 			sourceTree = "<group>";
 		};
 		212F3284259A95C4006218B4 /* builder */ = {
@@ -193,6 +187,13 @@
 				21A66929258058D600A75F2C /* NewWantNotesVC.swift */,
 			);
 			path = newWant;
+			sourceTree = "<group>";
+		};
+		21713C28259AAD3300E4A503 /* timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = timer;
 			sourceTree = "<group>";
 		};
 		217832A72558873C00E0AAD6 = {
@@ -275,6 +276,7 @@
 		217832EC25698B8B00E0AAD6 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21713C28259AAD3300E4A503 /* timer */,
 				212F3284259A95C4006218B4 /* builder */,
 				215F19B1257B2F6C00C556D0 /* dataAccess */,
 				2178330A256CCAEA00E0AAD6 /* want */,
@@ -361,6 +363,7 @@
 			children = (
 				2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */,
 				21C947FE2591A7BE009D0279 /* WantViewModel.swift */,
+				21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -561,10 +564,10 @@
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
-				212F3283259A86B8006218B4 /* DateTimeFunctions.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
+				21713C2E259AC48200E4A503 /* DateUtils.swift in Sources */,
 				21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */,
 				2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */,
 				215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */,
@@ -580,6 +583,7 @@
 				217832BE2558873C00E0AAD6 /* won_iOS.xcdatamodeld in Sources */,
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
+				21713C2C259AB7BD00E4A503 /* WantDaysLeftManager.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,
