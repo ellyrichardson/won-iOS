@@ -14,6 +14,7 @@ class WantViewModel {
     private var name: String
     private var points: Int
     private var notes: String
+    private var image: UIImage
     private var daysLeft: Int
     private var obtained: Bool
     private var obtainedDate: Date?
@@ -30,6 +31,7 @@ class WantViewModel {
         self.obtained = false
         self.dateCreated = Date()
         self.dateModified = Date()
+        self.image = UIImage()
     }
     
     public func configureTableViewCell(cell: WantTVCell) {
@@ -72,6 +74,10 @@ class WantViewModel {
         } else {
             label.text = DateTimeFunctions.dateToStringDMmmY(date: self.obtainedDate!)
         }
+    }
+    
+    public func configureWantImageView(imageView: UIImageView) {
+        imageView.image = self.image
     }
     
     public func setOwner(owner: String) {
@@ -120,6 +126,14 @@ class WantViewModel {
     
     public func getId() -> String {
         return id
+    }
+    
+    func setImage(image: UIImage) {
+        self.image = image
+    }
+    
+    func getImage() -> UIImage {
+        return image
     }
     
     public func setObtained(obtained: Bool) {

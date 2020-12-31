@@ -533,15 +533,24 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="192" id="Uqr-BA-UbM">
                                         <rect key="frame" x="0.0" y="28" width="414" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uqr-BA-UbM" id="TxI-pw-xEa">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uqr-BA-UbM" id="TxI-pw-xEa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-uw-8NZ">
-                                                    <rect key="frame" x="67" y="11" width="240" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.and.ellipsis.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-uw-8NZ">
+                                                    <rect key="frame" x="66.5" y="9" width="281" height="170"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="281" id="RVK-Kz-CA8"/>
+                                                        <constraint firstAttribute="height" constant="171.5" id="e2c-cP-Ub1"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zM9-uw-8NZ" firstAttribute="centerX" secondItem="TxI-pw-xEa" secondAttribute="centerX" id="ZXn-bA-jhQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="zM9-uw-8NZ" secondAttribute="bottom" constant="9" id="dHO-21-BmU"/>
+                                                <constraint firstItem="zM9-uw-8NZ" firstAttribute="top" secondItem="TxI-pw-xEa" secondAttribute="top" constant="9" id="zmQ-tr-61R"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="p2C-qP-zjk">
@@ -668,7 +677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vei-kK-dsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5029" y="-166"/>
+            <point key="canvasLocation" x="5028.985507246377" y="-166.07142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l1d-TM-8Rl">
@@ -926,4 +935,7 @@
             <point key="canvasLocation" x="5773.913043478261" y="525.66964285714289"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
+    </resources>
 </document>

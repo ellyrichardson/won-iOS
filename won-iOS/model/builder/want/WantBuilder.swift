@@ -40,6 +40,11 @@ class WantBuilder {
         return self
     }
     
+    func withImagePath(imagePath: String) -> WantBuilder {
+        want.setImagePath(imagePath: imagePath)
+        return self
+    }
+    
     func withDaysLeft(daysLeft: Int) -> WantBuilder {
         want.setDaysLeft(daysLeft: daysLeft)
         return self

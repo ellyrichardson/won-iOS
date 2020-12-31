@@ -38,17 +38,43 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     
     private func convertWantViewModelToModel(viewModel: WantViewModel) -> Want {
         let wantBuilder = WantBuilder()
-        return wantBuilder.withId(id: viewModel.getId())
+        let wantModel = wantBuilder.withId(id: viewModel.getId())
             .withName(name: viewModel.getName())
             .withPoints(points: Int(viewModel.getPoints())!)
             .withDateCreated(dateCreated: viewModel.getDateCreated())
             .withDateModified(dateModified: viewModel.getDateModified())
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .build()
+        if viewModel.getImage().size.width > 0 {
+            let imageName = UUID.init().uuidString
+            saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
+            wantModel.setImagePath(imagePath: "THEPATH/" + imageName)
+        }
+        return wantModel
     }
     
     public func saveAsViewModel(viewModel: WantViewModel) {
         save(object: convertWantViewModelToModel(viewModel: viewModel))
+    }
+    
+    private func saveWantImageToAppDirectory(image: UIImage, imageName: String) {
+        // get the documents directory url
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        // choose a name for your image
+        let fileName = imageName
+        // create the destination file url to save your image
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        // get your UIImage jpeg data representation and check if the destination file url already exists
+        if let data = image.jpegData(compressionQuality:  1.0),
+          !FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                // writes the image data to disk
+                try data.write(to: fileURL)
+                print("file saved")
+            } catch {
+                print("error saving file:", error)
+            }
+        }
     }
     
     public func updateDaysLeftAsViewModel(viewModel: WantViewModel, daysLeft: Int) {
