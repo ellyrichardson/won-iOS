@@ -9,17 +9,12 @@
 import Foundation
 
 class WantManager {
-    private var dataAccess = WantRealmViewModelDataAccess()
     
-    /*
-    init(dataAccess : WantRealmViewModelDataAccess?) {
-        self.dataAccess = dataAccess
-    }*/
+    private var dataAccess = WantRealmViewModelDataAccess()
     
     func runInitialWantsDaysLeftCheck() {
         let wantViewModels = dataAccess.findAllWants()
         for wantViewModel in wantViewModels {
-            //let want: Want = (dataAccess.findById(id: wantViewModel.getId()))
             let wantDueDate = DateUtils.addDayToDate(date: wantViewModel.getDateCreated(), days: 30.0)
             print(wantViewModel.getDateCreated())
             print("NEW  STUFF")
@@ -37,9 +32,5 @@ class WantManager {
     
     @objc private func fireCheckingOfDaysLeft() {
         runInitialWantsDaysLeftCheck()
-        /*
-        DispatchQueue.global(qos: .background).async {
-            self.checkWantsForDaysLeft()
-        }*/
     }
 }

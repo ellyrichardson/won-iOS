@@ -32,18 +32,6 @@ class WantViewModel {
         self.dateModified = Date()
     }
     
-    /*
-    public init (id: String, owner: String, name: String, points: Int, notes: String, obtained: Bool, dateCreated: Date, dateModified: Date) {
-        self.id = id
-        self.owner = owner
-        self.name = name
-        self.points = points
-        self.notes = notes
-        self.obtained = obtained
-        self.dateCreated = dateCreated
-        self.dateModified = dateModified
-    }*/
-    
     public func configureTableViewCell(cell: WantTVCell) {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)

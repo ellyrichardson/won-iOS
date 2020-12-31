@@ -110,8 +110,8 @@
             filePath = "won-iOS/viewModel/want/WantViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "configureWanterestPointsValueLabel(label:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "won-iOS/viewModel/want/WantViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "configureWanterestPointsValueLabel(label:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,9 +174,9 @@
             filePath = "won-iOS/viewModel/want/WantManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "checkWantsForDaysLeft()"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "runInitialWantsDaysLeftCheck()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
