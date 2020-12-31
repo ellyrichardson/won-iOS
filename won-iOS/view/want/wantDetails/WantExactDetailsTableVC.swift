@@ -37,5 +37,6 @@ class WantExactDetailsTableVC: UITableViewController {
         wantViewModel?.configureWantDateCreatedValueLabel(label: dateCreatedValueLabel)
         wantViewModel?.configureWantDateModifiedValueLabel(label: dateModifiedValueLabel)
         wantViewModel?.configureWantObtainedDateValueLabel(label: obtainedAtValueLabel)
+        wantViewModel?.configureWantDaysLeftValueLabel(label: daysLeftValueLabel)
     }
 }

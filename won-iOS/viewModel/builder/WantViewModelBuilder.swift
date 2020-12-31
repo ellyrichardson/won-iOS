@@ -40,6 +40,11 @@ class WantViewModelBuilder {
         return self
     }
     
+    func withDaysLeft(daysLeft: Int) -> WantViewModelBuilder {
+        wantViewModel.setDaysLeft(daysLeft: daysLeft)
+        return self
+    }
+    
     func withObtained(obtained: Bool) -> WantViewModelBuilder {
         wantViewModel.setObtained(obtained: obtained)
         return self
