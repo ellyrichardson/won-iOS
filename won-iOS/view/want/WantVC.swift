@@ -48,7 +48,8 @@ class WantVC: UIViewController, VCDelegate {
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
         })
-        runInitialDaysLeftChecking()
+        
+        //runInitialDaysLeftChecking()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,10 +57,11 @@ class WantVC: UIViewController, VCDelegate {
         self.wantsTableView.reloadData()
     }
     
+    /*
     func runInitialDaysLeftChecking() {
         let wantDaysLeftManager = WantDaysLeftManager(dataAccess: self.dataSource)
         wantDaysLeftManager.checkWantsForDaysLeft(wantViewModels: self.dataSource.findAllWants())
-    }
+    }*/
     
     /*
     @IBAction func unwindToHere( _ seg: UIStoryboardSegue) {

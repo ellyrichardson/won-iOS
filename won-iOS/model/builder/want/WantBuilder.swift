@@ -40,6 +40,11 @@ class WantBuilder {
         return self
     }
     
+    func withDaysLeft(daysLeft: Int) -> WantBuilder {
+        want.setDaysLeft(daysLeft: daysLeft)
+        return self
+    }
+    
     func withSocialStatus(socialStatus: WantSocialStatus) -> WantBuilder {
         want.setSocialStatus(socialStatus: socialStatus)
         return self

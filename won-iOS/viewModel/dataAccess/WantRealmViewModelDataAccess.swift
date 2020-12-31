@@ -6,6 +6,8 @@
 //  Copyright © 2020 EllyRichardson. All rights reserved.
 //
 
+import RealmSwift
+
 class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewModelDataAccessProtocol {
     func findAllWants() -> [WantViewModel] {
         return findAllWantsAsViewModel()
@@ -22,6 +24,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
                 .withNotes(notes: want.getNotes())
                 .withPoints(points: want.getPoints())
                 .withDateCreated(dateCreated: want.getDateCreated())
+                .withDaysLeft(daysLeft: want.getDaysLeft())
                 .withDateModified(dateModified: want.getDateModified())
                 .build()
             wantViewModels.append(wantViewModel)
@@ -40,10 +43,21 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withPoints(points: Int(viewModel.getPoints())!)
             .withDateCreated(dateCreated: viewModel.getDateCreated())
             .withDateModified(dateModified: viewModel.getDateModified())
+            .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .build()
     }
     
     public func saveAsViewModel(viewModel: WantViewModel) {
         save(object: convertWantViewModelToModel(viewModel: viewModel))
+    }
+    
+    public func updateDaysLeftAsViewModel(viewModel: WantViewModel, daysLeft: Int) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first {
+            try! realm.write {
+                want.daysLeft = daysLeft
+            }
+        }
     }
 }
