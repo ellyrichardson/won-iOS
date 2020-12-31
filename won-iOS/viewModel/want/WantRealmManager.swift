@@ -14,26 +14,9 @@ struct WantRealmManager {
     
     var dataSource: WantRealmViewModelDataAccess?
     
-    // TODO: FIGURE OUT WHERE TO PUT REALM INSTANCE
-    
     init(dataSource : WantRealmViewModelDataAccess?) {
         self.dataSource = dataSource
     }
-    /*
-    func addNewWant(viewModel: WantViewModel) {
-        dataSource?.saveWantAsViewModel(viewModel: viewModel)
-    }*/
-    
-    /*
-    func addWatcherToWant(want: Want, watcher: String) {
-        var watchers = want.getSocialStatus().getWatchers()
-        watchers.insert(watcher)
-        want.getSocialStatus().setWatchers(watchers: watchers)
-    }*/
-    /*
-    func deleteWant(viewModel: WantViewModel) {
-        dataSource?.deleteWantAsViewModel(viewModel: viewModel)
-    }*/
     
     func createNotificationToken(initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
         let results = dataSource?.findResultsOfType(type: Want.self)
@@ -50,6 +33,4 @@ struct WantRealmManager {
         }
         return token
     }
-    
-    //TODO: Add a loader from Realm DB
 }

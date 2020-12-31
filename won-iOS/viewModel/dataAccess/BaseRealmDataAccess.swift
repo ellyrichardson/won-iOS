@@ -43,4 +43,8 @@ class BaseRealmDataAccess<T>: NSObject {
     func getType() -> T.Type {
         return T.self
     }
+    
+    func getRealmInstanceForSubclasses() -> Realm {
+        return realm
+    }
 }

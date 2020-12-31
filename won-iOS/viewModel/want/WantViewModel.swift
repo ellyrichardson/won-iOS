@@ -14,6 +14,7 @@ class WantViewModel {
     private var name: String
     private var points: Int
     private var notes: String
+    private var daysLeft: Int
     private var obtained: Bool
     private var obtainedDate: Date?
     private var dateCreated: Date
@@ -25,26 +26,16 @@ class WantViewModel {
         self.name = ""
         self.points = 0
         self.notes = ""
+        self.daysLeft = 30
         self.obtained = false
         self.dateCreated = Date()
         self.dateModified = Date()
     }
     
-    /*
-    public init (id: String, owner: String, name: String, points: Int, notes: String, obtained: Bool, dateCreated: Date, dateModified: Date) {
-        self.id = id
-        self.owner = owner
-        self.name = name
-        self.points = points
-        self.notes = notes
-        self.obtained = obtained
-        self.dateCreated = dateCreated
-        self.dateModified = dateModified
-    }*/
-    
     public func configureTableViewCell(cell: WantTVCell) {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
+        cell.timeLeftLabel.text = String(self.daysLeft) + " days left"
     }
     
     public func configureWanterestPointsValueLabel(label: UILabel) {
@@ -57,6 +48,10 @@ class WantViewModel {
     
     public func configureWantDateModifiedValueLabel(label: UILabel) {
         label.text = DateTimeFunctions.dateToStringDMmmY(date: self.dateModified)
+    }
+    
+    public func configureWantDaysLeftValueLabel(label: UILabel) {
+        label.text = String(self.daysLeft)
     }
     
     public func configureWantNameValueLabel(label: UILabel) {
@@ -109,6 +104,14 @@ class WantViewModel {
     
     public func getNotes() -> String {
         return notes
+    }
+    
+    public func setDaysLeft(daysLeft: Int) {
+        self.daysLeft = daysLeft
+    }
+    
+    public func getDaysLeft() -> Int {
+        return daysLeft
     }
     
     public func setId(id: String) {

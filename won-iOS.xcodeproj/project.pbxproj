@@ -19,7 +19,7 @@
 		215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B5257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift */; };
 		215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19B7257C7AB600C556D0 /* WantDelegate.swift */; };
 		215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19BB257C8C1300C556D0 /* VCDelegate.swift */; };
-		21713C2C259AB7BD00E4A503 /* WantDaysLeftManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */; };
+		21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21713C2B259AB7BD00E4A503 /* WantManager.swift */; };
 		21713C2E259AC48200E4A503 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21713C2D259AC48200E4A503 /* DateUtils.swift */; };
 		217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B32558873C00E0AAD6 /* AppDelegate.swift */; };
 		217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217832B52558873C00E0AAD6 /* SceneDelegate.swift */; };
@@ -76,7 +76,7 @@
 		215F19B5257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmViewModelDataAccessProtocol.swift; sourceTree = "<group>"; };
 		215F19B7257C7AB600C556D0 /* WantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDelegate.swift; sourceTree = "<group>"; };
 		215F19BB257C8C1300C556D0 /* VCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCDelegate.swift; sourceTree = "<group>"; };
-		21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDaysLeftManager.swift; sourceTree = "<group>"; };
+		21713C2B259AB7BD00E4A503 /* WantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantManager.swift; sourceTree = "<group>"; };
 		21713C2D259AC48200E4A503 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		217832B02558873C00E0AAD6 /* won-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "won-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		217832B32558873C00E0AAD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -374,7 +374,7 @@
 			children = (
 				2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */,
 				21C947FE2591A7BE009D0279 /* WantViewModel.swift */,
-				21713C2B259AB7BD00E4A503 /* WantDaysLeftManager.swift */,
+				21713C2B259AB7BD00E4A503 /* WantManager.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -595,7 +595,7 @@
 				217832BE2558873C00E0AAD6 /* won_iOS.xcdatamodeld in Sources */,
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
-				21713C2C259AB7BD00E4A503 /* WantDaysLeftManager.swift in Sources */,
+				21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,

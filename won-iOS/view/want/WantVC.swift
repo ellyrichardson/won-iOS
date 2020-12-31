@@ -20,19 +20,10 @@ class WantVC: UIViewController, VCDelegate {
     private var delegate: WantDelegate?
     private var notificationToken: NotificationToken? = nil
     
-    // TEMPorarily removed: private weak var selectedWant: Want?
-    
-    
     lazy var wantRealmManager: WantRealmManager = {
         let manager = WantRealmManager(dataSource: dataSource)
         return manager
     }()
-    
-    /*
-    lazy var realmManager: RealmManager = {
-        let realmManager = RealmManager(dataSource: dataSource)
-        return realmManager
-    }()*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,29 +39,12 @@ class WantVC: UIViewController, VCDelegate {
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
         })
-        runInitialDaysLeftChecking()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.wantsTableView.reloadData()
     }
-    
-    func runInitialDaysLeftChecking() {
-        let wantDaysLeftManager = WantDaysLeftManager(dataAccess: self.dataSource)
-        wantDaysLeftManager.checkWantsForDaysLeft(wantViewModels: self.dataSource.findAllWants())
-    }
-    
-    /*
-    @IBAction func unwindToHere( _ seg: UIStoryboardSegue) {
-        
-        if (seg.identifier == UNWIND_SEGUE_TO_WANTS) {
-            let wantVC = seg.destination as! WantVC
-            // do stuff here
-            wantVC.reloadWantsTableViewData()
-        }
-    }*/
-    
     
     private func updateTableView(deletions: [Int], insertions: [Int], modifications: [Int]) {
         self.wantsTableView.beginUpdates()
