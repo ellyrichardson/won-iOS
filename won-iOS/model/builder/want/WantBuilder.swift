@@ -40,8 +40,8 @@ class WantBuilder {
         return self
     }
     
-    func withImagePath(imagePath: String) -> WantBuilder {
-        want.setImagePath(imagePath: imagePath)
+    func withImageName(imageName: String) -> WantBuilder {
+        want.setImageName(imageName: imageName)
         return self
     }
     

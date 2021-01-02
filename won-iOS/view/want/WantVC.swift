@@ -12,6 +12,7 @@ import RealmSwift
 class WantVC: UIViewController, VCDelegate {
     private let SHOW_WANT_DETAILS_SEGUE = "showWantDetails"
     
+    @IBOutlet weak var wantImageView: UIImageView!
     @IBOutlet weak var addWantButton: CircleButton!
     @IBOutlet weak var sortWantsButton: CircleButton!
     @IBOutlet weak var wantsTableView: UITableView!

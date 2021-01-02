@@ -38,6 +38,9 @@ class WantViewModel {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
         cell.timeLeftLabel.text = String(self.daysLeft) + " days left"
+        if image.size.width > 0 {
+            cell.wantImage.image = self.image
+        }
     }
     
     public func configureWanterestPointsValueLabel(label: UILabel) {
@@ -77,7 +80,9 @@ class WantViewModel {
     }
     
     public func configureWantImageView(imageView: UIImageView) {
-        imageView.image = self.image
+        if image.size.width > 0 {
+            imageView.image = self.image
+        }
     }
     
     public func setOwner(owner: String) {

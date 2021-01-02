@@ -17,22 +17,30 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         var wantViewModels = [WantViewModel]()
         let wants: [Want] = findAll()
         for want in wants {
-            let wantViewModelBuilder = WantViewModelBuilder()
-            let wantViewModel = wantViewModelBuilder.withId(id: want.getId())
-                .withOwner(owner: want.getOwner())
-                .withName(name: want.getName())
-                .withNotes(notes: want.getNotes())
-                .withPoints(points: want.getPoints())
-                .withDateCreated(dateCreated: want.getDateCreated())
-                .withDaysLeft(daysLeft: want.getDaysLeft())
-                .withDateModified(dateModified: want.getDateModified())
-                .build()
-            wantViewModels.append(wantViewModel)
+            wantViewModels.append(prepareWantViewModel(want: want))
         }
         return wantViewModels
     }
     
-    public func deleteAsViewModel(viewModel: WantViewModel) {
+    private func prepareWantViewModel(want: Want) -> WantViewModel {
+        let wantViewModelBuilder = WantViewModelBuilder()
+        let wantViewModel = wantViewModelBuilder.withId(id: want.getId())
+            .withOwner(owner: want.getOwner())
+            .withName(name: want.getName())
+            .withNotes(notes: want.getNotes())
+            .withPoints(points: want.getPoints())
+            .withDateCreated(dateCreated: want.getDateCreated())
+            .withDaysLeft(daysLeft: want.getDaysLeft())
+            .withDateModified(dateModified: want.getDateModified())
+            .build()
+        if want.getImageName() != "" {
+            let imagePath = URL(fileURLWithPath: getDocumentDirectoryPath()).appendingPathComponent(want.getImageName())
+            wantViewModel.setImage(image: UIImage(contentsOfFile: imagePath.path)!)
+        }
+        return wantViewModel
+    }
+    
+    func deleteAsViewModel(viewModel: WantViewModel) {
         delete(object: convertWantViewModelToModel(viewModel: viewModel))
     }
     
@@ -46,14 +54,22 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .build()
         if viewModel.getImage().size.width > 0 {
-            let imageName = UUID.init().uuidString
+            let imageName = UUID.init().uuidString + ".png"
             saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
-            wantModel.setImagePath(imagePath: "THEPATH/" + imageName)
+            //wantModel.setImagePath(imagePath: URL(fileURLWithPath: getDocumentDirectoryPath()).appendingPathComponent(imageName).path)
+            wantModel.setImageName(imageName: imageName)
         }
         return wantModel
     }
     
-    public func saveAsViewModel(viewModel: WantViewModel) {
+    private func getDocumentDirectoryPath() -> String {
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        return paths.first!
+    }
+    
+    func saveAsViewModel(viewModel: WantViewModel) {
         save(object: convertWantViewModelToModel(viewModel: viewModel))
     }
     
@@ -77,7 +93,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         }
     }
     
-    public func updateDaysLeftAsViewModel(viewModel: WantViewModel, daysLeft: Int) {
+    func updateDaysLeftAsViewModel(viewModel: WantViewModel, daysLeft: Int) {
         let realm = getRealmInstanceForSubclasses()
         let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
         if let want = wants.first {

@@ -15,7 +15,7 @@ class Want: Object {
     @objc dynamic var points: Int = 0
     @objc dynamic var daysLeft: Int = 0
     @objc dynamic var notes: String = ""
-    @objc dynamic var imagePath: String = ""
+    @objc dynamic var imageName: String = ""
     @objc dynamic var socialStatus: WantSocialStatus?
     @objc dynamic var obtained: Bool = false
     @objc dynamic var obtainedDate: Date?
@@ -31,14 +31,14 @@ class Want: Object {
         return "id"
     }
     
-    convenience init(id: String, owner: String, name: String, points: Int, imagePath: String, notes: String, obtained: Bool, obtainedDate: Date, dateCreated: Date, dateModified: Date, socialStatus: WantSocialStatus) {
+    convenience init(id: String, owner: String, name: String, points: Int, imageName: String, notes: String, obtained: Bool, obtainedDate: Date, dateCreated: Date, dateModified: Date, socialStatus: WantSocialStatus) {
         self.init()
         self.id = id
         self.owner = owner
         self.name = name
         self.daysLeft = getPreparedDaysLeft()
         self.points = points
-        self.imagePath = imagePath
+        self.imageName = imageName
         self.notes = notes
         self.socialStatus = socialStatus
         self.obtained = obtained
@@ -101,12 +101,12 @@ class Want: Object {
         self.notes = notes
     }
     
-    func getImagePath() -> String {
-        return imagePath
+    func getImageName() -> String {
+        return imageName
     }
     
-    func setImagePath(imagePath: String) {
-        self.imagePath = imagePath
+    func setImageName(imageName: String) {
+        self.imageName = imageName
     }
     
     public func getSocialStatus() -> WantSocialStatus {

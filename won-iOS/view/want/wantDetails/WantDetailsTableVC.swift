@@ -33,6 +33,7 @@ class WantDetailsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
+        wantViewModel?.configureWantImageView(imageView: wantImage)
         add(asChildViewController: wantExactDetailsTableVC)
     }
     
