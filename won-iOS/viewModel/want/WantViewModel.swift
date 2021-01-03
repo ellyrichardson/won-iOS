@@ -172,4 +172,8 @@ class WantViewModel {
     public func getDateModified() -> Date {
         return dateModified
     }
+    
+    func save() {
+        
+    }
 }

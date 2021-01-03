@@ -19,6 +19,7 @@ class NewWantVC: UIViewController {
     private var wantInterestPoints: String?
     private var wantRealmViewModelDataAccess: WantRealmViewModelDataAccess?
     private var wantImage: UIImage?
+    private var wantImageUpdated = false
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard
@@ -44,6 +45,7 @@ class NewWantVC: UIViewController {
             if let vc = self {
                 // Do something with the item.
                 self?.wantImage = item
+                self?.wantImageUpdated = true
             }
         }
         self.add(asChildViewController: vc)
@@ -67,7 +69,7 @@ class NewWantVC: UIViewController {
             .withDateCreated(dateCreated: Date())
             .withDateModified(dateModified: Date())
             .build()
-        if self.wantImage != nil {
+        if self.wantImageUpdated {
             wantViewModel.setImage(image: self.wantImage!)
         }
         self.wantRealmViewModelDataAccess!.saveAsViewModel(viewModel: wantViewModel)

@@ -8,12 +8,15 @@
 
 import UIKit
 
-class WantDetailsTableVC: UITableViewController {
+class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    typealias EditedImageHandler = (_ name: UIImage) -> Void
+    
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var detailsTableView: UIView!
     private var wantViewModel: WantViewModel?
+    private var dataAccess: WantRealmViewModelDataAccess?
     
     func setWantViewModel(wantViewModel: WantViewModel) {
         self.wantViewModel = wantViewModel
@@ -34,6 +37,7 @@ class WantDetailsTableVC: UITableViewController {
         super.viewDidLoad()
         wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
         wantViewModel?.configureWantImageView(imageView: wantImage)
+        dataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: wantExactDetailsTableVC)
     }
     
@@ -50,5 +54,45 @@ class WantDetailsTableVC: UITableViewController {
         
         // Notify Child View Controller
         viewController.didMove(toParent: self)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        wantImage.image = selectedImage
+        self.dataAccess?.updateImageAsViewModel(viewModel: self.wantViewModel!, image: self.wantViewModel!.getImage())
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        wantImage.addGestureRecognizer(tap)
+        wantImage.isUserInteractionEnabled = true
+        /*
+        if indexPath.row == 3 || indexPath.row == 4 || indexPath.row == 5 || indexPath.row == 8 || indexPath.row == 9 || indexPath.row == 10 {
+            // To remove line separator from tableViewCells
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            cell.directionalLayoutMargins = .zero
+        }*/
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
 }

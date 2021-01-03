@@ -33,6 +33,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDaysLeft(daysLeft: want.getDaysLeft())
             .withDateModified(dateModified: want.getDateModified())
             .build()
+        print("IMAGE: " + want.getImageName())
         if want.getImageName() != "" {
             let imagePath = URL(fileURLWithPath: getDocumentDirectoryPath()).appendingPathComponent(want.getImageName())
             wantViewModel.setImage(image: UIImage(contentsOfFile: imagePath.path)!)
@@ -93,12 +94,36 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         }
     }
     
+    private func removeFileFromDocumentDirectory(fileName: String) {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        do {
+            try FileManager.default.removeItem(atPath: fileURL.path)
+        } catch let error as NSError {
+          print(error.debugDescription)
+        }
+    }
+    
     func updateDaysLeftAsViewModel(viewModel: WantViewModel, daysLeft: Int) {
         let realm = getRealmInstanceForSubclasses()
         let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
         if let want = wants.first {
             try! realm.write {
                 want.daysLeft = daysLeft
+            }
+        }
+    }
+    
+    func updateImageAsViewModel(viewModel: WantViewModel, image: UIImage) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first {
+            removeFileFromDocumentDirectory(fileName: want.getImageName())
+            let imageName = UUID.init().uuidString + ".png"
+            saveWantImageToAppDirectory(image: image, imageName: imageName)
+            try! realm.write {
+                want.imageName = imageName
+                want.dateModified = Date()
             }
         }
     }
