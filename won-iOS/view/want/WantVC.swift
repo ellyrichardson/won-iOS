@@ -44,6 +44,7 @@ class WantVC: UIViewController, VCDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        TimerProcess.sharedTimer.runTimer(withInterval: 1.0)
         self.wantsTableView.reloadData()
     }
     
@@ -79,5 +80,6 @@ class WantVC: UIViewController, VCDelegate {
             let wantDetailsVC = destNavCtrl.topViewController as! WantDetailsVC
             wantDetailsVC.setWantViewModel(wantViewModel: sender as! WantViewModel)
         }
+        TimerProcess.sharedTimer.pauseTimer()
     }
 }

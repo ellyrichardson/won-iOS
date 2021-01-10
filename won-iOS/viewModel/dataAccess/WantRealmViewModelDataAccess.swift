@@ -34,8 +34,10 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDateModified(dateModified: want.getDateModified())
             .build()
         print("IMAGE: " + want.getImageName())
-        if want.getImageName() != "" {
-            let imagePath = URL(fileURLWithPath: getDocumentDirectoryPath()).appendingPathComponent(want.getImageName())
+        let validImageName = want.getImageName().components(separatedBy: ".")[0]
+        if UUID(uuidString: validImageName) != nil {
+            let imagePath = getDocumentDirectoryPath().appendingPathComponent(want.getImageName())
+            print("IMAGE PATH: " + imagePath.path)
             wantViewModel.setImage(image: UIImage(contentsOfFile: imagePath.path)!)
         }
         return wantViewModel
@@ -55,19 +57,15 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .build()
         if viewModel.getImage().size.width > 0 {
-            let imageName = UUID.init().uuidString + ".png"
+            let imageName = UUID.init().uuidString + ".jpg"
             saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
-            //wantModel.setImagePath(imagePath: URL(fileURLWithPath: getDocumentDirectoryPath()).appendingPathComponent(imageName).path)
             wantModel.setImageName(imageName: imageName)
         }
         return wantModel
     }
     
-    private func getDocumentDirectoryPath() -> String {
-        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-        let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-        return paths.first!
+    private func getDocumentDirectoryPath() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
     func saveAsViewModel(viewModel: WantViewModel) {
@@ -76,17 +74,29 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     
     private func saveWantImageToAppDirectory(image: UIImage, imageName: String) {
         // get the documents directory url
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        // choose a name for your image
-        let fileName = imageName
+        let documentsDirectory = getDocumentDirectoryPath()
         // create the destination file url to save your image
-        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        let fileURL = documentsDirectory.appendingPathComponent(imageName)
+        print("FILE URL: " + fileURL.path)
         // get your UIImage jpeg data representation and check if the destination file url already exists
+        /*
+        let didExist = FileManager.default.fileExists(atPath: fileURL.path)
         if let data = image.jpegData(compressionQuality:  1.0),
-          !FileManager.default.fileExists(atPath: fileURL.path) {
+          !didExist {
             do {
                 // writes the image data to disk
                 try data.write(to: fileURL)
+                print("file saved")
+            } catch {
+                print("error saving file:", error)
+            }
+        }*/
+        
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            let data = image.jpegData(compressionQuality:  1.0)
+            do {
+                // writes the image data to disk
+                try data!.write(to: fileURL)
                 print("file saved")
             } catch {
                 print("error saving file:", error)
@@ -100,6 +110,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         do {
             try FileManager.default.removeItem(atPath: fileURL.path)
         } catch let error as NSError {
+            print("REMOVING image dont exist")
           print(error.debugDescription)
         }
     }
@@ -114,13 +125,14 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         }
     }
     
-    func updateImageAsViewModel(viewModel: WantViewModel, image: UIImage) {
+    func updateImageAsViewModel(viewModel: WantViewModel) {
         let realm = getRealmInstanceForSubclasses()
         let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
         if let want = wants.first {
+            //TimerProcess.sharedTimer.stopTimer()
             removeFileFromDocumentDirectory(fileName: want.getImageName())
-            let imageName = UUID.init().uuidString + ".png"
-            saveWantImageToAppDirectory(image: image, imageName: imageName)
+            let imageName = UUID.init().uuidString + ".jpg"
+            saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
             try! realm.write {
                 want.imageName = imageName
                 want.dateModified = Date()

@@ -41,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = try! Realm()
         
         let wantManager = WantManager()
-        wantManager.runInitialWantsDaysLeftCheck()
-        wantManager.runTimerBasedAsyncWantsDaysLeft()
+        TimerProcess.sharedTimer.startTimer(withInterval: 1.0, andJob: wantManager.runWantsDaysLeftCheck)
         
         return true
     }

@@ -67,9 +67,10 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         
+        self.wantViewModel?.setImage(image: selectedImage)
+        self.dataAccess?.updateImageAsViewModel(viewModel: self.wantViewModel!)
         // Set photoImageView to display the selected image.
         wantImage.image = selectedImage
-        self.dataAccess?.updateImageAsViewModel(viewModel: self.wantViewModel!, image: self.wantViewModel!.getImage())
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)

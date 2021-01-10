@@ -18,7 +18,7 @@ class NewWantVC: UIViewController {
     private var wantName: String?
     private var wantInterestPoints: String?
     private var wantRealmViewModelDataAccess: WantRealmViewModelDataAccess?
-    private var wantImage: UIImage?
+    private var wantImage: UIImage = UIImage(named: "default_image")!
     private var wantImageUpdated = false
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
@@ -68,10 +68,11 @@ class NewWantVC: UIViewController {
             .withPoints(points: Int(self.wantInterestPoints!)!)
             .withDateCreated(dateCreated: Date())
             .withDateModified(dateModified: Date())
+            .withImage(image: self.wantImage)
             .build()
-        if self.wantImageUpdated {
-            wantViewModel.setImage(image: self.wantImage!)
-        }
+        //if self.wantImageUpdated {
+        //wantViewModel.setImage(image: self.wantImage)
+       // }
         self.wantRealmViewModelDataAccess!.saveAsViewModel(viewModel: wantViewModel)
         self.dismiss(animated: true, completion: nil)
     }
