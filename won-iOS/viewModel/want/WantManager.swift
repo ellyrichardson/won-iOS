@@ -9,10 +9,10 @@
 import Foundation
 
 class WantManager {
-    
+
     private var dataAccess = WantRealmViewModelDataAccess()
     
-    func runInitialWantsDaysLeftCheck() {
+    func runWantsDaysLeftCheck() {
         let wantViewModels = dataAccess.findAllWants()
         for wantViewModel in wantViewModels {
             let wantDueDate = DateUtils.addDayToDate(date: wantViewModel.getDateCreated(), days: 30.0)
@@ -26,11 +26,17 @@ class WantManager {
         }
     }
     
-    func runTimerBasedAsyncWantsDaysLeft() {
+    /*
+    func startTimerBasedAsyncWantsDaysLeft() {
+        /*
         _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireCheckingOfDaysLeft), userInfo: nil, repeats: true)
+        guard self.internalTimer != nil else {
+            fatalError("Timer already intialized")
+        }*/
+        TimerProcess.sharedTimer.startTimer(withInterval: 1.0, andJob: runWantsDaysLeftCheck)
     }
     
     @objc private func fireCheckingOfDaysLeft() {
-        runInitialWantsDaysLeftCheck()
-    }
+        runWantsDaysLeftCheck()
+    }*/
 }

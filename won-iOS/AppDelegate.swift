@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
-            schemaVersion: 3,
+            schemaVersion: 5,
             // Set the block which will be called automatically when opening a Realm with
             // a schema version lower than the one set above
             migrationBlock: { migration, oldSchemaVersion in
@@ -41,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = try! Realm()
         
         let wantManager = WantManager()
-        wantManager.runInitialWantsDaysLeftCheck()
-        wantManager.runTimerBasedAsyncWantsDaysLeft()
+        TimerProcess.sharedTimer.startTimer(withInterval: 1.0, andJob: wantManager.runWantsDaysLeftCheck)
         
         return true
     }

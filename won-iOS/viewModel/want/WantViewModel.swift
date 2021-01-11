@@ -14,6 +14,7 @@ class WantViewModel {
     private var name: String
     private var points: Int
     private var notes: String
+    private var image: UIImage
     private var daysLeft: Int
     private var obtained: Bool
     private var obtainedDate: Date?
@@ -30,12 +31,16 @@ class WantViewModel {
         self.obtained = false
         self.dateCreated = Date()
         self.dateModified = Date()
+        self.image = UIImage()
     }
     
     public func configureTableViewCell(cell: WantTVCell) {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
         cell.timeLeftLabel.text = String(self.daysLeft) + " days left"
+        if image.size.width > 0 {
+            cell.wantImage.image = self.image
+        }
     }
     
     public func configureWanterestPointsValueLabel(label: UILabel) {
@@ -71,6 +76,12 @@ class WantViewModel {
             label.text = "---------"
         } else {
             label.text = DateTimeFunctions.dateToStringDMmmY(date: self.obtainedDate!)
+        }
+    }
+    
+    public func configureWantImageView(imageView: UIImageView) {
+        if image.size.width > 0 {
+            imageView.image = self.image
         }
     }
     
@@ -122,6 +133,14 @@ class WantViewModel {
         return id
     }
     
+    func setImage(image: UIImage) {
+        self.image = image
+    }
+    
+    func getImage() -> UIImage {
+        return image
+    }
+    
     public func setObtained(obtained: Bool) {
         self.obtained = obtained
     }
@@ -152,5 +171,9 @@ class WantViewModel {
     
     public func getDateModified() -> Date {
         return dateModified
+    }
+    
+    func save() {
+        
     }
 }

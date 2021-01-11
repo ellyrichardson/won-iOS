@@ -13,6 +13,7 @@ class WantTVCell: UITableViewCell {
     @IBOutlet weak var wantName: UILabel!
     @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var wantImage: UIImageView!
     
     
 }
