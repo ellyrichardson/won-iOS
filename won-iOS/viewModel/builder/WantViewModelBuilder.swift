@@ -6,7 +6,7 @@
 //  Copyright © 2020 EllyRichardson. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class WantViewModelBuilder {
     private var wantViewModel: WantViewModel
@@ -37,6 +37,11 @@ class WantViewModelBuilder {
     
     func withNotes(notes: String) -> WantViewModelBuilder {
         wantViewModel.setNotes(notes: notes)
+        return self
+    }
+    
+    func withImage(image: UIImage) -> WantViewModelBuilder {
+        wantViewModel.setImage(image: image)
         return self
     }
     

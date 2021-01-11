@@ -40,6 +40,7 @@
 		21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783302256B37D000E0AAD6 /* CircleButton.swift */; };
 		21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783304256B455800E0AAD6 /* WantDataSource.swift */; };
 		2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */; };
+		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
@@ -103,6 +104,7 @@
 		21783302256B37D000E0AAD6 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		21783304256B455800E0AAD6 /* WantDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDataSource.swift; sourceTree = "<group>"; };
 		2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmManager.swift; sourceTree = "<group>"; };
+		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				212E8800259ADE4500EE2046 /* date */,
 				21713C2D259AC48200E4A503 /* DateUtils.swift */,
+				219DA1EA25A410F2002D4A9E /* TimerProcess.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */,
 				215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */,
 				217832F42569C69600E0AAD6 /* WantHistory.swift in Sources */,
+				219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
