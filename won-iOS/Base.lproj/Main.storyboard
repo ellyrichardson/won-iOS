@@ -235,7 +235,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
-                                            <segue destination="gSb-eM-hdc" kind="presentation" id="T9P-Jq-2jH"/>
+                                            <segue destination="gSb-eM-hdc" kind="presentation" modalPresentationStyle="fullScreen" id="T9P-Jq-2jH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-Nt-bnq" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
@@ -403,7 +403,7 @@
             <objects>
                 <navigationController id="gSb-eM-hdc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1hG-yt-GU0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -419,20 +419,13 @@
             <objects>
                 <viewController id="i4j-qf-FgH" customClass="NewWantVC" customModule="won_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6X-85-5DU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HwU-VN-IWV">
                                 <rect key="frame" x="20" y="56" width="374" height="713"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; Add New Want" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-S2-SeN">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jk-eI-VC6">
                                         <rect key="frame" x="0.0" y="55" width="374" height="564"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -445,6 +438,16 @@
                                             <action selector="doneButtonPressed:" destination="i4j-qf-FgH" eventType="touchUpInside" id="JKQ-pM-S8n"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFt-w5-x8I">
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
+                                        <state key="normal" title="&lt; Enter New Want"/>
+                                        <connections>
+                                            <action selector="cancelBtnPressed:" destination="i4j-qf-FgH" eventType="touchUpInside" id="Uf3-Ge-lcJ"/>
+                                            <segue destination="NHq-8S-sgO" kind="unwind" unwindAction="unwindToHere:" id="n0K-Tk-TKK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -454,11 +457,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="G4W-Gp-EGZ"/>
                     <connections>
+                        <outlet property="cancelButton" destination="MFt-w5-x8I" id="d2l-Fh-29g"/>
                         <outlet property="doneButton" destination="wgB-Jv-3yL" id="q7N-cb-PUv"/>
                         <outlet property="wantAttributesView" destination="1jk-eI-VC6" id="wtE-Lq-kL0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDw-kQ-nog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="NHq-8S-sgO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4295.652173913044" y="-166.07142857142856"/>
         </scene>
@@ -474,13 +479,6 @@
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; Add Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-j1-rdg">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYS-wP-dKi">
                                         <rect key="frame" x="67" y="180" width="240" height="382"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -504,6 +502,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqx-AV-2CB">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
+                                        <state key="normal" title="&lt; Add Notes"/>
+                                        <connections>
+                                            <action selector="dismissPageBtnPressed:" destination="bN9-H2-Fgf" eventType="touchUpInside" id="Xaa-cN-L1J"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -513,12 +520,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Sma-6h-jKI"/>
                     <connections>
+                        <outlet property="dismissPageButton" destination="Tqx-AV-2CB" id="e1p-im-cGW"/>
                         <outlet property="notesTextView" destination="zid-bX-3wk" id="LM5-mU-d9q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUb-Qr-kfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5774" y="-166"/>
+            <point key="canvasLocation" x="5773.913043478261" y="-166.07142857142856"/>
         </scene>
         <!--NewWantAttributesTableVC-->
         <scene sceneID="qxb-tv-qNw">
@@ -658,7 +666,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="bN9-H2-Fgf" kind="presentation" id="WEV-hG-ZTs"/>
+                                            <segue destination="bN9-H2-Fgf" kind="showDetail" identifier="newWantNotesVCSegue" id="WEV-hG-ZTs"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -735,16 +743,25 @@
                                                     <rect key="frame" x="20" y="11" width="97" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Details"/>
+                                                    <connections>
+                                                        <action selector="detailsBtnPress:" destination="Xfu-Oa-dzs" eventType="touchUpInside" id="RWK-hL-AOQ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-L3-O8Z">
                                                     <rect key="frame" x="139" y="11" width="97" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Notification"/>
+                                                    <connections>
+                                                        <action selector="notificationBtnPress:" destination="Xfu-Oa-dzs" eventType="touchUpInside" id="4Pr-wz-aGg"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbV-jZ-anN">
                                                     <rect key="frame" x="257" y="11" width="97" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Notes"/>
+                                                    <connections>
+                                                        <action selector="notesBtnPress:" destination="Xfu-Oa-dzs" eventType="touchUpInside" id="Jfr-ME-Qwc"/>
+                                                    </connections>
                                                 </button>
                                                 <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kxe-vh-H7Z">
                                                     <rect key="frame" x="20" y="64" width="334" height="353"/>
@@ -762,7 +779,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="detailsButton" destination="D44-SL-lhc" id="IMY-1f-UDa"/>
                         <outlet property="detailsTableView" destination="kxe-vh-H7Z" id="UwO-TD-oMU"/>
+                        <outlet property="notesButton" destination="gbV-jZ-anN" id="1ol-j5-uHb"/>
+                        <outlet property="notificationButton" destination="Ihs-L3-O8Z" id="GaX-Qd-vCA"/>
                         <outlet property="wantImage" destination="3J1-Wq-TRH" id="Se8-kc-kiD"/>
                     </connections>
                 </tableViewController>
@@ -934,6 +954,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ey7-nG-XfP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5773.913043478261" y="525.66964285714289"/>
+        </scene>
+        <!--Want Notes DetailsVC-->
+        <scene sceneID="KJu-tZ-2WC">
+            <objects>
+                <viewController storyboardIdentifier="WantNotesDetailsVC" id="ea4-ts-vcS" customClass="WantNotesDetailsVC" customModule="won_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PUR-Th-Es3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-Ey-XWh">
+                                <rect key="frame" x="20" y="44" width="374" height="346"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOTES:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1n-BR-bES">
+                                        <rect key="frame" x="8" y="8" width="358" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gtD-fs-vsx">
+                                        <rect key="frame" x="8" y="56" width="358" height="277"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LnQ-Ke-fLZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="notesTextVew" destination="gtD-fs-vsx" id="4o3-mf-IJa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0M-dx-ciW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5773.913043478261" y="1221.4285714285713"/>
         </scene>
     </scenes>
     <resources>
