@@ -43,6 +43,8 @@
 		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
+		21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */; };
+		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
 		21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FE2591A7BE009D0279 /* WantViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,8 @@
 		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
+		21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotesDetailsVC.swift; sourceTree = "<group>"; };
+		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
 		21C947FE2591A7BE009D0279 /* WantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModel.swift; sourceTree = "<group>"; };
 		6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.debug.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				215F19AF2579DC6100C556D0 /* WantDetailsTableVC.swift */,
 				215F19AB25787C1600C556D0 /* WantDetailsVC.swift */,
 				21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */,
+				21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */,
 			);
 			path = wantDetails;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				215F19B1257B2F6C00C556D0 /* dataAccess */,
 				2178330A256CCAEA00E0AAD6 /* want */,
 				215F19AD2578844400C556D0 /* ViewModel.swift */,
+				21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				217832B82558873C00E0AAD6 /* ViewController.swift in Sources */,
+				21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */,
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
@@ -600,6 +607,7 @@
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
 				21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */,
+				21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,

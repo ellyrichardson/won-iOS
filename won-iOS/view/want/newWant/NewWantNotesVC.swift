@@ -8,13 +8,42 @@
 
 import UIKit
 
-class NewWantNotesVC: UIViewController {
+class NewWantNotesVC: UIViewController, UITextViewDelegate {
     
+    let UNWIND_TO_ATTRIBUTES_VC = "unwindToNewWantAttributesTableVC"
+    
+    typealias EditedTextHandler = (_ name: String) -> Void
+    
+    @IBOutlet weak var dismissPageButton: UIButton!
     @IBOutlet weak var notesTextView: UITextView!
+    
+    //var didEditWantNotes: (EditedTextHandler)?
+    private var wantNotes = ""
+    private var delegate: DataReceivingVCProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notesTextView.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func dismissPageBtnPressed(_ sender: UIButton) {
+        //performSegue(withIdentifier: UNWIND_TO_ATTRIBUTES_VC, sender: self)
+        delegate?.passData(data: self.wantNotes)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
+        wantNotes = textView.text
+    }
+    
+    func getWantNotes() -> String {
+        return self.wantNotes
+    }
+    
+    func setDelegate(delegate: DataReceivingVCProtocol) {
+        self.delegate = delegate
     }
 }

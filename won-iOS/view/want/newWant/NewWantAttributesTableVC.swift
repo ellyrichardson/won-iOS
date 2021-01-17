@@ -8,7 +8,11 @@
 
 import UIKit
 
-class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DataReceivingVCProtocol {
+    
+    private let SEGUE_TO_NOTES = "newWantNotesVCSegue"
+    private let UNWIND_TO_ATTRIBUTES_VC = "unwindToNewWantAttributesTableVC"
+    
     typealias EditedTextHandler = (_ name: String) -> Void
     typealias EditedImageHandler = (_ name: UIImage) -> Void
     
@@ -21,6 +25,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     var didEditWantNameField: (EditedTextHandler)?
     var didEditWantInterestPointsField: (EditedTextHandler)?
     var didChangeWantImage: (EditedImageHandler)?
+    var didEditWantNotes: (EditedTextHandler)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +88,35 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if (segue.identifier == SEGUE_TO_NOTES) {
+            let notesVC = segue.destination as! NewWantNotesVC
+            //let destNavCtrl = segue.destination as! UINavigationController
+            //let notesVC = destNavCtrl.topViewController as! NewWantNotesVC
+            notesVC.setDelegate(delegate: self)
+        }
+    }
+    
+    /*
+    @IBAction func unwindToHere( _ seg: UIStoryboardSegue) {
+        if let sourceVC = seg.source as? NewWantNotesVC {
+            didEditWantNotes!(sourceVC.getWantNotes())
+        }
+    }*/
+    
+    func passData(data: Any) {
+        let stringg = data as! String
+        didEditWantNotes!(stringg)
+    }
+    
+    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 4 {
+            self.performSegue(withIdentifier: SEGUE_TO_NOTES, sender: self)
+        }
+    }*/
 
     // MARK: - Table view data source
     /*

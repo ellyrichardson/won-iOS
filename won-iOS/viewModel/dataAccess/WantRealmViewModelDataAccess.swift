@@ -55,6 +55,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDateCreated(dateCreated: viewModel.getDateCreated())
             .withDateModified(dateModified: viewModel.getDateModified())
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
+            .withNotes(notes: viewModel.getNotes())
             .build()
         if viewModel.getImage().size.width > 0 {
             let imageName = UUID.init().uuidString + ".jpg"
@@ -121,6 +122,16 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         if let want = wants.first {
             try! realm.write {
                 want.daysLeft = daysLeft
+            }
+        }
+    }
+    
+    func updateNotesAsViewModel(viewModel: WantViewModel) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first {
+            try! realm.write {
+                want.notes = viewModel.getNotes()
             }
         }
     }

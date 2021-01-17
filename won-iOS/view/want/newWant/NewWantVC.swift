@@ -12,6 +12,7 @@ class NewWantVC: UIViewController {
     
     private let UNWIND_SEGUE_TO_WANTS = "unwindSegueToWants"
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var doneButton: CircleButton!
     @IBOutlet weak var wantAttributesView: UIView!
     
@@ -20,6 +21,7 @@ class NewWantVC: UIViewController {
     private var wantRealmViewModelDataAccess: WantRealmViewModelDataAccess?
     private var wantImage: UIImage = UIImage(named: "default_image")!
     private var wantImageUpdated = false
+    private var wantNotes = ""
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard
@@ -48,6 +50,12 @@ class NewWantVC: UIViewController {
                 self?.wantImageUpdated = true
             }
         }
+        vc.didEditWantNotes = { [weak self](item) in
+            if let vc = self {
+                // Do something with the item.
+                self?.wantNotes = item
+            }
+        }
         self.add(asChildViewController: vc)
         return vc
     }()
@@ -64,7 +72,7 @@ class NewWantVC: UIViewController {
         let wantViewModel = wantViewModelBuilder.withId(id: UUID.init().uuidString)
             .withName(name: self.wantName!)
             .withOwner(owner: "DUMMY")
-            .withNotes(notes: "NOTEZZZ")
+            .withNotes(notes: self.wantNotes)
             .withPoints(points: Int(self.wantInterestPoints!)!)
             .withDateCreated(dateCreated: Date())
             .withDateModified(dateModified: Date())
@@ -73,6 +81,7 @@ class NewWantVC: UIViewController {
         //if self.wantImageUpdated {
         //wantViewModel.setImage(image: self.wantImage)
        // }
+        print("NOTES: " + self.wantNotes)
         self.wantRealmViewModelDataAccess!.saveAsViewModel(viewModel: wantViewModel)
         self.dismiss(animated: true, completion: nil)
     }
@@ -96,5 +105,8 @@ class NewWantVC: UIViewController {
         viewController.didMove(toParent: self)
     }
     
+    @IBAction func cancelBtnPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }

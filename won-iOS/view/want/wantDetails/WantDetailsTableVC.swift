@@ -12,6 +12,9 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
     typealias EditedImageHandler = (_ name: UIImage) -> Void
     
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
+    @IBOutlet weak var detailsButton: UIButton!
+    @IBOutlet weak var notificationButton: UIButton!
+    @IBOutlet weak var notesButton: UIButton!
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var detailsTableView: UIView!
@@ -33,6 +36,19 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         return vc
     }()
     
+    private lazy var wantNotesDetailsVC: WantNotesDetailsVC = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var vc = storyboard.instantiateViewController(withIdentifier: "WantNotesDetailsVC") as! WantNotesDetailsVC
+        vc.setWantViewModel(wantViewModel: self.wantViewModel!)
+        vc.setDataAccess(dataAccess: self.dataAccess!)
+
+        self.add(asChildViewController: vc)
+        return vc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
@@ -40,6 +56,20 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         dataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: wantExactDetailsTableVC)
     }
+    
+    @IBAction func detailsBtnPress(_ sender: UIButton) {
+        remove(asChildViewController: wantNotesDetailsVC)
+        add(asChildViewController: wantExactDetailsTableVC)
+    }
+    
+    @IBAction func notificationBtnPress(_ sender: UIButton) {
+    }
+    
+    @IBAction func notesBtnPress(_ sender: UIButton) {
+        remove(asChildViewController: wantExactDetailsTableVC)
+        add(asChildViewController: wantNotesDetailsVC)
+    }
+    
     
     private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
@@ -54,6 +84,17 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         
         // Notify Child View Controller
         viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController) {
+        // Notify Child View Controller
+        viewController.willMove(toParent: nil)
+        
+        // Remove Child View From Superview
+        viewController.view.removeFromSuperview()
+        
+        // Notify Child View Controller
+        viewController.removeFromParent()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -72,7 +113,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         // Set photoImageView to display the selected image.
         wantImage.image = selectedImage
         
-        // Dismiss the picker.
+        // Dismiss the pcker.
         dismiss(animated: true, completion: nil)
     }
     
