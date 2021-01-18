@@ -11,16 +11,17 @@ import UIKit
 class WantDetailsVC: UIViewController {
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
     
-    @IBOutlet weak var wantNameLabel: UILabel!
+    //@IBOutlet weak var wantNameLabel: UILabel!
     private var wantViewModel: WantViewModel?
     
+    @IBOutlet weak var dismissPageBtn: UIButton!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var optionsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        wantViewModel?.configureWantNameValueLabel(label: wantNameLabel)
+        wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
     }
     
     func setWantViewModel(wantViewModel: WantViewModel) {
@@ -37,4 +38,9 @@ class WantDetailsVC: UIViewController {
             // You can save the reference to it, or pass data to it.
         }
     }
+    
+    @IBAction func dismissPageBtnPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
