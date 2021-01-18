@@ -42,5 +42,4 @@ class WantDetailsVC: UIViewController {
     @IBAction func dismissPageBtnPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }

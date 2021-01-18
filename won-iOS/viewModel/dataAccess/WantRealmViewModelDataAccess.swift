@@ -44,7 +44,17 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     }
     
     func deleteAsViewModel(viewModel: WantViewModel) {
-        delete(object: convertWantViewModelToModel(viewModel: viewModel))
+        //delete(object: convertWantViewModelToModel(viewModel: viewModel))
+        let realm = getRealmInstanceForSubclasses()
+        //let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        /*if let want = wants.first {
+            try! realm.write {
+                want.daysLeft = daysLeft
+            }
+        }*/
+        try! realm.write {
+            realm.delete(realm.objects(Want.self).filter("id = %@", viewModel.getId()))
+        }
     }
     
     private func convertWantViewModelToModel(viewModel: WantViewModel) -> Want {
