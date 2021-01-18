@@ -26,12 +26,18 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let presentedWants = findAllWants()
-        if editingStyle == .delete {
-            deleteAsViewModel(viewModel: presentedWants[indexPath.row])
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            let presentedWants = self.findAllWants()
+            self.deleteAsViewModel(viewModel: presentedWants[indexPath.row])
         }
+
+        let share = UITableViewRowAction(style: .default, title: "Share") { (action, indexPath) in
+            // share item at indexPath
+            print("SHARE BUTTON PRESSED")
+        }
+
+        share.backgroundColor = UIColor.lightGray
+        return [delete, share]
     }
 }
