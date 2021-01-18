@@ -303,7 +303,7 @@
                                             <outlet property="timeLeftLabel" destination="3L1-0X-bds" id="kQZ-yr-Wc8"/>
                                             <outlet property="wantImage" destination="FJf-bz-URN" id="5aa-o5-Bsf"/>
                                             <outlet property="wantName" destination="3EY-L5-kO5" id="5lB-A2-RQI"/>
-                                            <segue destination="2oP-Fg-qe1" kind="presentation" identifier="showWantDetails" trigger="accessoryAction" id="Zt4-B7-lpz"/>
+                                            <segue destination="2oP-Fg-qe1" kind="presentation" identifier="showWantDetails" trigger="accessoryAction" modalPresentationStyle="fullScreen" id="Zt4-B7-lpz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -315,8 +315,12 @@
                             <constraint firstItem="Pfr-x3-7YA" firstAttribute="leading" secondItem="WW2-FK-d6c" secondAttribute="leading" constant="20" id="QcU-rc-bWf"/>
                             <constraint firstItem="hni-vd-bLC" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="bottom" id="WB2-XN-k0U"/>
                             <constraint firstItem="WW2-FK-d6c" firstAttribute="trailing" secondItem="Pfr-x3-7YA" secondAttribute="trailing" constant="20" id="ZUp-uq-p5h"/>
+                            <constraint firstItem="hni-vd-bLC" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="bottom" id="fQi-Bw-R6k"/>
                             <constraint firstItem="WW2-FK-d6c" firstAttribute="trailing" secondItem="hni-vd-bLC" secondAttribute="trailing" constant="20" id="he5-gc-zVu"/>
                             <constraint firstItem="hni-vd-bLC" firstAttribute="bottom" secondItem="WW2-FK-d6c" secondAttribute="bottom" id="icK-a7-kaZ"/>
+                            <constraint firstItem="WW2-FK-d6c" firstAttribute="trailing" secondItem="Pfr-x3-7YA" secondAttribute="trailing" constant="20" id="icR-6G-XI1"/>
+                            <constraint firstItem="Pfr-x3-7YA" firstAttribute="leading" secondItem="WW2-FK-d6c" secondAttribute="leading" constant="20" id="tBN-pq-dFn"/>
+                            <constraint firstItem="Pfr-x3-7YA" firstAttribute="top" secondItem="WW2-FK-d6c" secondAttribute="top" constant="20" id="tJN-SE-Gff"/>
                             <constraint firstItem="hni-vd-bLC" firstAttribute="leading" secondItem="WW2-FK-d6c" secondAttribute="leading" constant="20" id="tLm-Cw-wH8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WW2-FK-d6c"/>
@@ -338,7 +342,7 @@
             <objects>
                 <navigationController id="2oP-Fg-qe1" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OZw-7q-0Ce">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -354,22 +358,15 @@
             <objects>
                 <viewController id="7Wr-f6-zoU" customClass="WantDetailsVC" customModule="won_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RD8-sv-pi8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INh-dE-uc0">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="56" width="374" height="806"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; Want Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYV-Pm-Ehr">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-Hc-Cwa">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="710"/>
+                                        <rect key="frame" x="0.0" y="54" width="374" height="710"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <connections>
                                             <segue destination="Xfu-Oa-dzs" kind="embed" identifier="detailsTableViewSegue" id="tB9-21-ndT"/>
@@ -379,6 +376,16 @@
                                         <rect key="frame" x="323" y="14" width="41" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="    ...   "/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-oY-3qi">
+                                        <rect key="frame" x="0.0" y="2" width="199" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
+                                        <state key="normal" title="&lt; Want Name"/>
+                                        <connections>
+                                            <action selector="cancelBtnPressed:" destination="i4j-qf-FgH" eventType="touchUpInside" id="GZq-uW-0aR"/>
+                                            <action selector="dismissPageBtnPressed:" destination="7Wr-f6-zoU" eventType="touchUpInside" id="P0U-M0-1EH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -390,13 +397,13 @@
                     <navigationItem key="navigationItem" id="1uI-pO-voc"/>
                     <connections>
                         <outlet property="detailsView" destination="x4j-Hc-Cwa" id="z7I-KU-Z61"/>
+                        <outlet property="dismissPageBtn" destination="wkV-oY-3qi" id="LDB-Oo-oMJ"/>
                         <outlet property="optionsButton" destination="1TV-xy-Tg1" id="jmy-l3-adb"/>
-                        <outlet property="wantNameLabel" destination="NYV-Pm-Ehr" id="woc-bh-PxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ol1-Pl-x2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4296" y="526"/>
+            <point key="canvasLocation" x="4295.652173913044" y="525.66964285714289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Juc-pL-xGT">

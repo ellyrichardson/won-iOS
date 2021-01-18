@@ -15,7 +15,7 @@ class WantManager {
     func runWantsDaysLeftCheck() {
         let wantViewModels = dataAccess.findAllWants()
         for wantViewModel in wantViewModels {
-            let wantDueDate = DateUtils.addDayToDate(date: wantViewModel.getDateCreated(), days: 30.0)
+            let wantDueDate = DateUtils.addDayToDate(date: wantViewModel.getDateCreated(), days: 31.0)
             print(wantViewModel.getDateCreated())
             print("NEW  STUFF")
             print(wantDueDate)

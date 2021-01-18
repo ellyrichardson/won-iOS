@@ -59,8 +59,9 @@ class WantViewModel {
         label.text = String(self.daysLeft)
     }
     
-    public func configureWantNameValueLabel(label: UILabel) {
-        label.text = "< " + self.name
+    public func configureWantNameButtonLabel(button: UIButton) {
+        //label.text = "< " + self.name
+        button.setTitle("< " + self.name, for: .normal)
     }
     
     public func configureWantObtainedValueLabel(label: UILabel) {
