@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -223,29 +224,50 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-x3-7YA">
                                 <rect key="frame" x="20" y="108" width="374" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Wants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-VY-X76">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-VY-X76">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="Ng0-xm-d5X"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-U8-GUz" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="220" y="14" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-Nt-bnq" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="285" y="5" width="48" height="48"/>
+                                        <color key="backgroundColor" name="won-light-blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Lkp-3Y-rWy"/>
+                                            <constraint firstAttribute="height" constant="48" id="jBc-vV-mqL"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="jnx-7M-sQK"/>
+                                            <constraint firstAttribute="width" constant="48" id="vNL-8s-MiX"/>
+                                        </constraints>
+                                        <state key="normal" image="sort-image"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-U8-GUz" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="201" y="5" width="48" height="48"/>
+                                        <color key="backgroundColor" name="won-light-blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Jiw-MS-4Zz"/>
+                                            <constraint firstAttribute="width" constant="48" id="jdu-V2-hGc"/>
+                                        </constraints>
+                                        <state key="normal" image="plus-image">
+                                            <color key="titleShadowColor" name="won-light-blue"/>
+                                        </state>
                                         <connections>
                                             <segue destination="gSb-eM-hdc" kind="presentation" modalPresentationStyle="fullScreen" id="T9P-Jq-2jH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-Nt-bnq" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="303" y="14" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Sort"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="Ned-VY-X76" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="top" id="7Lk-Yr-eSJ"/>
+                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="leading" secondItem="i2K-U8-GUz" secondAttribute="trailing" constant="36" id="PRb-vU-jkp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ned-VY-X76" secondAttribute="bottom" id="Vv4-Gs-Dbj"/>
+                                    <constraint firstItem="i2K-U8-GUz" firstAttribute="centerY" secondItem="Pfr-x3-7YA" secondAttribute="centerY" id="XhY-6W-Nm7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kg7-Nt-bnq" secondAttribute="trailing" constant="41" id="gXq-Yz-S1c"/>
+                                    <constraint firstItem="Ned-VY-X76" firstAttribute="leading" secondItem="Pfr-x3-7YA" secondAttribute="leading" id="hoF-13-jLn"/>
+                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="centerY" secondItem="Pfr-x3-7YA" secondAttribute="centerY" id="lLc-Wo-tut"/>
                                     <constraint firstAttribute="width" constant="374" id="nqM-dx-umB"/>
                                     <constraint firstAttribute="height" constant="58" id="tXE-Ma-fCz"/>
                                 </constraints>
@@ -1038,5 +1060,10 @@
     </scenes>
     <resources>
         <image name="default_image" width="320" height="320"/>
+        <image name="plus-image" width="24" height="24"/>
+        <image name="sort-image" width="24" height="24"/>
+        <namedColor name="won-light-blue">
+            <color red="0.5" green="0.79052734375" blue="0.94550031423568726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

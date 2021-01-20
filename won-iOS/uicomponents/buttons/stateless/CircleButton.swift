@@ -27,7 +27,7 @@ class CircleButton: UIButton {
         
         backgroundColor = UIColor.green
         titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 18)
-        layer.cornerRadius = 13
+        layer.cornerRadius = 24.5
         layer.borderWidth = 3.0
         layer.borderColor = UIColor.clear.cgColor
     }

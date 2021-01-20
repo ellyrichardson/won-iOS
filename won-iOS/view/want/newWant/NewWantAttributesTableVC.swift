@@ -31,12 +31,21 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
         super.viewDidLoad()
         wantNameField.addTarget(self, action: #selector(self.wantNameFieldDidChange(_:)), for: .editingChanged)
         wantInterestPointsField.addTarget(self, action: #selector(self.wantInterestPointsFieldDidChange(_:)), for: .editingChanged)
+        
+        prepareImage()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func prepareImage() {
+        wantImage.layer.cornerRadius = 190//wantImage.frame.size.width/2.1
+        wantImage.clipsToBounds = true
+        wantImage.layer.borderWidth = 2.0
+        wantImage.layer.borderColor = UIColor.white.cgColor
     }
     
     @objc func wantNameFieldDidChange(_ textField: UITextField) {
