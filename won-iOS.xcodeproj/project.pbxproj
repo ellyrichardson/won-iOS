@@ -40,6 +40,8 @@
 		21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783302256B37D000E0AAD6 /* CircleButton.swift */; };
 		21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21783304256B455800E0AAD6 /* WantDataSource.swift */; };
 		2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */; };
+		217AD9EE25BBD698008A4C53 /* NewWantTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9ED25BBD698008A4C53 /* NewWantTVCell.swift */; };
+		217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9F125BCA23F008A4C53 /* OvalButton.swift */; };
 		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
@@ -106,6 +108,8 @@
 		21783302256B37D000E0AAD6 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		21783304256B455800E0AAD6 /* WantDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDataSource.swift; sourceTree = "<group>"; };
 		2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmManager.swift; sourceTree = "<group>"; };
+		217AD9ED25BBD698008A4C53 /* NewWantTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantTVCell.swift; sourceTree = "<group>"; };
+		217AD9F125BCA23F008A4C53 /* OvalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
 		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				217832FF2569D46800E0AAD6 /* WantTVCell.swift */,
+				217AD9ED25BBD698008A4C53 /* NewWantTVCell.swift */,
 			);
 			path = tableViewCell;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				21783302256B37D000E0AAD6 /* CircleButton.swift */,
+				217AD9F125BCA23F008A4C53 /* OvalButton.swift */,
 			);
 			path = stateless;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				215F19B3257B2F8B00C556D0 /* WantRealmViewModelDataAccess.swift in Sources */,
 				217832FA2569CB7100E0AAD6 /* WantSocialStatus.swift in Sources */,
 				217832BE2558873C00E0AAD6 /* won_iOS.xcdatamodeld in Sources */,
+				217AD9EE25BBD698008A4C53 /* NewWantTVCell.swift in Sources */,
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
 				21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */,
@@ -611,6 +618,7 @@
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,
+				217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */,
 				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,
 				215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */,
 				21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */,

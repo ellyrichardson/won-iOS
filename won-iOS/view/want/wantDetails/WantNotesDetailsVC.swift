@@ -10,6 +10,7 @@ import UIKit
 
 class WantNotesDetailsVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var notesTextVew: UITextView!
+    @IBOutlet weak var wantNotesView: UIView!
     
     private var wantViewModel: WantViewModel?
     private var dataAccess: WantRealmViewModelDataAccess?
@@ -28,6 +29,8 @@ class WantNotesDetailsVC: UIViewController, UITextViewDelegate {
         self.notesTextVew.text = wantViewModel?.getNotes()
         print("NOTES in WNLVC: " + self.notesTextVew.text)
         // Do any additional setup after loading the view.
+        self.wantNotesView.layer.cornerRadius = 10;
+        self.wantNotesView.layer.masksToBounds = true;
     }
     
     override func viewWillDisappear(_ animated: Bool) {

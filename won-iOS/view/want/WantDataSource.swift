@@ -27,7 +27,6 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
         let results = findAllWants()
         let wantViewModel = results[indexPath.row]
         wantViewModel.configureTableViewCell(cell: cell)
-        cell.contentView.backgroundColor = UIColor(named: "won-green")
         return cell
     }
 }

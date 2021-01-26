@@ -8,13 +8,16 @@
 
 import UIKit
 
-class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DataReceivingVCProtocol {
+class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DataReceivingVCProtocol, UITextFieldDelegate {
     
     private let SEGUE_TO_NOTES = "newWantNotesVCSegue"
     private let UNWIND_TO_ATTRIBUTES_VC = "unwindToNewWantAttributesTableVC"
     
+    //private var checkButtonEnabled = false
+    
     typealias EditedTextHandler = (_ name: String) -> Void
     typealias EditedImageHandler = (_ name: UIImage) -> Void
+    typealias IsCheckButtonEnabledHandler = (_ name: Bool) -> Void
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var wantNameField: UITextField!
@@ -26,6 +29,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     var didEditWantInterestPointsField: (EditedTextHandler)?
     var didChangeWantImage: (EditedImageHandler)?
     var didEditWantNotes: (EditedTextHandler)?
+    var isCheckButtonEnabled: (IsCheckButtonEnabledHandler)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +54,12 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     
     @objc func wantNameFieldDidChange(_ textField: UITextField) {
         didEditWantNameField?(wantNameField.text!)
+        isCheckButtonEnabled?(areTextFieldsNotEmpty())
     }
     
     @objc func wantInterestPointsFieldDidChange(_ textField: UITextField) {
         didEditWantInterestPointsField?(wantInterestPointsField.text!)
+        isCheckButtonEnabled?(areTextFieldsNotEmpty())
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -74,6 +80,26 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
+    
+    func areTextFieldsNotEmpty() -> Bool {
+        if !self.wantNameField.text!.isEmpty && !self.wantInterestPointsField.text!.isEmpty {
+            return true
+        }
+        return false//self.checkButtonEnabled
+    }
+    
+    /*
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+        if !text.isEmpty{
+            self.checkButtonEnabled = true
+        } else {
+            self.checkButtonEnabled = false
+        }
+        return true
+    }*/
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))

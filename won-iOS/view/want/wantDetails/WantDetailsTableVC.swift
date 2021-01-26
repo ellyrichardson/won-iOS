@@ -55,6 +55,14 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         wantViewModel?.configureWantImageView(imageView: wantImage)
         dataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: wantExactDetailsTableVC)
+        prepareImage()
+    }
+    
+    func prepareImage() {
+        wantImage.layer.cornerRadius = 190//wantImage.frame.size.width/2.1
+        wantImage.clipsToBounds = true
+        wantImage.layer.borderWidth = 2.0
+        wantImage.layer.borderColor = UIColor.white.cgColor
     }
     
     @IBAction func detailsBtnPress(_ sender: UIButton) {
