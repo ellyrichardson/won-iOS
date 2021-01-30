@@ -15,12 +15,19 @@ class WantTVCell: UITableViewCell {
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var wantImage: UIImageView!
     
+    var obtained: Bool = false {
+        didSet {
+            configureBackgroundColor()
+        }
+    }
+    
     override func awakeFromNib() {
         prepareImage()
         
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius = 8
-        self.contentView.backgroundColor = UIColor(named: "won-dark-blue")
+        //self.contentView.backgroundColor = UIColor(named: "won-dark-blue")
+        configureBackgroundColor()
 
         self.layer.backgroundColor = UIColor.clear.cgColor
         self.layer.shadowColor = UIColor.black.cgColor
@@ -49,5 +56,13 @@ class WantTVCell: UITableViewCell {
         wantImage.clipsToBounds = true
         wantImage.layer.borderWidth = 2.0
         wantImage.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    private func configureBackgroundColor() {
+        if !obtained {
+            self.contentView.backgroundColor = UIColor(named: "won-orange")
+        } else {
+            self.contentView.backgroundColor = UIColor(named: "won-dark-blue")
+        }
     }
 }

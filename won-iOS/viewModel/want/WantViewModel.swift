@@ -38,8 +38,14 @@ class WantViewModel {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
         cell.timeLeftLabel.text = String(self.daysLeft) + " days left"
+        cell.obtained = self.obtained
         if image.size.width > 0 {
             cell.wantImage.image = self.image
+        }
+        if self.obtained {
+            cell.backgroundColor = UIColor(named: "won-bluer-teal")
+        } else {
+            cell.backgroundColor = UIColor(named: "won-dark-blue")
         }
     }
     
@@ -83,6 +89,33 @@ class WantViewModel {
     public func configureWantImageView(imageView: UIImageView) {
         if image.size.width > 0 {
             imageView.image = self.image
+        }
+    }
+    
+    // Only for WantExactDetailsTableVC use
+    public func configureObtainedBackgroundColorFor(cell: UITableViewCell) {
+        if self.obtained {
+            cell.contentView.backgroundColor = UIColor(named: "won-orange")
+        } else {
+            cell.contentView.backgroundColor = UIColor(named: "won-light-orange")
+        }
+    }
+    
+    public func configureObtainedButton(btn: UIButton) {
+        if self.obtained {
+            let image = UIImage(named: "dark-blue-ok-image") as UIImage?
+            btn.setBackgroundImage(image, for: .normal)
+        } else {
+            let image = UIImage(named: "blank-radio-button") as UIImage?
+            btn.setBackgroundImage(image, for: .normal)
+        }
+    }
+    
+    public func configureObtainedValueLabel(label: UILabel) {
+        if self.obtained {
+            label.text = "OBTAINED"
+        } else {
+            label.text = "NOT OBTAINED"
         }
     }
     
@@ -146,7 +179,7 @@ class WantViewModel {
         self.obtained = obtained
     }
     
-    public func getObtained() -> Bool {
+    public func isObtained() -> Bool {
         return obtained
     }
     

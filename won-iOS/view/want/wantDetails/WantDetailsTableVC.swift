@@ -19,7 +19,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var detailsTableView: UIView!
     private var wantViewModel: WantViewModel?
-    private var dataAccess: WantRealmViewModelDataAccess?
+    private var dataAccess = WantRealmViewModelDataAccess()
     
     func setWantViewModel(wantViewModel: WantViewModel) {
         self.wantViewModel = wantViewModel
@@ -31,7 +31,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         
         // Instantiate View Controller
         var vc = storyboard.instantiateViewController(withIdentifier: "WantExactDetailsTableVC") as! WantExactDetailsTableVC
-
+        vc.setDataAccess(dataAccess: self.dataAccess)
         self.add(asChildViewController: vc)
         return vc
     }()
@@ -43,7 +43,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         // Instantiate View Controller
         var vc = storyboard.instantiateViewController(withIdentifier: "WantNotesDetailsVC") as! WantNotesDetailsVC
         vc.setWantViewModel(wantViewModel: self.wantViewModel!)
-        vc.setDataAccess(dataAccess: self.dataAccess!)
+        vc.setDataAccess(dataAccess: self.dataAccess)
 
         self.add(asChildViewController: vc)
         return vc
@@ -53,7 +53,6 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
         wantViewModel?.configureWantImageView(imageView: wantImage)
-        dataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: wantExactDetailsTableVC)
         prepareImage()
     }
@@ -117,7 +116,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         }
         
         self.wantViewModel?.setImage(image: selectedImage)
-        self.dataAccess?.updateImageAsViewModel(viewModel: self.wantViewModel!)
+        self.dataAccess.updateImageAsViewModel(viewModel: self.wantViewModel!)
         // Set photoImageView to display the selected image.
         wantImage.image = selectedImage
         
