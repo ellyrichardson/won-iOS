@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewWantVC: UIViewController {
+class NewWantVC: UIViewController, UITextFieldDelegate {
     
     private let UNWIND_SEGUE_TO_WANTS = "unwindSegueToWants"
     
@@ -56,6 +56,12 @@ class NewWantVC: UIViewController {
                 self?.wantNotes = item
             }
         }
+        vc.isCheckButtonEnabled = { [weak self](item) in
+            if let vc = self {
+                // Do something with the item.
+                self?.doneButton.isEnabled = item
+            }
+        }
         self.add(asChildViewController: vc)
         return vc
     }()
@@ -65,6 +71,17 @@ class NewWantVC: UIViewController {
         self.wantRealmViewModelDataAccess = WantRealmViewModelDataAccess()
         add(asChildViewController: newWantAttributesTableVC)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        configureUI()
+        self.doneButton.isEnabled = false
+    }
+    
+    private func configureUI() {
+        let image = UIImage(named: "dark-blue-ok-image") as UIImage?
+        //self.doneButton.setImage(image, for: .normal)
+        self.doneButton.setBackgroundImage(image, for: .normal)
+        //self.doneButton.imageView?.contentMode = .scaleAspectFill
+        //self.doneButton.button.setImage(image, for: .normal)
+        //self.doneButton.imageEdgeInsets = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
     }
     
     @IBAction func doneButtonPressed(_ sender: CircleButton) {

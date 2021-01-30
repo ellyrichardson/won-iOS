@@ -31,8 +31,13 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withPoints(points: want.getPoints())
             .withDateCreated(dateCreated: want.getDateCreated())
             .withDaysLeft(daysLeft: want.getDaysLeft())
+            .withObtained(obtained: want.isObtained())
+            //.withObtainedDate(obtainedDate: want.getObtainedDate()!)
             .withDateModified(dateModified: want.getDateModified())
             .build()
+        if want.getObtainedDate() != nil {
+            wantViewModel.setObtainedDate(obtainedDate: want.getObtainedDate()!)
+        }
         print("IMAGE: " + want.getImageName())
         let validImageName = want.getImageName().components(separatedBy: ".")[0]
         if UUID(uuidString: validImageName) != nil {
@@ -66,6 +71,8 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDateModified(dateModified: viewModel.getDateModified())
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .withNotes(notes: viewModel.getNotes())
+            .withObtained(obtained: viewModel.isObtained())
+            .withObtainedDate(obtainedDate: viewModel.getObtainedDate())
             .build()
         if viewModel.getImage().size.width > 0 {
             let imageName = UUID.init().uuidString + ".jpg"
@@ -142,6 +149,23 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         if let want = wants.first {
             try! realm.write {
                 want.notes = viewModel.getNotes()
+            }
+        }
+    }
+    
+    func updateObtainedAsViewModel(viewModel: WantViewModel) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first {
+            try! realm.write {
+                if viewModel.isObtained() {
+                    want.obtained = viewModel.isObtained()
+                    want.obtainedDate = Date()
+                }
+                else {
+                    want.obtained = viewModel.isObtained()
+                    want.obtainedDate = nil
+                }
             }
         }
     }

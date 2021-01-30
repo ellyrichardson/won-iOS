@@ -1,15 +1,14 @@
 //
-//  CircleButton.swift
+//  WantDetailsTVCell.swift
 //  won-iOS
 //
-//  Created by Elly Richardson on 11/22/20.
-//  Copyright © 2020 EllyRichardson. All rights reserved.
+//  Created by Elly Richardson on 1/23/21.
+//  Copyright © 2021 EllyRichardson. All rights reserved.
 //
 
 import UIKit
 
-class CircleButton: UIButton {
-    
+class OvalButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -25,9 +24,9 @@ class CircleButton: UIButton {
     func setupButton() {
         setTitleColor(.white, for: .normal)
         
-        backgroundColor = UIColor(named: "won-light-orange")
-        titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 18)
-        layer.cornerRadius = 24.5
+        backgroundColor = UIColor(named: "won-dark-blue")
+        titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 13)
+        layer.cornerRadius = 15.0
         layer.borderWidth = 3.0
         layer.borderColor = UIColor.clear.cgColor
     }

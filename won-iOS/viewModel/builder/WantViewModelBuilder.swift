@@ -65,6 +65,11 @@ class WantViewModelBuilder {
         return self
     }
     
+    func withObtainedDate(obtainedDate: Date) -> WantViewModelBuilder {
+        wantViewModel.setObtainedDate(obtainedDate: obtainedDate)
+        return self
+    }
+    
     func build() -> WantViewModel {
         return wantViewModel
     }

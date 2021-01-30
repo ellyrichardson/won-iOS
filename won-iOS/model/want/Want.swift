@@ -125,8 +125,12 @@ class Want: Object {
         self.obtained = obtained
     }
     
-    public func getObtainedDate() -> Date {
-        return obtainedDate!
+    public func getObtainedDate() -> Date? {
+        if obtainedDate != nil {
+            return obtainedDate!
+        } else {
+            return nil
+        }
     }
     
     public func setObtainedDate(obtainedDate: Date) {

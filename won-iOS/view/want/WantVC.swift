@@ -40,6 +40,8 @@ class WantVC: UIViewController, VCDelegate {
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
         })
+        addWantButton.contentMode = .center
+        addWantButton.imageView?.contentMode = .scaleAspectFit
     }
     
     override func viewWillAppear(_ animated: Bool) {
