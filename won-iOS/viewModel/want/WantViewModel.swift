@@ -214,4 +214,10 @@ class WantViewModel {
     func save() {
         
     }
+    
+    public func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC) {
+        detailsTableVC.setWantViewModel(wantViewModel: wantViewModel)
+        detailsTableVC.tableView.reloadData()
+    }
+    
 }
