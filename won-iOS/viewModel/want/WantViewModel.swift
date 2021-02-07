@@ -44,6 +44,8 @@ class WantViewModel {
         }
         if self.obtained {
             cell.backgroundColor = UIColor(named: "won-bluer-teal")
+        } else if self.daysLeft < 1 {
+            cell.backgroundColor = UIColor(named: "won-red-orange")
         } else {
             cell.backgroundColor = UIColor(named: "won-dark-blue")
         }
@@ -96,6 +98,15 @@ class WantViewModel {
     public func configureObtainedBackgroundColorFor(cell: UITableViewCell) {
         if self.obtained {
             cell.contentView.backgroundColor = UIColor(named: "won-dark-blue")
+        } else {
+            cell.contentView.backgroundColor = UIColor(named: "won-light-orange")
+        }
+    }
+    
+    // Only for WantExactDetailsTableVC use
+    public func configureGeneralBackgroundColorFor(cell: UITableViewCell) {
+        if !self.obtained && self.daysLeft < 1 {
+            cell.contentView.backgroundColor = UIColor(named: "won-red-orange")
         } else {
             cell.contentView.backgroundColor = UIColor(named: "won-light-orange")
         }
@@ -156,6 +167,9 @@ class WantViewModel {
     }
     
     public func getDaysLeft() -> Int {
+        if daysLeft < 1 {
+            return 0
+        }
         return daysLeft
     }
     
