@@ -95,7 +95,7 @@ class WantViewModel {
     // Only for WantExactDetailsTableVC use
     public func configureObtainedBackgroundColorFor(cell: UITableViewCell) {
         if self.obtained {
-            cell.contentView.backgroundColor = UIColor(named: "won-orange")
+            cell.contentView.backgroundColor = UIColor(named: "won-dark-blue")
         } else {
             cell.contentView.backgroundColor = UIColor(named: "won-light-orange")
         }
@@ -183,8 +183,12 @@ class WantViewModel {
         return obtained
     }
     
-    public func getObtainedDate() -> Date {
-        return obtainedDate!
+    public func getObtainedDate() -> Date? {
+        if obtainedDate != nil {
+            return obtainedDate!
+        } else {
+            return nil
+        }
     }
     
     public func setObtainedDate(obtainedDate: Date) {

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
-class WantDetailsVC: UIViewController {
+class WantDetailsVC: UIViewController, DetachedVCDelegate {
+    
     private let DETAILS_TABLE_VIEW_SEGUE = "detailsTableViewSegue"
     
     //@IBOutlet weak var wantNameLabel: UILabel!
@@ -17,6 +19,7 @@ class WantDetailsVC: UIViewController {
     @IBOutlet weak var dismissPageBtn: UIButton!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var optionsButton: UIButton!
+    @IBOutlet weak var deleteButton: CircleButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,5 +44,27 @@ class WantDetailsVC: UIViewController {
     
     @IBAction func dismissPageBtnPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func optionsBtnPressed(_ sender: UIButton) {
+        let vc = EditWantVC()
+        vc.detachedVCDelegate = self
+        SwiftEntryKit.display(entry: vc, using: PresetsDataSource.getPopupPreset())
+    }
+    /*
+    @IBAction func optionsBtnPressed(_ sender: UIButton) {
+        let vc = EditWantVC()
+        vc.detachedVCDelegate = self
+        let navigationController = EditWantNavVC(rootViewController: vc)
+        SwiftEntryKit.display(entry: navigationController, using: PresetsDataSource.getPopupPreset())
+    }*/
+    
+    @IBAction func deleteBtnPressed(_ sender: UIButton) {
+        
+    }
+    
+    func action(sender: Any) {
+        // Do something
+        //performSegue(withIdentifier: "segueToEditWantVC", sender: self)
     }
 }
