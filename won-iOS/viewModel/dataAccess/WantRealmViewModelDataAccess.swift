@@ -72,8 +72,14 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .withNotes(notes: viewModel.getNotes())
             .withObtained(obtained: viewModel.isObtained())
-            .withObtainedDate(obtainedDate: viewModel.getObtainedDate())
+            //.withObtainedDate(obtainedDate: viewModel.getObtainedDate())
             .build()
+        //if want.getObtainedDate() != nil {
+         //   wantViewModel.setObtainedDate(obtainedDate: want.getObtainedDate()!)
+        //}
+        if viewModel.getObtainedDate() != nil {
+            wantModel.setObtainedDate(obtainedDate: viewModel.getObtainedDate()!)
+        }
         if viewModel.getImage().size.width > 0 {
             let imageName = UUID.init().uuidString + ".jpg"
             saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)

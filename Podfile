@@ -6,6 +6,7 @@ target 'won-iOS' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'SwiftEntryKit', '1.2.7'
   # Pods for won-iOS
 
   #target 'won-iOS' do

@@ -50,6 +50,13 @@
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
 		21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FE2591A7BE009D0279 /* WantViewModel.swift */; };
+		21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7B725CA5E1D0082DE0E /* PresetsDataSource.swift */; };
+		21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7BC25CA5E990082DE0E /* PresetDescription.swift */; };
+		21F6B7C825CA5FAE0082DE0E /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7C725CA5FAE0082DE0E /* UIColor+Utils.swift */; };
+		21F6B7D525CA61D70082DE0E /* DeviceTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7D425CA61D70082DE0E /* DeviceTypeDetector.swift */; };
+		21F6B7DB25CB7CD10082DE0E /* EditWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7DA25CB7CD10082DE0E /* EditWantVC.swift */; };
+		21F6B7E325CB7D460082DE0E /* EditWantVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F6B7E225CB7D460082DE0E /* EditWantVC.xib */; };
+		21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7EC25CB889D0082DE0E /* DetachedVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +126,13 @@
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
 		21C947FE2591A7BE009D0279 /* WantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModel.swift; sourceTree = "<group>"; };
+		21F6B7B725CA5E1D0082DE0E /* PresetsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsDataSource.swift; sourceTree = "<group>"; };
+		21F6B7BC25CA5E990082DE0E /* PresetDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDescription.swift; sourceTree = "<group>"; };
+		21F6B7C725CA5FAE0082DE0E /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		21F6B7D425CA61D70082DE0E /* DeviceTypeDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTypeDetector.swift; sourceTree = "<group>"; };
+		21F6B7DA25CB7CD10082DE0E /* EditWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWantVC.swift; sourceTree = "<group>"; };
+		21F6B7E225CB7D460082DE0E /* EditWantVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWantVC.xib; sourceTree = "<group>"; };
+		21F6B7EC25CB889D0082DE0E /* DetachedVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachedVCDelegate.swift; sourceTree = "<group>"; };
 		6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.debug.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_won_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,9 +174,11 @@
 		212F3280259A8692006218B4 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				21F6B7B625CA5DA80082DE0E /* swiftEntryKit */,
 				212E8800259ADE4500EE2046 /* date */,
 				21713C2D259AC48200E4A503 /* DateUtils.swift */,
 				219DA1EA25A410F2002D4A9E /* TimerProcess.swift */,
+				21F6B7D425CA61D70082DE0E /* DeviceTypeDetector.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -360,12 +376,14 @@
 		217832FD2569D2F800E0AAD6 /* want */ = {
 			isa = PBXGroup;
 			children = (
+				21F6B7D925CB7B3B0082DE0E /* editWant */,
 				215F19BA257C7BCE00C556D0 /* newWant */,
 				215F19B9257C7BB400C556D0 /* wantDetails */,
 				21783304256B455800E0AAD6 /* WantDataSource.swift */,
 				217832E82562360500E0AAD6 /* WantVC.swift */,
 				215F19B7257C7AB600C556D0 /* WantDelegate.swift */,
 				215F19BB257C8C1300C556D0 /* VCDelegate.swift */,
+				21F6B7EC25CB889D0082DE0E /* DetachedVCDelegate.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -403,6 +421,25 @@
 			children = (
 			);
 			path = exact;
+			sourceTree = "<group>";
+		};
+		21F6B7B625CA5DA80082DE0E /* swiftEntryKit */ = {
+			isa = PBXGroup;
+			children = (
+				21F6B7B725CA5E1D0082DE0E /* PresetsDataSource.swift */,
+				21F6B7BC25CA5E990082DE0E /* PresetDescription.swift */,
+				21F6B7C725CA5FAE0082DE0E /* UIColor+Utils.swift */,
+			);
+			path = swiftEntryKit;
+			sourceTree = "<group>";
+		};
+		21F6B7D925CB7B3B0082DE0E /* editWant */ = {
+			isa = PBXGroup;
+			children = (
+				21F6B7DA25CB7CD10082DE0E /* EditWantVC.swift */,
+				21F6B7E225CB7D460082DE0E /* EditWantVC.xib */,
+			);
+			path = editWant;
 			sourceTree = "<group>";
 		};
 		30032227BC9F9242450F02F8 /* Pods */ = {
@@ -528,6 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F6B7E325CB7D460082DE0E /* EditWantVC.xib in Resources */,
 				217832C32558874100E0AAD6 /* LaunchScreen.storyboard in Resources */,
 				217832C02558874100E0AAD6 /* Assets.xcassets in Resources */,
 				217832BB2558873C00E0AAD6 /* Main.storyboard in Resources */,
@@ -598,11 +636,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				217832B82558873C00E0AAD6 /* ViewController.swift in Sources */,
+				21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */,
 				21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */,
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
+				21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
 				212E8802259ADE4500EE2046 /* DateTimeFunctions.swift in Sources */,
@@ -611,10 +651,12 @@
 				2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */,
 				215F19B6257B30F000C556D0 /* WantRealmViewModelDataAccessProtocol.swift in Sources */,
 				217832F42569C69600E0AAD6 /* WantHistory.swift in Sources */,
+				21F6B7C825CA5FAE0082DE0E /* UIColor+Utils.swift in Sources */,
 				219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */,
 				21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
+				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
 				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
 				217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */,
@@ -625,10 +667,12 @@
 				217AD9EE25BBD698008A4C53 /* NewWantTVCell.swift in Sources */,
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
+				21F6B7D525CA61D70082DE0E /* DeviceTypeDetector.swift in Sources */,
 				21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */,
 				21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
+				21F6B7DB25CB7CD10082DE0E /* EditWantVC.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,
 				217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */,
 				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,

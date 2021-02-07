@@ -1,22 +1,30 @@
 PODS:
+  - QuickLayout (3.0.0)
   - Realm (10.1.4):
     - Realm/Headers (= 10.1.4)
   - Realm/Headers (10.1.4)
   - RealmSwift (10.1.4):
     - Realm (= 10.1.4)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
   - RealmSwift
+  - SwiftEntryKit (= 1.2.7)
 
 SPEC REPOS:
   trunk:
+    - QuickLayout
     - Realm
     - RealmSwift
+    - SwiftEntryKit
 
 SPEC CHECKSUMS:
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
   RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
 
-PODFILE CHECKSUM: 8d4b8f18c0b9f566ab7fe661126c204252fad6d3
+PODFILE CHECKSUM: 4ac2f4390757a750c951835b16624285b0fb7bd9
 
 COCOAPODS: 1.10.0
