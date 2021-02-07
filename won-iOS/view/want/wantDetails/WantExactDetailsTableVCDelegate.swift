@@ -32,7 +32,12 @@ class WantExactDetailsTableVCDelegate: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            // Update general cell background color based on the obtainment and days left
+            self.wantViewModel?.configureGeneralBackgroundColorFor(cell: cell)
+        }
         if indexPath.row == 1 {
+            // Update obtained cell background color based on the obtainment
             self.wantViewModel?.configureObtainedBackgroundColorFor(cell: cell)
         }
     }

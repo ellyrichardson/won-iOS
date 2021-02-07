@@ -16,6 +16,8 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
     //@IBOutlet weak var wantNameLabel: UILabel!
     private var wantViewModel: WantViewModel?
     
+    private weak var detailsTVC: WantDetailsTableVC?
+    
     @IBOutlet weak var dismissPageBtn: UIButton!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var optionsButton: UIButton!
@@ -35,8 +37,8 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
         super.prepare(for: segue, sender: sender)
         
         if (segue.identifier == DETAILS_TABLE_VIEW_SEGUE) {
-            let detailsTVC = segue.destination as! WantDetailsTableVC
-            detailsTVC.setWantViewModel(wantViewModel: wantViewModel!)
+            detailsTVC = (segue.destination as! WantDetailsTableVC)
+            detailsTVC!.setWantViewModel(wantViewModel: wantViewModel!)
             // Now you have a pointer to the child view controller.
             // You can save the reference to it, or pass data to it.
         }
@@ -49,15 +51,9 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
     @IBAction func optionsBtnPressed(_ sender: UIButton) {
         let vc = EditWantVC()
         vc.detachedVCDelegate = self
+        vc.setWantViewModel(wantViewModel: wantViewModel!)
         SwiftEntryKit.display(entry: vc, using: PresetsDataSource.getPopupPreset())
     }
-    /*
-    @IBAction func optionsBtnPressed(_ sender: UIButton) {
-        let vc = EditWantVC()
-        vc.detachedVCDelegate = self
-        let navigationController = EditWantNavVC(rootViewController: vc)
-        SwiftEntryKit.display(entry: navigationController, using: PresetsDataSource.getPopupPreset())
-    }*/
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
         
@@ -66,5 +62,8 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
     func action(sender: Any) {
         // Do something
         //performSegue(withIdentifier: "segueToEditWantVC", sender: self)
+        self.wantViewModel = (sender as! WantViewModel)
+        wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
+        wantViewModel?.updateWantDetails(wantViewModel: self.wantViewModel!, detailsTableVC: detailsTVC!)
     }
 }

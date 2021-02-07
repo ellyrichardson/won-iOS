@@ -155,6 +155,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         if let want = wants.first {
             try! realm.write {
                 want.notes = viewModel.getNotes()
+                want.dateModified = Date()
             }
         }
     }
@@ -186,6 +187,18 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
             try! realm.write {
                 want.imageName = imageName
+                want.dateModified = Date()
+            }
+        }
+    }
+    
+    func updateViewModel(viewModel: WantViewModel) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first {
+            try! realm.write {
+                want.name = viewModel.getName()
+                want.points = Int(viewModel.getPoints())!
                 want.dateModified = Date()
             }
         }
