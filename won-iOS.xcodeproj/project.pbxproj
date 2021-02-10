@@ -46,6 +46,9 @@
 		21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
+		21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */; };
+		21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784F25D3694C003B77F5 /* WantNotification.swift */; };
+		21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */; };
 		21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */; };
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
@@ -122,6 +125,9 @@
 		21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVCDelegate.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
+		21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotificationsVC.swift; sourceTree = "<group>"; };
+		21BC784F25D3694C003B77F5 /* WantNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotification.swift; sourceTree = "<group>"; };
+		21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationViewModel.swift; sourceTree = "<group>"; };
 		21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotesDetailsVC.swift; sourceTree = "<group>"; };
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 				215F19A92578796800C556D0 /* NewWantVC.swift */,
 				21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */,
 				21A66929258058D600A75F2C /* NewWantNotesVC.swift */,
+				21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */,
 			);
 			path = newWant;
 			sourceTree = "<group>";
@@ -335,6 +342,7 @@
 				217832F125698C7100E0AAD6 /* Want.swift */,
 				217832F32569C69600E0AAD6 /* WantHistory.swift */,
 				217832F92569CB7100E0AAD6 /* WantSocialStatus.swift */,
+				21BC784F25D3694C003B77F5 /* WantNotification.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 				2178330B256CCAFB00E0AAD6 /* WantRealmManager.swift */,
 				21C947FE2591A7BE009D0279 /* WantViewModel.swift */,
 				21713C2B259AB7BD00E4A503 /* WantManager.swift */,
+				21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -641,6 +650,7 @@
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
+				21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
 				21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
@@ -657,7 +667,9 @@
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
+				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
+				21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */,
 				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
 				217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */,
 				217832F82569CAF600E0AAD6 /* WantBuilder.swift in Sources */,

@@ -81,6 +81,11 @@ class WantBuilder {
         return self
     }
     
+    func withNotification(notification: WantNotification) ->  WantBuilder {
+        want.setNotification(notification: notification)
+        return self
+    }
+    
     func build() -> Want {
         return want
     }
