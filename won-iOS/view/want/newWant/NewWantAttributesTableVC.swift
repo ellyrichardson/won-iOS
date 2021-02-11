@@ -18,6 +18,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     typealias EditedTextHandler = (_ name: String) -> Void
     typealias EditedImageHandler = (_ name: UIImage) -> Void
     typealias IsCheckButtonEnabledHandler = (_ name: Bool) -> Void
+    typealias EditedNotificationHandler = (_ name: WantNotification) -> Void
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var wantNameField: UITextField!
@@ -30,6 +31,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     var didChangeWantImage: (EditedImageHandler)?
     var didEditWantNotes: (EditedTextHandler)?
     var isCheckButtonEnabled: (IsCheckButtonEnabledHandler)?
+    var didEditWantNotification: (EditedNotificationHandler)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +144,10 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     }*/
     
     func passData(data: Any) {
-        let stringg = data as! String
-        didEditWantNotes!(stringg)
+        if let passedData = data as? String {
+            didEditWantNotes!(passedData)
+        } else if let passedData = data as? WantNotification {
+            didEditWantNotification!(passedData)
+        }
     }
 }

@@ -21,6 +21,7 @@ class Want: Object {
     @objc dynamic var obtainedDate: Date?
     @objc dynamic var dateCreated: Date = Date()
     @objc dynamic var dateModified: Date = Date()
+    @objc dynamic var notification: WantNotification?
     
     //private var privacy: PrivacyType
     // private var timeSpan: TimeSpan
@@ -31,7 +32,7 @@ class Want: Object {
         return "id"
     }
     
-    convenience init(id: String, owner: String, name: String, points: Int, imageName: String, notes: String, obtained: Bool, obtainedDate: Date, dateCreated: Date, dateModified: Date, socialStatus: WantSocialStatus) {
+    convenience init(id: String, owner: String, name: String, points: Int, imageName: String, notes: String, obtained: Bool, obtainedDate: Date, dateCreated: Date, dateModified: Date, socialStatus: WantSocialStatus, notification: WantNotification) {
         self.init()
         self.id = id
         self.owner = owner
@@ -45,6 +46,7 @@ class Want: Object {
         self.obtainedDate = obtainedDate
         self.dateCreated = dateCreated
         self.dateModified = dateModified
+        self.notification = notification
         //self.history = history
     }
     
@@ -151,5 +153,16 @@ class Want: Object {
     
     public func setDateModified(dateModified: Date) {
         self.dateModified = dateModified
+    }
+    
+    public func getNotification() -> WantNotification? {
+        if notification != nil {
+            return notification!
+        }
+        return nil
+    }
+    
+    public func setNotification(notification: WantNotification) {
+        self.notification = notification
     }
 }

@@ -20,6 +20,7 @@ class WantViewModel {
     private var obtainedDate: Date?
     private var dateCreated: Date
     private var dateModified: Date
+    private var notificationViewModel: WantNotificationViewModel?
     
     public init() {
         self.id = ""
@@ -225,13 +226,29 @@ class WantViewModel {
         return dateModified
     }
     
+    public func setNotificationViewModel(notificationViewModel: WantNotificationViewModel) {
+        self.notificationViewModel = notificationViewModel
+    }
+    
+    public func getNotificationViewModel() -> WantNotificationViewModel? {
+        if self.notificationViewModel != nil {
+            return self.notificationViewModel!
+        }
+        return nil
+    }
+    
     func save() {
         
     }
     
+    // To update WantDetailsTableVC when a Want is being edited
     public func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC) {
         detailsTableVC.setWantViewModel(wantViewModel: wantViewModel)
         detailsTableVC.tableView.reloadData()
+    }
+    
+    public func createNotification() {
+        
     }
     
 }
