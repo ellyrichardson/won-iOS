@@ -49,6 +49,7 @@
 		21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */; };
 		21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784F25D3694C003B77F5 /* WantNotification.swift */; };
 		21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */; };
+		21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC785925D4E190003B77F5 /* WantNotificationBuilder.swift */; };
 		21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */; };
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
@@ -128,6 +129,7 @@
 		21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotificationsVC.swift; sourceTree = "<group>"; };
 		21BC784F25D3694C003B77F5 /* WantNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotification.swift; sourceTree = "<group>"; };
 		21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationViewModel.swift; sourceTree = "<group>"; };
+		21BC785925D4E190003B77F5 /* WantNotificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationBuilder.swift; sourceTree = "<group>"; };
 		21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotesDetailsVC.swift; sourceTree = "<group>"; };
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			children = (
 				217832F72569CAF600E0AAD6 /* WantBuilder.swift */,
 				217832FB2569CF6500E0AAD6 /* WantHistoryBuilder.swift */,
+				21BC785925D4E190003B77F5 /* WantNotificationBuilder.swift */,
 			);
 			path = want;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
+				21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,

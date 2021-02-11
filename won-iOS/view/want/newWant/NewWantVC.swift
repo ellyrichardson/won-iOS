@@ -22,6 +22,7 @@ class NewWantVC: UIViewController, UITextFieldDelegate {
     private var wantImage: UIImage = UIImage(named: "default_image")!
     private var wantImageUpdated = false
     private var wantNotes = ""
+    private var wantNotification = WantNotification()
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard

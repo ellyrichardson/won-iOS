@@ -38,6 +38,9 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         if want.getObtainedDate() != nil {
             wantViewModel.setObtainedDate(obtainedDate: want.getObtainedDate()!)
         }
+        if want.getNotification() != nil {
+            wantViewModel.setNotificationViewModel(notificationViewModel: WantNotificationViewModel(notification: want.getNotification()!))
+        }
         print("IMAGE: " + want.getImageName())
         let validImageName = want.getImageName().components(separatedBy: ".")[0]
         if UUID(uuidString: validImageName) != nil {
@@ -80,12 +83,25 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         if viewModel.getObtainedDate() != nil {
             wantModel.setObtainedDate(obtainedDate: viewModel.getObtainedDate()!)
         }
+        if viewModel.getNotificationViewModel() != nil {
+            let wantNotif: WantNotification = createWantNotificationFromViewModel(notifViewModel: viewModel.getNotificationViewModel()!)
+            wantModel.setNotification(notification: wantNotif)
+        }
         if viewModel.getImage().size.width > 0 {
             let imageName = UUID.init().uuidString + ".jpg"
             saveWantImageToAppDirectory(image: viewModel.getImage(), imageName: imageName)
             wantModel.setImageName(imageName: imageName)
         }
         return wantModel
+    }
+    
+    private func createWantNotificationFromViewModel(notifViewModel: WantNotificationViewModel) -> WantNotification {
+        let wantNotifBuilder = WantNotificationBuilder()
+        return wantNotifBuilder
+            .withDaysLeft(daysLeft: notifViewModel.getDaysLeft())
+            .withRepeating(repeating: notifViewModel.isRepeating())
+            .withNotifying(notifying: notifViewModel.isNotifying())
+            .build()
     }
     
     private func getDocumentDirectoryPath() -> URL {
@@ -200,6 +216,10 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
                 want.name = viewModel.getName()
                 want.points = Int(viewModel.getPoints())!
                 want.dateModified = Date()
+                if viewModel.getNotificationViewModel() != nil {
+                    let wantNotif: WantNotification = createWantNotificationFromViewModel(notifViewModel: viewModel.getNotificationViewModel()!)
+                    want.notification = wantNotif
+                }
             }
         }
     }

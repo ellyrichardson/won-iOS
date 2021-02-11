@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewWantNotificationsVC: UIViewController {
+class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate {
     
     
     @IBOutlet weak var dismissPageBtn: UIButton!
@@ -16,12 +16,17 @@ class NewWantNotificationsVC: UIViewController {
     @IBOutlet weak var enabledSwitch: UISwitch!
     @IBOutlet weak var repeatingSwitch: UISwitch!
     
-    
+    private var delegate: DataReceivingVCProtocol?
+    private var wantNotif: WantNotification?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        notifyOnDaysLeftPickerView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //wantNotif =
     }
     
 
@@ -36,6 +41,22 @@ class NewWantNotificationsVC: UIViewController {
     */
     
     @IBAction func dismissBtnPressed(_ sender: UIButton) {
+        //let daysLeft = notifyOnDaysLeftPickerView.sele
+        let wantNotif = createWantNotification(daysLeft: <#T##Int#>, repeating: <#T##Bool#>, notifying: <#T##Bool#>)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func createWantNotification(daysLeft: Int, repeating: Bool, notifying: Bool) -> WantNotification {
+        let wantNotifBuilder = WantNotificationBuilder()
+        return wantNotifBuilder
+            .withDaysLeft(daysLeft: daysLeft)
+            .withNotifying(notifying: notifying)
+            .withRepeating(repeating: repeating)
+            .build()
+    }
+    
+    func setDelegate(delegate: DataReceivingVCProtocol) {
+        self.delegate = delegate
     }
 
 }
