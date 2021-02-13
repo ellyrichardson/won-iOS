@@ -18,20 +18,21 @@ class NewWantNotesVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var notesTextView: UITextView!
     
     //var didEditWantNotes: (EditedTextHandler)?
-    private var wantNotes = ""
+    private var wantNotes: String?
     private var delegate: DataReceivingVCProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         notesTextView.delegate = self
+        notesTextView.text = wantNotes
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func dismissPageBtnPressed(_ sender: UIButton) {
         //performSegue(withIdentifier: UNWIND_TO_ATTRIBUTES_VC, sender: self)
-        delegate?.passData(data: self.wantNotes)
+        delegate?.passData(data: self.wantNotes as Any)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -40,7 +41,11 @@ class NewWantNotesVC: UIViewController, UITextViewDelegate {
     }
     
     func getWantNotes() -> String {
-        return self.wantNotes
+        return self.wantNotes!
+    }
+    
+    func setWantNotes(notes: String) {
+        self.wantNotes = notes
     }
     
     func setDelegate(delegate: DataReceivingVCProtocol) {

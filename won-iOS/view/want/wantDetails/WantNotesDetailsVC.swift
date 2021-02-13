@@ -26,11 +26,15 @@ class WantNotesDetailsVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notesTextVew.delegate = self
-        self.notesTextVew.text = wantViewModel?.getNotes()
+        //self.notesTextVew.text = wantViewModel?.getNotes()
         print("NOTES in WNLVC: " + self.notesTextVew.text)
         // Do any additional setup after loading the view.
         self.wantNotesView.layer.cornerRadius = 10;
         self.wantNotesView.layer.masksToBounds = true;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.notesTextVew.text = wantViewModel?.getNotes()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

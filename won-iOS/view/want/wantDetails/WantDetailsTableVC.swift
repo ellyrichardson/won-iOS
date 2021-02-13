@@ -36,6 +36,18 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         return vc
     }()
     
+    private lazy var wantNotificationsDetailsVC: WantNotificationsDetailsVC = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var vc = storyboard.instantiateViewController(withIdentifier: "WantNotificationsDetailsVC") as! WantNotificationsDetailsVC
+        vc.setWantViewModel(wantViewModel: self.wantViewModel!)
+        vc.setDataAccess(dataAccess: self.dataAccess)
+        self.add(asChildViewController: vc)
+        return vc
+    }()
+    
     private lazy var wantNotesDetailsVC: WantNotesDetailsVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -44,7 +56,6 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         var vc = storyboard.instantiateViewController(withIdentifier: "WantNotesDetailsVC") as! WantNotesDetailsVC
         vc.setWantViewModel(wantViewModel: self.wantViewModel!)
         vc.setDataAccess(dataAccess: self.dataAccess)
-
         self.add(asChildViewController: vc)
         return vc
     }()
@@ -65,16 +76,24 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func detailsBtnPress(_ sender: UIButton) {
-        remove(asChildViewController: wantNotesDetailsVC)
         add(asChildViewController: wantExactDetailsTableVC)
+        remove(asChildViewController: wantNotesDetailsVC)
+        remove(asChildViewController: wantNotificationsDetailsVC)
+        
     }
     
     @IBAction func notificationBtnPress(_ sender: UIButton) {
+        add(asChildViewController: wantNotificationsDetailsVC)
+        remove(asChildViewController: wantNotesDetailsVC)
+        remove(asChildViewController: wantExactDetailsTableVC)
+
     }
     
     @IBAction func notesBtnPress(_ sender: UIButton) {
-        remove(asChildViewController: wantExactDetailsTableVC)
         add(asChildViewController: wantNotesDetailsVC)
+        remove(asChildViewController: wantNotificationsDetailsVC)
+        remove(asChildViewController: wantExactDetailsTableVC)
+        
     }
     
     

@@ -50,6 +50,7 @@
 		21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784F25D3694C003B77F5 /* WantNotification.swift */; };
 		21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */; };
 		21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC785925D4E190003B77F5 /* WantNotificationBuilder.swift */; };
+		21BC786225D79CFD003B77F5 /* WantNotificationsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC786125D79CFD003B77F5 /* WantNotificationsDetailsVC.swift */; };
 		21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */; };
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
@@ -130,6 +131,7 @@
 		21BC784F25D3694C003B77F5 /* WantNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotification.swift; sourceTree = "<group>"; };
 		21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationViewModel.swift; sourceTree = "<group>"; };
 		21BC785925D4E190003B77F5 /* WantNotificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationBuilder.swift; sourceTree = "<group>"; };
+		21BC786125D79CFD003B77F5 /* WantNotificationsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationsDetailsVC.swift; sourceTree = "<group>"; };
 		21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotesDetailsVC.swift; sourceTree = "<group>"; };
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */,
 				21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */,
 				21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */,
+				21BC786125D79CFD003B77F5 /* WantNotificationsDetailsVC.swift */,
 			);
 			path = wantDetails;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
 				212E8802259ADE4500EE2046 /* DateTimeFunctions.swift in Sources */,
+				21BC786225D79CFD003B77F5 /* WantNotificationsDetailsVC.swift in Sources */,
 				21713C2E259AC48200E4A503 /* DateUtils.swift in Sources */,
 				21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */,
 				2178330C256CCAFB00E0AAD6 /* WantRealmManager.swift in Sources */,

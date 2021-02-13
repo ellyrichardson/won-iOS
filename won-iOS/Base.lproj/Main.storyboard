@@ -799,7 +799,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Z0c-jJ-2Hi" kind="showDetail" id="JxM-Vo-KjX"/>
+                                            <segue destination="Z0c-jJ-2Hi" kind="showDetail" identifier="newWantNotificationsVCSegue" id="JxM-Vo-KjX"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="bsk-qN-cb7">
@@ -1122,6 +1122,73 @@
             </objects>
             <point key="canvasLocation" x="5773.913043478261" y="525.66964285714289"/>
         </scene>
+        <!--Want Notifications DetailsVC-->
+        <scene sceneID="NsV-wV-ekg">
+            <objects>
+                <viewController storyboardIdentifier="WantNotificationsDetailsVC" id="5jJ-CQ-80M" customClass="WantNotificationsDetailsVC" customModule="won_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Js-t4-Ldi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76q-d1-SYl">
+                                <rect key="frame" x="246" y="72" width="96" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="FgM-qn-6WV"/>
+                                    <constraint firstAttribute="width" constant="96" id="bfT-Mn-lUL"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeating: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ya-Ds-xNQ">
+                                <rect key="frame" x="60" y="210" width="169" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5B2-6z-GTB">
+                                <rect key="frame" x="271" y="208" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enabled: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6U-Nt-14y">
+                                <rect key="frame" x="60" y="168" width="169" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-An-MxS">
+                                <rect key="frame" x="271" y="166" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify on days left:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9F-G0-z5F">
+                                <rect key="frame" x="60" y="98" width="169" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="cCY-v9-E5K"/>
+                                    <constraint firstAttribute="width" constant="169" id="mwp-Ay-ZFN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VzZ-sR-5QN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="76q-d1-SYl" firstAttribute="top" secondItem="VzZ-sR-5QN" secondAttribute="top" constant="28" id="Jyr-mz-2ng"/>
+                            <constraint firstItem="76q-d1-SYl" firstAttribute="leading" secondItem="i9F-G0-z5F" secondAttribute="trailing" constant="17" id="WCM-2d-BwB"/>
+                            <constraint firstItem="i9F-G0-z5F" firstAttribute="top" secondItem="VzZ-sR-5QN" secondAttribute="top" constant="54" id="kl2-A2-hip"/>
+                            <constraint firstItem="i9F-G0-z5F" firstAttribute="leading" secondItem="VzZ-sR-5QN" secondAttribute="leading" constant="60" id="zuh-Hi-yNh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enabledSwitch" destination="nbQ-An-MxS" id="vs2-Df-Cff"/>
+                        <outlet property="notifyWithDaysLeftPickerView" destination="76q-d1-SYl" id="WzD-5L-kZs"/>
+                        <outlet property="repeatingSwitch" destination="5B2-6z-GTB" id="koN-b5-Jlp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQY-wT-3OW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5774" y="1209"/>
+        </scene>
         <!--Want Notes DetailsVC-->
         <scene sceneID="KJu-tZ-2WC">
             <objects>
@@ -1181,7 +1248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0M-dx-ciW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5773.913043478261" y="1221.4285714285713"/>
+            <point key="canvasLocation" x="5774" y="1889"/>
         </scene>
     </scenes>
     <resources>
