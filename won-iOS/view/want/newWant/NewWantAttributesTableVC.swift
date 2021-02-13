@@ -11,6 +11,7 @@ import UIKit
 class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, DataReceivingVCProtocol, UITextFieldDelegate {
     
     private let SEGUE_TO_NOTES = "newWantNotesVCSegue"
+    private let SEGUE_TO_NOTIFICATIONS = "newWantNotificationsVCSegue"
     private let UNWIND_TO_ATTRIBUTES_VC = "unwindToNewWantAttributesTableVC"
     
     //private var checkButtonEnabled = false
@@ -18,7 +19,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     typealias EditedTextHandler = (_ name: String) -> Void
     typealias EditedImageHandler = (_ name: UIImage) -> Void
     typealias IsCheckButtonEnabledHandler = (_ name: Bool) -> Void
-    typealias EditedNotificationHandler = (_ name: WantNotification) -> Void
+    typealias EditedNotificationHandler = (_ name: WantNotificationViewModel) -> Void
     
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var wantNameField: UITextField!
@@ -32,6 +33,10 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     var didEditWantNotes: (EditedTextHandler)?
     var isCheckButtonEnabled: (IsCheckButtonEnabledHandler)?
     var didEditWantNotification: (EditedNotificationHandler)?
+    
+    private var wantNotification = WantNotificationViewModel()
+    // This changes based on the NewWantNotesVC value
+    private var wantNotes = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +138,13 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
             //let destNavCtrl = segue.destination as! UINavigationController
             //let notesVC = destNavCtrl.topViewController as! NewWantNotesVC
             notesVC.setDelegate(delegate: self)
+            notesVC.setWantNotes(notes: wantNotes)
+        }
+        if (segue.identifier == SEGUE_TO_NOTIFICATIONS) {
+            let notifVC = segue.destination as! NewWantNotificationsVC
+            //let destNavCtrl = segue.destination as! UINavigationController
+            //let notesVC = destNavCtrl.topViewController as! NewWantNotesVC
+            notifVC.setWantNotificationViewModel(wantNotifViewModel: self.wantNotification)
         }
     }
     
@@ -145,8 +157,9 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     
     func passData(data: Any) {
         if let passedData = data as? String {
+            self.wantNotes = passedData
             didEditWantNotes!(passedData)
-        } else if let passedData = data as? WantNotification {
+        } else if let passedData = data as? WantNotificationViewModel {
             didEditWantNotification!(passedData)
         }
     }

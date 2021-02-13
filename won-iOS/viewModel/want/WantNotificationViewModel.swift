@@ -9,33 +9,53 @@
 import Foundation
 
 class WantNotificationViewModel {
-    private var notification: WantNotification
+    //private var notification: WantNotification
+    private var daysLeft: Int
+    private var repeating: Bool
+    private var notifying: Bool
     
-    init(notification: WantNotification) {
-        self.notification = notification
+    init() {
+        //self.notification = WantNotification()
+        //self.notification.setDaysLeft(daysLeft: 3)
+        //self.notification.setRepeating(repeating: true)
+        //self.notification.setNotifying(notifying: true)
+        self.daysLeft = 3
+        self.repeating = true
+        self.notifying = true
+    }
+    
+    //init(notification: WantNotification) {
+      //  self.notification = notification
+    //}
+    
+    init(daysLeft: Int, repeating: Bool, notifying: Bool) {
+        //self.notification = WantNotification()
+        self.daysLeft = daysLeft
+        self.repeating = repeating
+        self.notifying = notifying
     }
     
     func isNotifying() -> Bool {
-        return notification.isNotifying()
+        return self.notifying
     }
     
     func setNotifying(notifying: Bool) {
-        self.notification.setNotifying(notifying: notifying)
+        self.notifying = notifying
     }
     
     func isRepeating() -> Bool {
-        return notification.isRepeating()
+        return self.repeating
     }
     
     func setRepeating(repeating: Bool) {
-        self.notification.setRepeating(repeating: repeating)
+        self.repeating = repeating
     }
     
     func getDaysLeft() -> Int {
-        return notification.getDaysLeft()
+        return self.daysLeft
     }
     
     func setDaysLeft(daysLeft: Int) {
-        self.notification.setDaysLeft(daysLeft: daysLeft)
+        self.daysLeft = daysLeft
     }
 }

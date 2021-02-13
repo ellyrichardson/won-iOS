@@ -39,7 +39,9 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             wantViewModel.setObtainedDate(obtainedDate: want.getObtainedDate()!)
         }
         if want.getNotification() != nil {
-            wantViewModel.setNotificationViewModel(notificationViewModel: WantNotificationViewModel(notification: want.getNotification()!))
+            let wantNotif = want.getNotification()
+            let wantNotifViewModel = WantNotificationViewModel(daysLeft: (wantNotif?.getDaysLeft())!, repeating: (wantNotif?.isRepeating())!, notifying: (wantNotif?.isNotifying())!)
+            wantViewModel.setNotificationViewModel(notificationViewModel: wantNotifViewModel)
         }
         print("IMAGE: " + want.getImageName())
         let validImageName = want.getImageName().components(separatedBy: ".")[0]
@@ -75,11 +77,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             .withDaysLeft(daysLeft: viewModel.getDaysLeft())
             .withNotes(notes: viewModel.getNotes())
             .withObtained(obtained: viewModel.isObtained())
-            //.withObtainedDate(obtainedDate: viewModel.getObtainedDate())
             .build()
-        //if want.getObtainedDate() != nil {
-         //   wantViewModel.setObtainedDate(obtainedDate: want.getObtainedDate()!)
-        //}
         if viewModel.getObtainedDate() != nil {
             wantModel.setObtainedDate(obtainedDate: viewModel.getObtainedDate()!)
         }

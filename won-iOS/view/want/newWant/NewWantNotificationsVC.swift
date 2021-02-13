@@ -8,7 +8,8 @@
 
 import UIKit
 
-class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate {
+class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     
     
     @IBOutlet weak var dismissPageBtn: UIButton!
@@ -17,16 +18,41 @@ class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var repeatingSwitch: UISwitch!
     
     private var delegate: DataReceivingVCProtocol?
-    private var wantNotif: WantNotification?
+    private var wantNotif: WantNotificationViewModel?
+    
+    private var daysLeftPickerData: [String] = [String]()
+    private var selectedDaysLeft: Int?
+    
+    private let FIRST = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         notifyOnDaysLeftPickerView.delegate = self
-        // Do any additional setup after loading the view.
+        notifyOnDaysLeftPickerView.dataSource = self
+        // This should have 3 as default based on the getDaysLeft from wantNotif
+        selectedDaysLeft = wantNotif?.getDaysLeft()
+        daysLeftPickerData = ["1","2","3","4","5","6","7","8","9","10",
+                              "11","12","13","14","15"]
+        // Default selected daysLeft is 3 based on the getDaysLeft from wantNotif
+        notifyOnDaysLeftPickerView.selectRow((wantNotif?.getDaysLeft())!, inComponent: FIRST, animated: true)
+        repeatingSwitch.setOn((wantNotif?.isRepeating())!, animated: true)
+        enabledSwitch.setOn((wantNotif?.isNotifying())!, animated: true)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //wantNotif =
+        selectedDaysLeft = Int(daysLeftPickerData[row])!
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return daysLeftPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return daysLeftPickerData[row]
     }
     
 
@@ -41,22 +67,19 @@ class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate {
     */
     
     @IBAction func dismissBtnPressed(_ sender: UIButton) {
-        //let daysLeft = notifyOnDaysLeftPickerView.sele
-        let wantNotif = createWantNotification(daysLeft: <#T##Int#>, repeating: <#T##Bool#>, notifying: <#T##Bool#>)
+        wantNotif?.setDaysLeft(daysLeft: selectedDaysLeft!)
+        wantNotif?.setNotifying(notifying: enabledSwitch.isOn)
+        wantNotif?.setRepeating(repeating: repeatingSwitch.isOn)
+        delegate?.passData(data: wantNotif as Any)
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    private func createWantNotification(daysLeft: Int, repeating: Bool, notifying: Bool) -> WantNotification {
-        let wantNotifBuilder = WantNotificationBuilder()
-        return wantNotifBuilder
-            .withDaysLeft(daysLeft: daysLeft)
-            .withNotifying(notifying: notifying)
-            .withRepeating(repeating: repeating)
-            .build()
     }
     
     func setDelegate(delegate: DataReceivingVCProtocol) {
         self.delegate = delegate
+    }
+    
+    func setWantNotificationViewModel(wantNotifViewModel: WantNotificationViewModel) {
+        self.wantNotif = wantNotifViewModel
     }
 
 }

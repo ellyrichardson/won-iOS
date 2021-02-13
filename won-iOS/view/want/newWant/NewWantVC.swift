@@ -22,7 +22,7 @@ class NewWantVC: UIViewController, UITextFieldDelegate {
     private var wantImage: UIImage = UIImage(named: "default_image")!
     private var wantImageUpdated = false
     private var wantNotes = ""
-    private var wantNotification = WantNotification()
+    private var wantNotification = WantNotificationViewModel()
     
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard
@@ -63,6 +63,12 @@ class NewWantVC: UIViewController, UITextFieldDelegate {
                 self?.doneButton.isEnabled = item
             }
         }
+        vc.didEditWantNotification = { [weak self](item) in
+            if let vc = self {
+                // Assign WantNotification from the WantNotification Page
+                self?.wantNotification = item
+            }
+        }
         self.add(asChildViewController: vc)
         return vc
     }()
@@ -95,6 +101,7 @@ class NewWantVC: UIViewController, UITextFieldDelegate {
             .withDateCreated(dateCreated: Date())
             .withDateModified(dateModified: Date())
             .withImage(image: self.wantImage)
+            .withNotification(wantNotificationViewModel: self.wantNotification)
             .build()
         //if self.wantImageUpdated {
         //wantViewModel.setImage(image: self.wantImage)

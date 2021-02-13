@@ -70,6 +70,11 @@ class WantViewModelBuilder {
         return self
     }
     
+    func withNotification(wantNotificationViewModel: WantNotificationViewModel) -> WantViewModelBuilder {
+        wantViewModel.setNotificationViewModel(notificationViewModel: wantNotificationViewModel)
+        return self
+    }
+    
     func build() -> WantViewModel {
         return wantViewModel
     }
