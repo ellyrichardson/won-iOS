@@ -144,6 +144,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
             let notifVC = segue.destination as! NewWantNotificationsVC
             //let destNavCtrl = segue.destination as! UINavigationController
             //let notesVC = destNavCtrl.topViewController as! NewWantNotesVC
+            notifVC.setDelegate(delegate: self)
             notifVC.setWantNotificationViewModel(wantNotifViewModel: self.wantNotification)
         }
     }

@@ -67,10 +67,10 @@ class NewWantNotificationsVC: UIViewController, UIPickerViewDelegate, UIPickerVi
     */
     
     @IBAction func dismissBtnPressed(_ sender: UIButton) {
-        wantNotif?.setDaysLeft(daysLeft: selectedDaysLeft!)
-        wantNotif?.setNotifying(notifying: enabledSwitch.isOn)
-        wantNotif?.setRepeating(repeating: repeatingSwitch.isOn)
-        delegate?.passData(data: wantNotif as Any)
+        self.wantNotif?.setDaysLeft(daysLeft: selectedDaysLeft!)
+        self.wantNotif?.setNotifying(notifying: enabledSwitch.isOn)
+        self.wantNotif?.setRepeating(repeating: repeatingSwitch.isOn)
+        delegate?.passData(data: self.wantNotif as Any)
         self.dismiss(animated: true, completion: nil)
     }
     
