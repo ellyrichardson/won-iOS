@@ -43,11 +43,9 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             let wantNotifViewModel = WantNotificationViewModel(daysLeft: (wantNotif?.getDaysLeft())!, repeating: (wantNotif?.isRepeating())!, notifying: (wantNotif?.isNotifying())!)
             wantViewModel.setNotificationViewModel(notificationViewModel: wantNotifViewModel)
         }
-        print("IMAGE: " + want.getImageName())
         let validImageName = want.getImageName().components(separatedBy: ".")[0]
         if UUID(uuidString: validImageName) != nil {
             let imagePath = getDocumentDirectoryPath().appendingPathComponent(want.getImageName())
-            print("IMAGE PATH: " + imagePath.path)
             wantViewModel.setImage(image: UIImage(contentsOfFile: imagePath.path)!)
         }
         return wantViewModel

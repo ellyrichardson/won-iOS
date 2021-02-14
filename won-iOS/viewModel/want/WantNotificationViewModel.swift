@@ -15,11 +15,8 @@ class WantNotificationViewModel {
     private var notifying: Bool
     
     init() {
-        //self.notification = WantNotification()
-        //self.notification.setDaysLeft(daysLeft: 3)
-        //self.notification.setRepeating(repeating: true)
-        //self.notification.setNotifying(notifying: true)
-        self.daysLeft = 3
+        // This is actually 3 because of array indexing
+        self.daysLeft = 2
         self.repeating = true
         self.notifying = true
     }

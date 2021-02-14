@@ -79,21 +79,18 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         add(asChildViewController: wantExactDetailsTableVC)
         remove(asChildViewController: wantNotesDetailsVC)
         remove(asChildViewController: wantNotificationsDetailsVC)
-        
     }
     
     @IBAction func notificationBtnPress(_ sender: UIButton) {
         add(asChildViewController: wantNotificationsDetailsVC)
         remove(asChildViewController: wantNotesDetailsVC)
         remove(asChildViewController: wantExactDetailsTableVC)
-
     }
     
     @IBAction func notesBtnPress(_ sender: UIButton) {
         add(asChildViewController: wantNotesDetailsVC)
         remove(asChildViewController: wantNotificationsDetailsVC)
         remove(asChildViewController: wantExactDetailsTableVC)
-        
     }
     
     

@@ -35,7 +35,8 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
         print((wantNotif?.isRepeating())!)
         print("NOTIFYING")
         print((wantNotif?.isNotifying())!)
-        notifyWithDaysLeftPickerView.selectRow((wantNotif?.getDaysLeft())!, inComponent: FIRST, animated: true)
+        // Minus 1 days left due to array indexing
+        notifyWithDaysLeftPickerView.selectRow((wantNotif?.getDaysLeft())! - 1, inComponent: FIRST, animated: true)
         repeatingSwitch.setOn((wantNotif?.isRepeating())!, animated: true)
         enabledSwitch.setOn((wantNotif?.isNotifying())!, animated: true)
     }
@@ -45,7 +46,7 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
         wantViewModel?.getNotificationViewModel()?.setRepeating(repeating: repeatingSwitch.isOn)
         wantViewModel?.getNotificationViewModel()?.setNotifying(notifying: enabledSwitch.isOn)
         // Updating of the DaysLeft of the ViewModel's notification is handled in the didSelectRow of PickerView
-        dataAccess?.updateNotesAsViewModel(viewModel: self.wantViewModel!)
+        dataAccess?.updateViewModel(viewModel: self.wantViewModel!)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
