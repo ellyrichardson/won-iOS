@@ -16,8 +16,8 @@ class WantNotificationViewModel {
     
     init() {
         // This is actually 3 because of array indexing
-        self.daysLeft = 2
-        self.repeating = true
+        self.daysLeft = 0
+        self.repeating = false
         self.notifying = true
     }
     

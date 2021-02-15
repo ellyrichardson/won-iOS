@@ -24,6 +24,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     @IBOutlet weak var wantImage: UIImageView!
     @IBOutlet weak var wantNameField: UITextField!
     @IBOutlet weak var wantInterestPointsField: UITextField!
+    @IBOutlet weak var wantNotificationIndicator: UIImageView!
     
     @IBOutlet weak var wantNotesLabel: UILabel!
     
@@ -37,6 +38,7 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     private var wantNotification = WantNotificationViewModel()
     // This changes based on the NewWantNotesVC value
     private var wantNotes = ""
+    //private var notificationEnabledIndicator = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +164,11 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
             didEditWantNotes!(passedData)
         } else if let passedData = data as? WantNotificationViewModel {
             didEditWantNotification!(passedData)
+            if passedData.isNotifying() {
+                wantNotificationIndicator.image = UIImage(named: "notification-image")
+            } else {
+                wantNotificationIndicator.image = UIImage(named: "greyscale-notification-image")
+            }
         }
     }
 }
