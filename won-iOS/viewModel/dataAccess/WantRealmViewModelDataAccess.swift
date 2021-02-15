@@ -60,6 +60,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
                 want.daysLeft = daysLeft
             }
         }*/
+        WantNotificationsManager.removeNotificationByWantId(wantId: viewModel.getId())
         try! realm.write {
             realm.delete(realm.objects(Want.self).filter("id = %@", viewModel.getId()))
         }
@@ -105,8 +106,24 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     }
     
     func saveAsViewModel(viewModel: WantViewModel) {
-        save(object: convertWantViewModelToModel(viewModel: viewModel))
+        let want = convertWantViewModelToModel(viewModel: viewModel)
+        //handleWantNotifications(want: want)
+        let wantNotif = want.getNotification()!
+        if wantNotif.isNotifying() {
+            WantNotificationsManager.scheduleNotificationFromWant(want: want)
+        }
+        save(object: want)
     }
+    
+    /*
+    private func handleWantNotifications(want: Want) {
+        let wantNotif = want.getNotification()!
+        if wantNotif.isNotifying() {
+            WantNotificationsManager.scheduleNotificationFromWant(want: want)
+        } else {
+            WantNotificationsManager.removeNotificationByWant(want: want)
+        }
+    }*/
     
     private func saveWantImageToAppDirectory(image: UIImage, imageName: String) {
         // get the documents directory url
@@ -204,6 +221,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         }
     }
     
+    // NOTES: KEEP THIS UPDATER
     func updateViewModel(viewModel: WantViewModel) {
         let realm = getRealmInstanceForSubclasses()
         let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
@@ -217,6 +235,38 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
                     want.notification = wantNotif
                 }
             }
+            //handleWantNotifications(want: want)
+        }
+    }
+    
+    func updateViewModelNotifications(viewModel: WantViewModel, shouldUpdate: Bool) {
+        if shouldUpdate {
+            handleRealmWantNotificationUpdate(viewModel: viewModel)
+        }
+    }
+    
+    private func handleRealmWantNotificationUpdate(viewModel: WantViewModel) {
+        let realm = getRealmInstanceForSubclasses()
+        let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
+        if let want = wants.first  {
+            try! realm.write {
+                if viewModel.getNotificationViewModel() != nil {
+                    let wantNotif: WantNotification = createWantNotificationFromViewModel(notifViewModel: viewModel.getNotificationViewModel()!)
+                    want.notification = wantNotif
+                }
+            }
+            handleWantNotificationsUpdate(want: want)
+        }
+    }
+    
+    private func handleWantNotificationsUpdate(want: Want) {
+        let wantNotif = want.getNotification()!
+        if wantNotif.isNotifying() {
+            // Remove request from Notification Center then add a new one from the same Want
+            WantNotificationsManager.removeNotificationByWantId(wantId: want.getId())
+            WantNotificationsManager.scheduleNotificationFromWant(want: want)
+        } else {
+            WantNotificationsManager.removeNotificationByWantId(wantId: want.getId())
         }
     }
 }
