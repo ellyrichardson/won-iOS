@@ -21,6 +21,7 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
     private var dataAccess: WantRealmViewModelDataAccess?
     
     private let FIRST = 0
+    private var didSwitchChange = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +47,12 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
         wantViewModel?.getNotificationViewModel()?.setRepeating(repeating: repeatingSwitch.isOn)
         wantViewModel?.getNotificationViewModel()?.setNotifying(notifying: enabledSwitch.isOn)
         // Updating of the DaysLeft of the ViewModel's notification is handled in the didSelectRow of PickerView
-        dataAccess?.updateViewModel(viewModel: self.wantViewModel!)
+        dataAccess?.updateViewModelNotifications(viewModel: self.wantViewModel!, shouldUpdate: self.didSwitchChange)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         wantViewModel?.getNotificationViewModel()?.setDaysLeft(daysLeft: Int(daysLeftPickerData[row])!)
+        self.didSwitchChange = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -73,7 +75,13 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
         self.dataAccess = dataAccess
     }
     
-
+    @IBAction func enabledSwitchUpdated(_ sender: UISwitch) {
+        self.didSwitchChange = true
+    }
+    
+    @IBAction func repeatingSwitchUpdated(_ sender: UISwitch) {
+        self.didSwitchChange = true
+    }
     /*
     // MARK: - Navigation
 

@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         wantManager.runWantsDaysLeftCheck()
         TimerProcess.sharedTimer.startTimer(withInterval: 60.0, andJob: wantManager.runWantsDaysLeftCheck)
         
+        NotificationUtil.requestNotificationAuthorization()
+        
         return true
     }
 

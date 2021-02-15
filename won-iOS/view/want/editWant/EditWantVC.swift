@@ -29,6 +29,7 @@ class EditWantVC: UIViewController {
         wantViewModel?.setPoints(points: interestPointTextField.text!)
         detachedVCDelegate?.action(sender: wantViewModel as Any)
         wantRealmViewModelDataAccess.updateViewModel(viewModel: wantViewModel!)
+        wantRealmViewModelDataAccess.updateViewModelNotifications(viewModel: wantViewModel!, shouldUpdate: true)
         SwiftEntryKit.dismiss()
     }
     
