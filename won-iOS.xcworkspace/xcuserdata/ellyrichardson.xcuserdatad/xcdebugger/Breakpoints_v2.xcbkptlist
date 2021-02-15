@@ -14,8 +14,8 @@
             filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "wantNameFieldDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "wantInterestPointsFieldDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "won-iOS/viewModel/want/WantManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "runWantsDaysLeftCheck()"
             landmarkType = "7">
          </BreakpointContent>
@@ -417,22 +417,6 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "textViewDidChange(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "35165A99-51A2-4297-AA62-5A37D1B1EC6F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -734,8 +718,8 @@
             filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -942,8 +926,8 @@
             filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "passData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -990,8 +974,8 @@
             filePath = "won-iOS/view/want/newWant/NewWantAttributesTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "passData(data:)"
             landmarkType = "7">
          </BreakpointContent>
