@@ -53,6 +53,9 @@
 		21BC786225D79CFD003B77F5 /* WantNotificationsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC786125D79CFD003B77F5 /* WantNotificationsDetailsVC.swift */; };
 		21BC786725D9DD24003B77F5 /* WantNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC786625D9DD24003B77F5 /* WantNotificationsManager.swift */; };
 		21BC786F25D9E961003B77F5 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC786E25D9E961003B77F5 /* NotificationUtil.swift */; };
+		21BC787425DC951A003B77F5 /* WantSortCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC787325DC9519003B77F5 /* WantSortCategories.swift */; };
+		21BC787E25DC964F003B77F5 /* SortWantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC787C25DC964F003B77F5 /* SortWantsVC.swift */; };
+		21BC787F25DC964F003B77F5 /* SortWantsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21BC787D25DC964F003B77F5 /* SortWantsVC.xib */; };
 		21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */; };
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
@@ -136,6 +139,9 @@
 		21BC786125D79CFD003B77F5 /* WantNotificationsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationsDetailsVC.swift; sourceTree = "<group>"; };
 		21BC786625D9DD24003B77F5 /* WantNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotificationsManager.swift; sourceTree = "<group>"; };
 		21BC786E25D9E961003B77F5 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
+		21BC787325DC9519003B77F5 /* WantSortCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantSortCategories.swift; sourceTree = "<group>"; };
+		21BC787C25DC964F003B77F5 /* SortWantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortWantsVC.swift; sourceTree = "<group>"; };
+		21BC787D25DC964F003B77F5 /* SortWantsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortWantsVC.xib; sourceTree = "<group>"; };
 		21C22F1F25AC16F300215F42 /* WantNotesDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantNotesDetailsVC.swift; sourceTree = "<group>"; };
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
@@ -395,6 +401,8 @@
 		217832FD2569D2F800E0AAD6 /* want */ = {
 			isa = PBXGroup;
 			children = (
+				21BC787325DC9519003B77F5 /* WantSortCategories.swift */,
+				21BC787B25DC9625003B77F5 /* OrganizeWants */,
 				21F6B7D925CB7B3B0082DE0E /* editWant */,
 				215F19BA257C7BCE00C556D0 /* newWant */,
 				215F19B9257C7BB400C556D0 /* wantDetails */,
@@ -442,6 +450,15 @@
 			children = (
 			);
 			path = exact;
+			sourceTree = "<group>";
+		};
+		21BC787B25DC9625003B77F5 /* OrganizeWants */ = {
+			isa = PBXGroup;
+			children = (
+				21BC787C25DC964F003B77F5 /* SortWantsVC.swift */,
+				21BC787D25DC964F003B77F5 /* SortWantsVC.xib */,
+			);
+			path = OrganizeWants;
 			sourceTree = "<group>";
 		};
 		21F6B7B625CA5DA80082DE0E /* swiftEntryKit */ = {
@@ -587,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21F6B7E325CB7D460082DE0E /* EditWantVC.xib in Resources */,
+				21BC787F25DC964F003B77F5 /* SortWantsVC.xib in Resources */,
 				217832C32558874100E0AAD6 /* LaunchScreen.storyboard in Resources */,
 				217832C02558874100E0AAD6 /* Assets.xcassets in Resources */,
 				217832BB2558873C00E0AAD6 /* Main.storyboard in Resources */,
@@ -678,12 +696,14 @@
 				21F6B7C825CA5FAE0082DE0E /* UIColor+Utils.swift in Sources */,
 				219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */,
 				21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */,
+				21BC787E25DC964F003B77F5 /* SortWantsVC.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
 				21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */,
 				21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
+				21BC787425DC951A003B77F5 /* WantSortCategories.swift in Sources */,
 				21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */,
 				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
 				21BC786725D9DD24003B77F5 /* WantNotificationsManager.swift in Sources */,
