@@ -9,34 +9,17 @@
 import Foundation
 
 class WantManager {
-
     private var dataAccess = WantRealmViewModelDataAccess()
     
     func runWantsDaysLeftCheck() {
         let wantViewModels = dataAccess.findAllWants()
         for wantViewModel in wantViewModels {
             let wantDueDate = DateUtils.addDayToDate(date: wantViewModel.getDateCreated(), days: 31.0)
-            print(wantViewModel.getDateCreated())
-            print("NEW  STUFF")
-            print(wantDueDate)
+            print("Want Days Left Checker - Running - Checking " + wantViewModel.getName())
             let expectedDaysLeft = DateUtils.daysBetweenTwoDates(earlyDate: Date(), laterDate: wantDueDate)
-            if wantViewModel.getDaysLeft() != expectedDaysLeft {
+            if wantViewModel.getDaysLeft() != expectedDaysLeft && wantViewModel.getDaysLeft() > 0 {
                 dataAccess.updateDaysLeftAsViewModel(viewModel: wantViewModel, daysLeft: expectedDaysLeft)
             }
         }
     }
-    
-    /*
-    func startTimerBasedAsyncWantsDaysLeft() {
-        /*
-        _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireCheckingOfDaysLeft), userInfo: nil, repeats: true)
-        guard self.internalTimer != nil else {
-            fatalError("Timer already intialized")
-        }*/
-        TimerProcess.sharedTimer.startTimer(withInterval: 1.0, andJob: runWantsDaysLeftCheck)
-    }
-    
-    @objc private func fireCheckingOfDaysLeft() {
-        runWantsDaysLeftCheck()
-    }*/
 }

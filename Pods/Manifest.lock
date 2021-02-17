@@ -1,4 +1,5 @@
 PODS:
+  - DLRadioButton (1.4.12)
   - QuickLayout (3.0.0)
   - Realm (10.1.4):
     - Realm/Headers (= 10.1.4)
@@ -9,22 +10,25 @@ PODS:
     - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - RealmSwift
   - SwiftEntryKit (= 1.2.7)
 
 SPEC REPOS:
   trunk:
+    - DLRadioButton
     - QuickLayout
     - Realm
     - RealmSwift
     - SwiftEntryKit
 
 SPEC CHECKSUMS:
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
   RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
 
-PODFILE CHECKSUM: 4ac2f4390757a750c951835b16624285b0fb7bd9
+PODFILE CHECKSUM: 203957207327ac9a0856271b7814025e22ff51fd
 
 COCOAPODS: 1.10.0
