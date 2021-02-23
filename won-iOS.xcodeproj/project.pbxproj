@@ -60,6 +60,7 @@
 		21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */; };
 		21C947FD258C66B9009D0279 /* WantExactDetailsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */; };
 		21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C947FE2591A7BE009D0279 /* WantViewModel.swift */; };
+		21F41E0125E5C9A000EABAD7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F41E0025E5C9A000EABAD7 /* StringExtension.swift */; };
 		21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7B725CA5E1D0082DE0E /* PresetsDataSource.swift */; };
 		21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7BC25CA5E990082DE0E /* PresetDescription.swift */; };
 		21F6B7C825CA5FAE0082DE0E /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7C725CA5FAE0082DE0E /* UIColor+Utils.swift */; };
@@ -146,6 +147,7 @@
 		21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceivingVCProtocol.swift; sourceTree = "<group>"; };
 		21C947FC258C66B9009D0279 /* WantExactDetailsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVC.swift; sourceTree = "<group>"; };
 		21C947FE2591A7BE009D0279 /* WantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModel.swift; sourceTree = "<group>"; };
+		21F41E0025E5C9A000EABAD7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		21F6B7B725CA5E1D0082DE0E /* PresetsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsDataSource.swift; sourceTree = "<group>"; };
 		21F6B7BC25CA5E990082DE0E /* PresetDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDescription.swift; sourceTree = "<group>"; };
 		21F6B7C725CA5FAE0082DE0E /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		212F3280259A8692006218B4 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				21F41DFF25E5C98A00EABAD7 /* extensions */,
 				21F6B7B625CA5DA80082DE0E /* swiftEntryKit */,
 				212E8800259ADE4500EE2046 /* date */,
 				21713C2D259AC48200E4A503 /* DateUtils.swift */,
@@ -461,6 +464,14 @@
 			path = OrganizeWants;
 			sourceTree = "<group>";
 		};
+		21F41DFF25E5C98A00EABAD7 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21F41E0025E5C9A000EABAD7 /* StringExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		21F6B7B625CA5DA80082DE0E /* swiftEntryKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +733,7 @@
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				21F6B7DB25CB7CD10082DE0E /* EditWantVC.swift in Sources */,
 				212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */,
+				21F41E0125E5C9A000EABAD7 /* StringExtension.swift in Sources */,
 				217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */,
 				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,
 				215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */,
