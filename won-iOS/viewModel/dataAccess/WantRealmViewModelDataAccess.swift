@@ -22,6 +22,24 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         return wantViewModels
     }
     
+    func findSortedWants(sortType: WantSortType, sortOrder: WantSortOrder) -> [WantViewModel] {
+        if sortType == WantSortType.BY_AGE && sortOrder == WantSortOrder.ASCENDING {
+            return findAllWants().sorted(by: {$0.getDateCreated() < $1.getDateCreated()})
+        }
+        else if sortType == WantSortType.BY_AGE && sortOrder == WantSortOrder.DESCENDING {
+            return findAllWants().sorted(by: {$0.getDateCreated() > $1.getDateCreated()})
+        }
+        else if sortType == WantSortType.BY_INTEREST_POINTS && sortOrder == WantSortOrder.ASCENDING {
+            return findAllWants().sorted(by: {$0.getPoints() < $1.getPoints()})
+        }
+        else if sortType == WantSortType.BY_INTEREST_POINTS && sortOrder == WantSortOrder.DESCENDING {
+            return findAllWants().sorted(by: {$0.getPoints() > $1.getPoints()})
+        }
+        else {
+            return findAllWants()
+        }
+    }
+    
     private func prepareWantViewModel(want: Want) -> WantViewModel {
         let wantViewModelBuilder = WantViewModelBuilder()
         let wantViewModel = wantViewModelBuilder.withId(id: want.getId())

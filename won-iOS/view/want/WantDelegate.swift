@@ -13,6 +13,9 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     
     weak var delegate: VCDelegate?
     
+    private var sortType = WantSortType.DEFAULT
+    private var sortOrder = WantSortOrder.DEFAULT
+    
     // #2
     init(withDelegate delegate: VCDelegate) {
         self.delegate = delegate
@@ -21,14 +24,14 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     // #3
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if delegate != nil {
-            let presentedWantViewModels = findAllWants()
+            let presentedWantViewModels = findSortedWants(sortType: sortType, sortOrder: sortOrder)
             self.delegate?.selectedCell(sender: presentedWantViewModels[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            let presentedWants = self.findAllWants()
+            let presentedWants = self.findSortedWants(sortType: self.sortType, sortOrder: self.sortOrder)
             self.deleteAsViewModel(viewModel: presentedWants[indexPath.row])
         }
 
@@ -39,5 +42,13 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
 
         share.backgroundColor = UIColor.lightGray
         return [delete, share]
+    }
+    
+    func setSortType(sortType: WantSortType) {
+        self.sortType = sortType
+    }
+    
+    func setSortOrder(sortOrder: WantSortOrder) {
+        self.sortOrder = sortOrder
     }
 }
