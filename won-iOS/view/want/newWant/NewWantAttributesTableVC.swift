@@ -53,12 +53,12 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
     
     @objc func wantNameFieldDidChange(_ textField: UITextField) {
         didEditWantNameField?(wantNameField.text!)
-        isCheckButtonEnabled?(areTextFieldsNotEmpty())
+        isCheckButtonEnabled?(areTextFieldsValid())
     }
     
     @objc func wantInterestPointsFieldDidChange(_ textField: UITextField) {
         didEditWantInterestPointsField?(wantInterestPointsField.text!)
-        isCheckButtonEnabled?(areTextFieldsNotEmpty())
+        isCheckButtonEnabled?(areTextFieldsValid())
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -80,8 +80,16 @@ class NewWantAttributesTableVC: UITableViewController, UIImagePickerControllerDe
         dismiss(animated: true, completion: nil)
     }
     
-    func areTextFieldsNotEmpty() -> Bool {
-        if !self.wantNameField.text!.isEmpty && !self.wantInterestPointsField.text!.isEmpty {
+    private func areTextFieldsNotEmpty() -> Bool {
+        return !self.wantNameField.text!.isEmpty && !self.wantInterestPointsField.text!.isEmpty
+    }
+    
+    private func isInterestPointsValid() -> Bool {
+        return self.wantInterestPointsField.text!.isNumeric && (self.wantInterestPointsField.text!.count < 3)
+    }
+    
+    func areTextFieldsValid() -> Bool {
+        if areTextFieldsNotEmpty() && isInterestPointsValid() {
             return true
         }
         return false
