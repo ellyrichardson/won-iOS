@@ -11,6 +11,8 @@ import RealmSwift
 
 class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
     private final let WANT_TABLE_VIEW_CELL = "wantTVCell"
+    private var sortType = WantSortType.DEFAULT
+    private var sortOrder = WantSortOrder.DEFAULT
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return findAllWants().count
@@ -24,9 +26,17 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WANT_TABLE_VIEW_CELL, for: indexPath) as? WantTVCell else {
             fatalError("The dequeued cell is not an instance of WantTVCell.")
         }
-        let results = findAllWants()
+        let results = findSortedWants(sortType: sortType, sortOrder: sortOrder)
         let wantViewModel = results[indexPath.row]
         wantViewModel.configureTableViewCell(cell: cell)
         return cell
+    }
+    
+    func setSortType(sortType: WantSortType) {
+        self.sortType = sortType
+    }
+    
+    func setSortOrder(sortOrder: WantSortOrder) {
+        self.sortOrder = sortOrder
     }
 }

@@ -8,8 +8,10 @@
 
 import UIKit
 import RealmSwift
+import SwiftEntryKit
 
-class WantVC: UIViewController, VCDelegate {
+class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol {
+    
     private let SHOW_WANT_DETAILS_SEGUE = "showWantDetails"
     
     @IBOutlet weak var wantImageView: UIImageView!
@@ -50,6 +52,10 @@ class WantVC: UIViewController, VCDelegate {
         self.wantsTableView.reloadData()
     }
     
+    func action(sender: Any) {
+        // Write some stuff here
+    }
+    
     private func updateTableView(deletions: [Int], insertions: [Int], modifications: [Int]) {
         self.wantsTableView.beginUpdates()
         // Always apply updates in the following order: deletions, insertions, then modifications.
@@ -83,5 +89,40 @@ class WantVC: UIViewController, VCDelegate {
             wantDetailsVC.setWantViewModel(wantViewModel: sender as! WantViewModel)
         }
         TimerProcess.sharedTimer.pauseTimer()
+    }
+    
+    @IBAction func sortWantsBtnPressed(_ sender: CircleButton) {
+        let vc = SortWantsVC()
+        vc.setDelegate(delegate: self)
+        SwiftEntryKit.display(entry: vc, using: PresetsDataSource.getPopupPreset())
+    }
+    
+    func passData(data: Any) {
+        if let passedData = data as? [Any] {
+            updateDataSourceForSorting(sortConfig: passedData)
+        }
+    }
+    
+    private func updateDataSourceForSorting(sortConfig: [Any]) {
+        var sortType: WantSortType?
+        var sortOrder: WantSortOrder?
+        if let configType = sortConfig[0] as? WantSortType {
+            sortType = configType
+        }
+        if let configOrder = sortConfig[1] as? WantSortOrder {
+            sortOrder = configOrder
+        }
+        
+        if sortType != nil && sortOrder != nil {
+            self.dataSource.setSortType(sortType: sortType!)
+            self.dataSource.setSortOrder(sortOrder: sortOrder!)
+            self.delegate?.setSortType(sortType: sortType!)
+            self.delegate?.setSortOrder(sortOrder: sortOrder!)
+            self.wantsTableView.delegate  = self.delegate
+            self.wantsTableView.dataSource = self.dataSource
+            self.wantsTableView.reloadData()
+        } else {
+            print("sortType or sortOrder was nil")
+        }
     }
 }

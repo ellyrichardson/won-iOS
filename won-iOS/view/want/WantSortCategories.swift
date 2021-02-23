@@ -8,14 +8,16 @@
 
 import Foundation
 
-enum WantSortTypes {
+enum WantSortType {
     //case byName
-    case defaultSort
-    case byAge
-    case byInterestPoints
+    //case defaultSort
+    case BY_AGE
+    case BY_INTEREST_POINTS
+    case DEFAULT
 }
 
-enum WantSortOrders {
-    case descOrder
-    case ascOrder
+enum WantSortOrder {
+    case DESCENDING
+    case ASCENDING
+    case DEFAULT
 }
