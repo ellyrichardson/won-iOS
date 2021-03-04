@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SwiftEntryKit
 
-class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol {
+class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBarDelegate {
     
     private let SHOW_WANT_DETAILS_SEGUE = "showWantDetails"
     
@@ -22,6 +22,8 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol {
     private let dataSource = WantDataSource()
     private var delegate: WantDelegate?
     private var notificationToken: NotificationToken? = nil
+    private var wantNameFilter = "" // CAN REMOVE
+    @IBOutlet weak var wantsSearchBar: UISearchBar!
     
     lazy var wantRealmManager: WantRealmManager = {
         let manager = WantRealmManager(dataSource: dataSource)
@@ -37,11 +39,13 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol {
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        notificationToken = wantRealmManager.createNotificationToken(initialAction: {
+        /*notificationToken = wantRealmManager.createNotificationToken(wantNameFilter: wantNameFilter, initialAction: {
             self.wantsTableView.reloadData()
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
-        })
+        })*/
+        notificationToken = createWantRealmNotificationToken()
+        wantsSearchBar.delegate = self
         addWantButton.contentMode = .center
         addWantButton.imageView?.contentMode = .scaleAspectFit
     }
@@ -124,5 +128,30 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol {
         } else {
             print("sortType or sortOrder was nil")
         }
+    }
+    
+    func createWantRealmNotificationToken() -> NotificationToken {
+        return wantRealmManager.createNotificationToken(wantNameFilter: wantNameFilter, initialAction: {
+            self.wantsTableView.reloadData()
+        }, primaryAction: {deletions,insertions,modifications in
+            self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
+        })
+    }
+    
+    /*
+     Create a ui search bar
+     
+     use this view as delegate
+     
+     add 
+     
+     */
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.wantNameFilter = searchText
+        self.dataSource.setNameFilter(nameFilter: searchText)
+        self.delegate?.setNameFilter(nameFilter: searchText)
+        self.notificationToken = createWantRealmNotificationToken()
+        self.wantsTableView.reloadData()
     }
 }

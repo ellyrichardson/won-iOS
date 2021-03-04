@@ -40,6 +40,12 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
         }
     }
     
+    func findWantsFilteredByName(wantName: String) -> [WantViewModel] {
+        return findAllWants().filter({(wantData: WantViewModel) -> Bool in
+            return wantData.getName().range(of: wantName, options: .caseInsensitive) != nil
+        })
+    }
+    
     private func prepareWantViewModel(want: Want) -> WantViewModel {
         let wantViewModelBuilder = WantViewModelBuilder()
         let wantViewModel = wantViewModelBuilder.withId(id: want.getId())
