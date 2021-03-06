@@ -21,6 +21,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
     
     private let dataSource = WantDataSource()
     private var delegate: WantDelegate?
+    private var sortConfig = [Any]()
     private var notificationToken: NotificationToken? = nil
     private var wantNameFilter = "" // CAN REMOVE
     @IBOutlet weak var wantsSearchBar: UISearchBar!
@@ -44,6 +45,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
         })*/
+        setupInitialSortConfig()
         notificationToken = createWantRealmNotificationToken()
         wantsSearchBar.delegate = self
         addWantButton.contentMode = .center
@@ -103,17 +105,18 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
     
     func passData(data: Any) {
         if let passedData = data as? [Any] {
-            updateDataSourceForSorting(sortConfig: passedData)
+            self.sortConfig = passedData
+            updateDataSourceForSorting()
         }
     }
     
-    private func updateDataSourceForSorting(sortConfig: [Any]) {
+    private func updateDataSourceForSorting() {
         var sortType: WantSortType?
         var sortOrder: WantSortOrder?
-        if let configType = sortConfig[0] as? WantSortType {
+        if let configType = self.sortConfig[0] as? WantSortType {
             sortType = configType
         }
-        if let configOrder = sortConfig[1] as? WantSortOrder {
+        if let configOrder = self.sortConfig[1] as? WantSortOrder {
             sortOrder = configOrder
         }
         
@@ -128,10 +131,17 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         } else {
             print("sortType or sortOrder was nil")
         }
+        // Updates the current notificationToken to have the sorting configs
+        self.notificationToken = createWantRealmNotificationToken()
+    }
+    
+    private func setupInitialSortConfig() {
+        self.sortConfig.append(WantSortType.DEFAULT)
+        self.sortConfig.append(WantSortOrder.DEFAULT)
     }
     
     func createWantRealmNotificationToken() -> NotificationToken {
-        return wantRealmManager.createNotificationToken(wantNameFilter: wantNameFilter, initialAction: {
+        return wantRealmManager.createNotificationToken(sortConfig: self.sortConfig, wantNameFilter: wantNameFilter, initialAction: {
             self.wantsTableView.reloadData()
         }, primaryAction: {deletions,insertions,modifications in
             self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
@@ -151,6 +161,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         self.wantNameFilter = searchText
         self.dataSource.setNameFilter(nameFilter: searchText)
         self.delegate?.setNameFilter(nameFilter: searchText)
+        // Updates the current notificationToken to have the filter
         self.notificationToken = createWantRealmNotificationToken()
         self.wantsTableView.reloadData()
     }
