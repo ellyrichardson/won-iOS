@@ -19,11 +19,13 @@ struct WantRealmManager {
     }
     
     // This observes changes in realm collection and updates the tableview it needs to update accordingly. These changes are deletions, insetions, and modifications to a tableView
-    func createNotificationToken(wantNameFilter: String, initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
+    func createNotificationToken(sortConfig: [Any], wantNameFilter: String, initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
         //let results = dataSource?.findResultsOfType(type: Want.self)
         //let results = dataSource?.findResultsOfType(type: Want.self).filter("ANY name.contains(" + wantNameFilter + ")")
-        let results = filterResult(wantName: wantNameFilter, results: (dataSource?.findResultsOfType(type: Want.self))!)
+        let filteredResults = filterResult(wantName: wantNameFilter, results: (dataSource?.findResultsOfType(type: Want.self))!)
         //results!
+        
+        let results = checkForSortingResults(sortConfig: sortConfig, results: filteredResults)
         
         let token = results.observe { (changes: RealmCollectionChange) in
             switch changes {
@@ -39,7 +41,41 @@ struct WantRealmManager {
         return token
     }
     
-    // CAN REMOVE
+    private func checkForSortingResults(sortConfig: [Any], results: Results<Want>) -> Results<Want> {
+        var sortType: WantSortType?
+        var sortOrder: WantSortOrder?
+        if let configType = sortConfig[0] as? WantSortType {
+            sortType = configType
+        }
+        if let configOrder = sortConfig[1] as? WantSortOrder {
+            sortOrder = configOrder
+        }
+        
+        if sortType != nil && sortOrder != nil {
+            //results.sorted(by: {$0.getDateCreated() < $1.getDateCreated()})
+            return sortResults(sortType: sortType!, sortOrder: sortOrder!, results: results)
+        } else {
+            //print("sortType or sortOrder was nil")
+            return results
+        }
+    }
+    
+    private func sortResults(sortType: WantSortType, sortOrder: WantSortOrder, results: Results<Want>) -> Results<Want> {
+        if sortType == WantSortType.BY_AGE && sortOrder == WantSortOrder.ASCENDING {
+            return results.sorted(byKeyPath: "dateCreated", ascending: true)
+        }
+        else if sortType == WantSortType.BY_AGE && sortOrder == WantSortOrder.DESCENDING {
+            return results.sorted(byKeyPath: "dateCreated", ascending: false)
+        }
+        else if sortType == WantSortType.BY_INTEREST_POINTS && sortOrder == WantSortOrder.ASCENDING {
+            return results.sorted(byKeyPath: "points", ascending: true)
+        }
+        else if sortType == WantSortType.BY_INTEREST_POINTS && sortOrder == WantSortOrder.DESCENDING {
+            return results.sorted(byKeyPath: "points", ascending: false)
+        }
+        return results
+    }
+    
     private func filterResult(wantName: String, results: Results<Want>) -> Results<Want> {
         if !wantName.isEmpty {
             //return results.filter("ANY name.contains(" + wantName + ")")
