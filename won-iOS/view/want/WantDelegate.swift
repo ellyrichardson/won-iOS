@@ -15,6 +15,7 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     
     private var sortType = WantSortType.DEFAULT
     private var sortOrder = WantSortOrder.DEFAULT
+    private var nameFilter = ""
     
     // #2
     init(withDelegate delegate: VCDelegate) {
@@ -24,14 +25,24 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     // #3
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if delegate != nil {
-            let presentedWantViewModels = findSortedWants(sortType: sortType, sortOrder: sortOrder)
+            var presentedWantViewModels: [WantViewModel]!
+            if !nameFilter.isEmpty {
+                presentedWantViewModels = findWantsFilteredByName(wantName: nameFilter)
+            } else {
+                presentedWantViewModels = findSortedWants(sortType: sortType, sortOrder: sortOrder)
+            }
             self.delegate?.selectedCell(sender: presentedWantViewModels[indexPath.row])
         }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            let presentedWants = self.findSortedWants(sortType: self.sortType, sortOrder: self.sortOrder)
+            var presentedWants: [WantViewModel]!
+            if !self.nameFilter.isEmpty {
+                presentedWants = self.findWantsFilteredByName(wantName: self.nameFilter)
+            } else {
+                presentedWants = self.findSortedWants(sortType: self.sortType, sortOrder: self.sortOrder)
+            }
             self.deleteAsViewModel(viewModel: presentedWants[indexPath.row])
         }
 
@@ -50,5 +61,9 @@ class WantDelegate : WantRealmViewModelDataAccess, UITableViewDelegate {
     
     func setSortOrder(sortOrder: WantSortOrder) {
         self.sortOrder = sortOrder
+    }
+    
+    func setNameFilter(nameFilter: String) {
+        self.nameFilter = nameFilter
     }
 }

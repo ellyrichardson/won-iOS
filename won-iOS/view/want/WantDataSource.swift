@@ -13,9 +13,14 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
     private final let WANT_TABLE_VIEW_CELL = "wantTVCell"
     private var sortType = WantSortType.DEFAULT
     private var sortOrder = WantSortOrder.DEFAULT
+    private var nameFilter = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return findAllWants().count
+        if !nameFilter.isEmpty {
+            return findWantsFilteredByName(wantName: nameFilter).count
+        } else {
+            return findAllWants().count
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -26,9 +31,16 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WANT_TABLE_VIEW_CELL, for: indexPath) as? WantTVCell else {
             fatalError("The dequeued cell is not an instance of WantTVCell.")
         }
-        let results = findSortedWants(sortType: sortType, sortOrder: sortOrder)
-        let wantViewModel = results[indexPath.row]
-        wantViewModel.configureTableViewCell(cell: cell)
+        if !nameFilter.isEmpty {
+            // do nothing for now
+            let results = findWantsFilteredByName(wantName: nameFilter)
+            let wantViewModel = results[indexPath.row]
+            wantViewModel.configureTableViewCell(cell: cell)
+        } else {
+            let results = findSortedWants(sortType: sortType, sortOrder: sortOrder)
+            let wantViewModel = results[indexPath.row]
+            wantViewModel.configureTableViewCell(cell: cell)
+        }
         return cell
     }
     
@@ -38,5 +50,9 @@ class WantDataSource: WantRealmViewModelDataAccess, UITableViewDataSource {
     
     func setSortOrder(sortOrder: WantSortOrder) {
         self.sortOrder = sortOrder
+    }
+    
+    func setNameFilter(nameFilter: String) {
+        self.nameFilter = nameFilter
     }
 }

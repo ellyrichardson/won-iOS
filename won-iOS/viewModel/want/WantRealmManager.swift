@@ -18,9 +18,14 @@ struct WantRealmManager {
         self.dataSource = dataSource
     }
     
-    func createNotificationToken(initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
-        let results = dataSource?.findResultsOfType(type: Want.self)
-        let token = results!.observe { (changes: RealmCollectionChange) in
+    // This observes changes in realm collection and updates the tableview it needs to update accordingly. These changes are deletions, insetions, and modifications to a tableView
+    func createNotificationToken(wantNameFilter: String, initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
+        //let results = dataSource?.findResultsOfType(type: Want.self)
+        //let results = dataSource?.findResultsOfType(type: Want.self).filter("ANY name.contains(" + wantNameFilter + ")")
+        let results = filterResult(wantName: wantNameFilter, results: (dataSource?.findResultsOfType(type: Want.self))!)
+        //results!
+        
+        let token = results.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial(_):
                 initialAction()
@@ -32,5 +37,14 @@ struct WantRealmManager {
             }
         }
         return token
+    }
+    
+    // CAN REMOVE
+    private func filterResult(wantName: String, results: Results<Want>) -> Results<Want> {
+        if !wantName.isEmpty {
+            //return results.filter("ANY name.contains(" + wantName + ")")
+            return results.filter("name contains[c] %@", wantName)
+        }
+        return results
     }
 }
