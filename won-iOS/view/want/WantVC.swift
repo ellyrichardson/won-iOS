@@ -33,7 +33,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.hideKeyboardWhenTappedAround()
         self.delegate = WantDelegate(withDelegate: self)
         self.wantsTableView.dataSource = self.dataSource
         //self.dataSource.deleteAll()
@@ -98,6 +98,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
     }
     
     @IBAction func sortWantsBtnPressed(_ sender: CircleButton) {
+        self.hideKeyboard() // Hides keyboard if it is present
         let vc = SortWantsVC()
         vc.setDelegate(delegate: self)
         SwiftEntryKit.display(entry: vc, using: PresetsDataSource.getPopupPreset())

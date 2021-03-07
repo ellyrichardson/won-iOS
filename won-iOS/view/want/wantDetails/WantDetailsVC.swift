@@ -49,6 +49,7 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
     }
     
     @IBAction func optionsBtnPressed(_ sender: UIButton) {
+        self.hideKeyboard() // Hides keyboard if it is present
         let vc = EditWantVC()
         vc.detachedVCDelegate = self
         vc.setWantViewModel(wantViewModel: wantViewModel!)
