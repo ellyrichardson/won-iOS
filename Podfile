@@ -8,6 +8,8 @@ target 'won-iOS' do
   pod 'RealmSwift'
   pod 'SwiftEntryKit', '1.2.7'
   pod 'DLRadioButton', '~> 1.4'
+  pod 'Quick'
+  pod 'Nimble'
   # Pods for won-iOS
 
   #target 'won-iOS' do

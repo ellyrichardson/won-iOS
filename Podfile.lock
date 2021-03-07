@@ -1,5 +1,7 @@
 PODS:
   - DLRadioButton (1.4.12)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
   - QuickLayout (3.0.0)
   - Realm (10.1.4):
     - Realm/Headers (= 10.1.4)
@@ -11,12 +13,16 @@ PODS:
 
 DEPENDENCIES:
   - DLRadioButton (~> 1.4)
+  - Nimble
+  - Quick
   - RealmSwift
   - SwiftEntryKit (= 1.2.7)
 
 SPEC REPOS:
   trunk:
     - DLRadioButton
+    - Nimble
+    - Quick
     - QuickLayout
     - Realm
     - RealmSwift
@@ -24,11 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
   RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
 
-PODFILE CHECKSUM: 203957207327ac9a0856271b7814025e22ff51fd
+PODFILE CHECKSUM: e768b56ba26b6ffc31a896ec3beaf15f763abca1
 
 COCOAPODS: 1.10.0
