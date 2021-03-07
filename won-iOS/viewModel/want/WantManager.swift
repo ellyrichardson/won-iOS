@@ -22,4 +22,8 @@ class WantManager {
             }
         }
     }
+    
+    func setDataAccess(dataAccess: WantRealmViewModelDataAccessProtocol) {
+        self.dataAccess = dataAccess as! WantRealmViewModelDataAccess
+    }
 }

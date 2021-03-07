@@ -10,6 +10,7 @@
 		05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */; };
 		212E8802259ADE4500EE2046 /* DateTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */; };
 		212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */; };
+		213BDD6D25F551E5005F3B21 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */; };
 		215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */; };
 		215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A92578796800C556D0 /* NewWantVC.swift */; };
 		215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AB25787C1600C556D0 /* WantDetailsVC.swift */; };
@@ -44,6 +45,10 @@
 		217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9F125BCA23F008A4C53 /* OvalButton.swift */; };
 		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
 		21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */; };
+		21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */; };
+		21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */; };
+		21A5D78D25F4915D008CF0A7 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78C25F4915D008CF0A7 /* UISearchBarExtension.swift */; };
+		21A5D7A625F54F1A008CF0A7 /* won-iOSSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
 		21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */; };
@@ -91,6 +96,7 @@
 		054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.release.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeFunctions.swift; sourceTree = "<group>"; };
 		212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModelBuilder.swift; sourceTree = "<group>"; };
+		213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmDataAccess.swift; sourceTree = "<group>"; };
 		215F19A92578796800C556D0 /* NewWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantVC.swift; sourceTree = "<group>"; };
 		215F19AB25787C1600C556D0 /* WantDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsVC.swift; sourceTree = "<group>"; };
@@ -131,6 +137,10 @@
 		217AD9F125BCA23F008A4C53 /* OvalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
 		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
 		21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVCDelegate.swift; sourceTree = "<group>"; };
+		21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		21A5D78C25F4915D008CF0A7 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
+		21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "won-iOSSpecs.swift"; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
 		21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotificationsVC.swift; sourceTree = "<group>"; };
@@ -310,6 +320,7 @@
 		217832CC2558874100E0AAD6 /* won-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				21A5D7A425F54EF9008CF0A7 /* ViewModelTests */,
 				217832CD2558874100E0AAD6 /* won_iOSTests.swift */,
 				217832CF2558874100E0AAD6 /* Info.plist */,
 			);
@@ -455,6 +466,14 @@
 			path = exact;
 			sourceTree = "<group>";
 		};
+		21A5D7A425F54EF9008CF0A7 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
 		21BC787B25DC9625003B77F5 /* OrganizeWants */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +487,10 @@
 			isa = PBXGroup;
 			children = (
 				21F41E0025E5C9A000EABAD7 /* StringExtension.swift */,
+				21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */,
+				21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */,
+				21A5D78C25F4915D008CF0A7 /* UISearchBarExtension.swift */,
+				213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -686,9 +709,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				217832B82558873C00E0AAD6 /* ViewController.swift in Sources */,
+				21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */,
 				21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */,
 				21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */,
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
+				21A5D78D25F4915D008CF0A7 /* UISearchBarExtension.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
 				21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */,
@@ -713,10 +738,12 @@
 				21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
+				21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
 				21BC787425DC951A003B77F5 /* WantSortCategories.swift in Sources */,
 				21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */,
 				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
+				213BDD6D25F551E5005F3B21 /* UIViewControllerExtension.swift in Sources */,
 				21BC786725D9DD24003B77F5 /* WantNotificationsManager.swift in Sources */,
 				217832B42558873C00E0AAD6 /* AppDelegate.swift in Sources */,
 				217832F82569CAF600E0AAD6 /* WantBuilder.swift in Sources */,
@@ -745,6 +772,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A5D7A625F54F1A008CF0A7 /* won-iOSSpecs.swift in Sources */,
 				217832CE2558874100E0AAD6 /* won_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
