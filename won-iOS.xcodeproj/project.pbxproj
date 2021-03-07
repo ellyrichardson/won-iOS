@@ -44,6 +44,9 @@
 		217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9F125BCA23F008A4C53 /* OvalButton.swift */; };
 		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
 		21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */; };
+		21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */; };
+		21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */; };
+		21A5D78D25F4915D008CF0A7 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78C25F4915D008CF0A7 /* UISearchBar.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
 		21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */; };
@@ -131,6 +134,9 @@
 		217AD9F125BCA23F008A4C53 /* OvalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
 		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
 		21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVCDelegate.swift; sourceTree = "<group>"; };
+		21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		21A5D78C25F4915D008CF0A7 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
 		21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotificationsVC.swift; sourceTree = "<group>"; };
@@ -468,6 +474,9 @@
 			isa = PBXGroup;
 			children = (
 				21F41E0025E5C9A000EABAD7 /* StringExtension.swift */,
+				21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */,
+				21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */,
+				21A5D78C25F4915D008CF0A7 /* UISearchBar.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -686,9 +695,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				217832B82558873C00E0AAD6 /* ViewController.swift in Sources */,
+				21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */,
 				21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */,
 				21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */,
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
+				21A5D78D25F4915D008CF0A7 /* UISearchBar.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
 				215F19B02579DC6100C556D0 /* WantDetailsTableVC.swift in Sources */,
 				21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */,
@@ -713,6 +724,7 @@
 				21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
+				21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
 				21BC787425DC951A003B77F5 /* WantSortCategories.swift in Sources */,
 				21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */,
