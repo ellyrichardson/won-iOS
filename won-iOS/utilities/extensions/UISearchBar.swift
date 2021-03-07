@@ -9,6 +9,7 @@
 import UIKit
 
 extension UISearchBar{
+    // For the DONE button on top of the Keyboard
     @IBInspectable var doneAccessory: Bool{
         get{
             return self.doneAccessory
