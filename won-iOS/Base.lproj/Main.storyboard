@@ -236,13 +236,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-Nt-bnq" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="285" y="5" width="48" height="48"/>
+                                        <rect key="frame" x="326" y="5" width="48" height="48"/>
                                         <color key="backgroundColor" name="won-light-blue"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Lkp-3Y-rWy"/>
-                                            <constraint firstAttribute="height" constant="48" id="jBc-vV-mqL"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="jnx-7M-sQK"/>
-                                            <constraint firstAttribute="width" constant="48" id="vNL-8s-MiX"/>
+                                            <constraint firstAttribute="height" constant="48" id="7jd-mh-qia"/>
+                                            <constraint firstAttribute="width" constant="48" id="Tom-3x-mRD"/>
                                         </constraints>
                                         <state key="normal" image="sort-image"/>
                                         <connections>
@@ -250,11 +248,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-U8-GUz" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="201" y="5" width="48" height="48"/>
+                                        <rect key="frame" x="234" y="5" width="48" height="48"/>
                                         <color key="backgroundColor" name="won-light-blue"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Jiw-MS-4Zz"/>
-                                            <constraint firstAttribute="width" constant="48" id="jdu-V2-hGc"/>
+                                            <constraint firstAttribute="width" constant="48" id="hKN-ub-X1b"/>
+                                            <constraint firstAttribute="height" constant="48" id="rSj-iA-444"/>
                                         </constraints>
                                         <state key="normal" image="plus-image">
                                             <color key="titleShadowColor" name="won-light-blue"/>
@@ -267,13 +265,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Ned-VY-X76" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="top" id="7Lk-Yr-eSJ"/>
-                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="leading" secondItem="i2K-U8-GUz" secondAttribute="trailing" constant="36" id="PRb-vU-jkp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kg7-Nt-bnq" secondAttribute="trailing" id="GpF-hl-RWz"/>
+                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="leading" secondItem="i2K-U8-GUz" secondAttribute="trailing" constant="44" id="HxM-HN-lom"/>
                                     <constraint firstAttribute="bottom" secondItem="Ned-VY-X76" secondAttribute="bottom" id="Vv4-Gs-Dbj"/>
-                                    <constraint firstItem="i2K-U8-GUz" firstAttribute="centerY" secondItem="Pfr-x3-7YA" secondAttribute="centerY" id="XhY-6W-Nm7"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kg7-Nt-bnq" secondAttribute="trailing" constant="41" id="gXq-Yz-S1c"/>
+                                    <constraint firstItem="i2K-U8-GUz" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="top" constant="5" id="h1c-cC-ocG"/>
                                     <constraint firstItem="Ned-VY-X76" firstAttribute="leading" secondItem="Pfr-x3-7YA" secondAttribute="leading" id="hoF-13-jLn"/>
-                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="centerY" secondItem="Pfr-x3-7YA" secondAttribute="centerY" id="lLc-Wo-tut"/>
                                     <constraint firstAttribute="width" constant="374" id="nqM-dx-umB"/>
+                                    <constraint firstItem="Kg7-Nt-bnq" firstAttribute="top" secondItem="Pfr-x3-7YA" secondAttribute="top" constant="5" id="qOJ-yc-YX0"/>
                                     <constraint firstAttribute="height" constant="58" id="tXE-Ma-fCz"/>
                                 </constraints>
                             </view>
@@ -287,6 +285,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wantTVCell" rowHeight="102" id="NxO-BI-gIN" customClass="WantTVCell" customModule="won_iOS" customModuleProvider="target">
@@ -424,9 +425,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INh-dE-uc0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INh-dE-uc0">
                                 <rect key="frame" x="20" y="56" width="374" height="806"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-Hc-Cwa">
                                         <rect key="frame" x="0.0" y="54" width="374" height="752"/>
@@ -435,9 +435,12 @@
                                             <segue destination="Xfu-Oa-dzs" kind="embed" identifier="detailsTableViewSegue" id="tB9-21-ndT"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-jt-F7m" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="318" y="4" width="48" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-jt-F7m" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="326" y="5" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="D8o-g6-Rlf"/>
+                                            <constraint firstAttribute="width" constant="48" id="m8g-5w-N6K"/>
+                                        </constraints>
                                         <state key="normal" image="trash-bin-image"/>
                                         <connections>
                                             <action selector="deleteBtnPressed:" destination="7Wr-f6-zoU" eventType="touchUpInside" id="m5C-bb-dHJ"/>
@@ -455,9 +458,12 @@
                                             <action selector="dismissPageBtnPressed:" destination="7Wr-f6-zoU" eventType="touchUpInside" id="P0U-M0-1EH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-xy-Tg1" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="236" y="3" width="48" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TV-xy-Tg1" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="234" y="5" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="rb8-Dp-mhV"/>
+                                            <constraint firstAttribute="width" constant="48" id="sDc-IS-wg6"/>
+                                        </constraints>
                                         <state key="normal" image="pencil-image"/>
                                         <connections>
                                             <action selector="optionsBtnPressed:" destination="7Wr-f6-zoU" eventType="touchUpInside" id="rYX-cl-kz0"/>
@@ -465,10 +471,22 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="P6h-jt-F7m" secondAttribute="trailing" id="0eh-j7-QSn"/>
+                                    <constraint firstItem="1TV-xy-Tg1" firstAttribute="top" secondItem="INh-dE-uc0" secondAttribute="top" constant="5" id="8mz-2w-XC8"/>
+                                    <constraint firstItem="P6h-jt-F7m" firstAttribute="leading" secondItem="1TV-xy-Tg1" secondAttribute="trailing" constant="44" id="tgl-Yl-WkA"/>
+                                    <constraint firstItem="P6h-jt-F7m" firstAttribute="top" secondItem="INh-dE-uc0" secondAttribute="top" constant="5" id="xuq-8Y-3w4"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hrh-Y9-ncw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="INh-dE-uc0" firstAttribute="leading" secondItem="Hrh-Y9-ncw" secondAttribute="leading" constant="20" id="1BN-vP-R3K"/>
+                            <constraint firstItem="Hrh-Y9-ncw" firstAttribute="trailing" secondItem="INh-dE-uc0" secondAttribute="trailing" constant="20" id="6O0-gb-kgp"/>
+                            <constraint firstItem="INh-dE-uc0" firstAttribute="top" secondItem="RD8-sv-pi8" secondAttribute="top" constant="56" id="Uc6-6C-Jh5"/>
+                            <constraint firstItem="INh-dE-uc0" firstAttribute="bottom" secondItem="Hrh-Y9-ncw" secondAttribute="bottom" id="jO5-cy-xTa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1uI-pO-voc"/>
                     <connections>
@@ -668,6 +686,9 @@
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -744,6 +765,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -771,6 +795,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-z5-FYV" customClass="CircleButton" customModule="won_iOS" customModuleProvider="target">
                                                     <rect key="frame" x="321" y="24" width="25" height="24"/>
@@ -1235,6 +1262,9 @@
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" name="won-light-orange"/>
