@@ -1,7 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-won-iOS/Pods-won-iOS-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework
-${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
-${BUILT_PRODUCTS_DIR}/Quick/Quick.framework
 ${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
 ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework

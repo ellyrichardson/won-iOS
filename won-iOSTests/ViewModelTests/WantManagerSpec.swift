@@ -8,8 +8,10 @@
 
 import Quick
 import Nimble
-@testable import WantManager
+@testable import won_iOS
 
-class WonSpecs: QuickSpec {
-    
+class WantManagerSpec: QuickSpec {
+    override func spec() {
+        
+    }
 }
