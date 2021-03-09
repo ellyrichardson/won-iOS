@@ -48,7 +48,7 @@
 		21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */; };
 		21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */; };
 		21A5D78D25F4915D008CF0A7 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78C25F4915D008CF0A7 /* UISearchBarExtension.swift */; };
-		21A5D7A625F54F1A008CF0A7 /* won-iOSSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */; };
+		21A5D7A625F54F1A008CF0A7 /* WantManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D7A525F54F1A008CF0A7 /* WantManagerSpec.swift */; };
 		21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */; };
 		21A6692A258058D600A75F2C /* NewWantNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A66929258058D600A75F2C /* NewWantNotesVC.swift */; };
 		21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */; };
@@ -73,6 +73,7 @@
 		21F6B7DB25CB7CD10082DE0E /* EditWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7DA25CB7CD10082DE0E /* EditWantVC.swift */; };
 		21F6B7E325CB7D460082DE0E /* EditWantVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F6B7E225CB7D460082DE0E /* EditWantVC.xib */; };
 		21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F6B7EC25CB889D0082DE0E /* DetachedVCDelegate.swift */; };
+		C2B16BAFC8E04AF889BC5472 /* Pods_won_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE675850D335A369FB1111CC /* Pods_won_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +141,7 @@
 		21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		21A5D78C25F4915D008CF0A7 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
-		21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "won-iOSSpecs.swift"; sourceTree = "<group>"; };
+		21A5D7A525F54F1A008CF0A7 /* WantManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantManagerSpec.swift; sourceTree = "<group>"; };
 		21A66927258057A800A75F2C /* NewWantAttributesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantAttributesTableVC.swift; sourceTree = "<group>"; };
 		21A66929258058D600A75F2C /* NewWantNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotesVC.swift; sourceTree = "<group>"; };
 		21BC784A25D23EDF003B77F5 /* NewWantNotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantNotificationsVC.swift; sourceTree = "<group>"; };
@@ -166,7 +167,10 @@
 		21F6B7E225CB7D460082DE0E /* EditWantVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditWantVC.xib; sourceTree = "<group>"; };
 		21F6B7EC25CB889D0082DE0E /* DetachedVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetachedVCDelegate.swift; sourceTree = "<group>"; };
 		6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.debug.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		93C1EDD2AC5F159DC8FA8DE4 /* Pods-won-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-won-iOSTests/Pods-won-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_won_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60F2946B771FC7F0546F232 /* Pods-won-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-won-iOSTests/Pods-won-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE675850D335A369FB1111CC /* Pods_won_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_won_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B16BAFC8E04AF889BC5472 /* Pods_won_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +228,13 @@
 				212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */,
 			);
 			path = builder;
+			sourceTree = "<group>";
+		};
+		213BDD8E25F712C9005F3B21 /* Packagers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packagers;
 			sourceTree = "<group>";
 		};
 		215F19B1257B2F6C00C556D0 /* dataAccess */ = {
@@ -320,6 +332,7 @@
 		217832CC2558874100E0AAD6 /* won-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				213BDD8E25F712C9005F3B21 /* Packagers */,
 				21A5D7A425F54EF9008CF0A7 /* ViewModelTests */,
 				217832CD2558874100E0AAD6 /* won_iOSTests.swift */,
 				217832CF2558874100E0AAD6 /* Info.plist */,
@@ -469,7 +482,7 @@
 		21A5D7A425F54EF9008CF0A7 /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				21A5D7A525F54F1A008CF0A7 /* won-iOSSpecs.swift */,
+				21A5D7A525F54F1A008CF0A7 /* WantManagerSpec.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -519,6 +532,8 @@
 			children = (
 				6DFA4C9367D86736A17457EB /* Pods-won-iOS.debug.xcconfig */,
 				054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */,
+				93C1EDD2AC5F159DC8FA8DE4 /* Pods-won-iOSTests.debug.xcconfig */,
+				E60F2946B771FC7F0546F232 /* Pods-won-iOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -527,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */,
+				EE675850D335A369FB1111CC /* Pods_won_iOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -557,9 +573,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 217832E02558874100E0AAD6 /* Build configuration list for PBXNativeTarget "won-iOSTests" */;
 			buildPhases = (
+				B047E0143B1FB770E030056F /* [CP] Check Pods Manifest.lock */,
 				217832C52558874100E0AAD6 /* Sources */,
 				217832C62558874100E0AAD6 /* Frameworks */,
 				217832C72558874100E0AAD6 /* Resources */,
+				C7AD73797FCB4EB43AD8F9EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -701,6 +719,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-won-iOS/Pods-won-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B047E0143B1FB770E030056F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-won-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7AD73797FCB4EB43AD8F9EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-won-iOSTests/Pods-won-iOSTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-won-iOSTests/Pods-won-iOSTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-won-iOSTests/Pods-won-iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -772,7 +829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21A5D7A625F54F1A008CF0A7 /* won-iOSSpecs.swift in Sources */,
+				21A5D7A625F54F1A008CF0A7 /* WantManagerSpec.swift in Sources */,
 				217832CE2558874100E0AAD6 /* won_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -974,6 +1031,7 @@
 		};
 		217832E12558874100E0AAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93C1EDD2AC5F159DC8FA8DE4 /* Pods-won-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -996,6 +1054,7 @@
 		};
 		217832E22558874100E0AAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E60F2946B771FC7F0546F232 /* Pods-won-iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

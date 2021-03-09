@@ -8,18 +8,20 @@ target 'won-iOS' do
   pod 'RealmSwift'
   pod 'SwiftEntryKit', '1.2.7'
   pod 'DLRadioButton', '~> 1.4'
-  pod 'Quick'
-  pod 'Nimble'
+  #pod 'Quick'
+  #pod 'Nimble'
   # Pods for won-iOS
 
   #target 'won-iOS' do
   #  pod 'RealmSwift'
   #end
 
-  #target 'won-iOSTests' do
-   # inherit! :search_paths
+  target 'won-iOSTests' do
+    inherit! :search_paths
     # Pods for testing
-  #end
+    pod 'Quick'
+    pod 'Nimble'
+  end
 
   #target 'won-iOSUITests' do
     # Pods for testing
