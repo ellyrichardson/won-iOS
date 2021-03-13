@@ -28,8 +28,51 @@ class WantManagerSpec: QuickSpec {
                     }
                 }
                 
-                it("should return 30 days") {
-                    
+                it("should return 30 days left if Want has wrong days left") {
+                    // SETUP Area
+                    let want = WantPackager.packageAsSimpleWith15DaysLeft()
+                    let wantManager = WantManager()
+                    let expectedDaysLeft = 30
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(want)
+                    }
+                    // RUN area
+                    wantManager.runWantsDaysLeftCheck()
+                    // ASSERTION area
+                    let wantFromDB = realm.objects(Want.self).last
+                    expect(wantFromDB?.daysLeft).to(be(expectedDaysLeft))
+                }
+                
+                it("should return 30 daysLeft if daysLeft is 30 in Want") {
+                    // SETUP Area
+                    let want = WantPackager.packageAsSimpleWith30DaysLeft()
+                    let wantManager = WantManager()
+                    let expectedDaysLeft = 30
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(want)
+                    }
+                    // RUN area
+                    wantManager.runWantsDaysLeftCheck()
+                    // ASSERTION area
+                    let wantFromDB = realm.objects(Want.self).last
+                    expect(wantFromDB?.daysLeft).to(be(expectedDaysLeft))
+                }
+                
+                it("should return 0 daysLeft if daysLeft is not initially assigned in Want") {
+                    // SETUP Area
+                    let want = WantPackager.packageAsSimpleWithUnspecifiedDaysLeft()
+                    let wantManager = WantManager()
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(want)
+                    }
+                    // RUN area
+                    wantManager.runWantsDaysLeftCheck()
+                    // ASSERTION area
+                    let wantFromDB = realm.objects(Want.self).last
+                    expect(wantFromDB?.daysLeft).to(be(0))
                 }
             }
         }
