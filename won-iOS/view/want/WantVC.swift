@@ -33,18 +33,11 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.hideKeyboardWhenTappedAround()
         self.delegate = WantDelegate(withDelegate: self)
         self.wantsTableView.dataSource = self.dataSource
-        //self.dataSource.deleteAll()
         self.wantsTableView.delegate = self.delegate
         self.wantsTableView.rowHeight = 102.0
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        /*notificationToken = wantRealmManager.createNotificationToken(wantNameFilter: wantNameFilter, initialAction: {
-            self.wantsTableView.reloadData()
-        }, primaryAction: {deletions,insertions,modifications in
-            self.updateTableView(deletions: deletions, insertions: insertions, modifications: modifications)
-        })*/
         setupInitialSortConfig()
         notificationToken = createWantRealmNotificationToken()
         wantsSearchBar.delegate = self

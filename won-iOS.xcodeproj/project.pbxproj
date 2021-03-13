@@ -11,6 +11,11 @@
 		212E8802259ADE4500EE2046 /* DateTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */; };
 		212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */; };
 		213BDD6D25F551E5005F3B21 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */; };
+		213BDD9325F86CED005F3B21 /* WantPackager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD9225F86CED005F3B21 /* WantPackager.swift */; };
+		213BDD9825F878F4005F3B21 /* WantRealmManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD9725F878F4005F3B21 /* WantRealmManagerSpec.swift */; };
+		213BDD9E25F9B2C1005F3B21 /* FakeVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD9D25F9B2C1005F3B21 /* FakeVCDelegate.swift */; };
+		213BDDA725FD7DA7005F3B21 /* WantModelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDDA625FD7DA7005F3B21 /* WantModelConverter.swift */; };
+		213BDDAC25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDDAB25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift */; };
 		215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */; };
 		215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19A92578796800C556D0 /* NewWantVC.swift */; };
 		215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F19AB25787C1600C556D0 /* WantDetailsVC.swift */; };
@@ -98,6 +103,11 @@
 		212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeFunctions.swift; sourceTree = "<group>"; };
 		212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModelBuilder.swift; sourceTree = "<group>"; };
 		213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		213BDD9225F86CED005F3B21 /* WantPackager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantPackager.swift; sourceTree = "<group>"; };
+		213BDD9725F878F4005F3B21 /* WantRealmManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmManagerSpec.swift; sourceTree = "<group>"; };
+		213BDD9D25F9B2C1005F3B21 /* FakeVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeVCDelegate.swift; sourceTree = "<group>"; };
+		213BDDA625FD7DA7005F3B21 /* WantModelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantModelConverter.swift; sourceTree = "<group>"; };
+		213BDDAB25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantRealmViewModelDataAccessSpec.swift; sourceTree = "<group>"; };
 		215F19A42570194200C556D0 /* BaseRealmDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmDataAccess.swift; sourceTree = "<group>"; };
 		215F19A92578796800C556D0 /* NewWantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantVC.swift; sourceTree = "<group>"; };
 		215F19AB25787C1600C556D0 /* WantDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsVC.swift; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 		212F3280259A8692006218B4 /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				213BDDA525FD7D98005F3B21 /* converter */,
 				21F41DFF25E5C98A00EABAD7 /* extensions */,
 				21F6B7B625CA5DA80082DE0E /* swiftEntryKit */,
 				212E8800259ADE4500EE2046 /* date */,
@@ -233,8 +244,25 @@
 		213BDD8E25F712C9005F3B21 /* Packagers */ = {
 			isa = PBXGroup;
 			children = (
+				213BDD9225F86CED005F3B21 /* WantPackager.swift */,
 			);
 			path = Packagers;
+			sourceTree = "<group>";
+		};
+		213BDD9C25F9B2A4005F3B21 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				213BDD9D25F9B2C1005F3B21 /* FakeVCDelegate.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		213BDDA525FD7D98005F3B21 /* converter */ = {
+			isa = PBXGroup;
+			children = (
+				213BDDA625FD7DA7005F3B21 /* WantModelConverter.swift */,
+			);
+			path = converter;
 			sourceTree = "<group>";
 		};
 		215F19B1257B2F6C00C556D0 /* dataAccess */ = {
@@ -332,6 +360,7 @@
 		217832CC2558874100E0AAD6 /* won-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				213BDD9C25F9B2A4005F3B21 /* views */,
 				213BDD8E25F712C9005F3B21 /* Packagers */,
 				21A5D7A425F54EF9008CF0A7 /* ViewModelTests */,
 				217832CD2558874100E0AAD6 /* won_iOSTests.swift */,
@@ -483,6 +512,8 @@
 			isa = PBXGroup;
 			children = (
 				21A5D7A525F54F1A008CF0A7 /* WantManagerSpec.swift */,
+				213BDD9725F878F4005F3B21 /* WantRealmManagerSpec.swift */,
+				213BDDAB25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -776,6 +807,7 @@
 				21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
 				21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */,
+				213BDDA725FD7DA7005F3B21 /* WantModelConverter.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
 				21BC786F25D9E961003B77F5 /* NotificationUtil.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
@@ -830,7 +862,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A5D7A625F54F1A008CF0A7 /* WantManagerSpec.swift in Sources */,
+				213BDDAC25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift in Sources */,
+				213BDD9325F86CED005F3B21 /* WantPackager.swift in Sources */,
+				213BDD9825F878F4005F3B21 /* WantRealmManagerSpec.swift in Sources */,
 				217832CE2558874100E0AAD6 /* won_iOSTests.swift in Sources */,
+				213BDD9E25F9B2C1005F3B21 /* FakeVCDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

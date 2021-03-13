@@ -47,6 +47,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     }
     
     private func prepareWantViewModel(want: Want) -> WantViewModel {
+        /*
         let wantViewModelBuilder = WantViewModelBuilder()
         let wantViewModel = wantViewModelBuilder.withId(id: want.getId())
             .withOwner(owner: want.getOwner())
@@ -66,7 +67,8 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
             let wantNotif = want.getNotification()
             let wantNotifViewModel = WantNotificationViewModel(daysLeft: (wantNotif?.getDaysLeft())!, repeating: (wantNotif?.isRepeating())!, notifying: (wantNotif?.isNotifying())!)
             wantViewModel.setNotificationViewModel(notificationViewModel: wantNotifViewModel)
-        }
+        }*/
+        let wantViewModel = WantModelConverter.convertToViewModel(want: want)
         let validImageName = want.getImageName().components(separatedBy: ".")[0]
         if UUID(uuidString: validImageName) != nil {
             let imagePath = getDocumentDirectoryPath().appendingPathComponent(want.getImageName())

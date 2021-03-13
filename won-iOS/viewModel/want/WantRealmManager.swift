@@ -20,13 +20,8 @@ struct WantRealmManager {
     
     // This observes changes in realm collection and updates the tableview it needs to update accordingly. These changes are deletions, insetions, and modifications to a tableView
     func createNotificationToken(sortConfig: [Any], wantNameFilter: String, initialAction: @escaping InitialActionHandler, primaryAction: @escaping PrimaryActionHandler) -> NotificationToken {
-        //let results = dataSource?.findResultsOfType(type: Want.self)
-        //let results = dataSource?.findResultsOfType(type: Want.self).filter("ANY name.contains(" + wantNameFilter + ")")
         let filteredResults = filterResult(wantName: wantNameFilter, results: (dataSource?.findResultsOfType(type: Want.self))!)
-        //results!
-        
         let results = checkForSortingResults(sortConfig: sortConfig, results: filteredResults)
-        
         let token = results.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial(_):
