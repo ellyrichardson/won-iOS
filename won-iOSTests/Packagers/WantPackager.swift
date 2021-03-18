@@ -64,10 +64,36 @@ class WantPackager {
         return builder.withName(name: "TestWant1")
             .withOwner(owner: "testOwner")
             .withNotes(notes: "testNotes")
-            .withPoints(points: 78)
             .withObtained(obtained: false)
             .withDaysLeft(daysLeft: 30)
             .withPoints(points: interestPoints)
+            .build()
+    }
+    
+    static func packageWithName(name: String) -> Want {
+        let builder = WantBuilder()
+        return builder.withName(name: name)
+            .withOwner(owner: "testOwner")
+            .withNotes(notes: "testNotes")
+            .withPoints(points: 78)
+            .withObtained(obtained: false)
+            .withDaysLeft(daysLeft: 30)
+            .build()
+    }
+    
+    static func packageAsSimpleWithNotification() -> Want {
+        let notificationBuilder = WantNotificationBuilder()
+        let wantNotif = notificationBuilder.withDaysLeft(daysLeft: 30)
+            .withNotifying(notifying: false)
+            .withRepeating(repeating: false)
+            .build()
+        let builder = WantBuilder()
+        return builder.withName(name: "TestWant1")
+            .withOwner(owner: "testOwner")
+            .withNotes(notes: "testNotes")
+            .withPoints(points: 78)
+            .withObtained(obtained: false)
+            .withNotification(notification: wantNotif)
             .build()
     }
 }
