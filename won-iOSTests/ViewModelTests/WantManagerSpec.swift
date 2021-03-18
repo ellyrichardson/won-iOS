@@ -41,6 +41,8 @@ class WantManagerSpec: QuickSpec {
                     wantManager.runWantsDaysLeftCheck()
                     // ASSERTION area
                     let wantFromDB = realm.objects(Want.self).last
+                    print("DAYS LEFT")
+                    print(wantFromDB?.daysLeft)
                     expect(wantFromDB?.daysLeft).to(be(expectedDaysLeft))
                 }
                 
@@ -57,6 +59,8 @@ class WantManagerSpec: QuickSpec {
                     wantManager.runWantsDaysLeftCheck()
                     // ASSERTION area
                     let wantFromDB = realm.objects(Want.self).last
+                    print("DAYS LEFT")
+                    print(wantFromDB?.daysLeft)
                     expect(wantFromDB?.daysLeft).to(be(expectedDaysLeft))
                 }
                 

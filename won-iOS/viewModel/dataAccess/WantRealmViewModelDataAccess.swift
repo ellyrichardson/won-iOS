@@ -248,6 +248,7 @@ class WantRealmViewModelDataAccess: BaseRealmDataAccess<Want>, WantRealmViewMode
     }
     
     // NOTES: KEEP THIS UPDATER
+    // COMMENT: Add some tests to this
     func updateViewModel(viewModel: WantViewModel) {
         let realm = getRealmInstanceForSubclasses()
         let wants = realm.objects(Want.self).filter("id = %@", viewModel.getId())
