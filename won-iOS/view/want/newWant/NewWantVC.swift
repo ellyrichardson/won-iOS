@@ -24,6 +24,7 @@ class NewWantVC: UIViewController, UITextFieldDelegate {
     private var wantNotes = ""
     private var wantNotification = WantNotificationViewModel()
     
+    // NOTE: This probably should be moved out of WantVC . Maybe move it to a VCLoader class
     private lazy var newWantAttributesTableVC: NewWantAttributesTableVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
