@@ -308,13 +308,6 @@
 			path = newWant;
 			sourceTree = "<group>";
 		};
-		21713C28259AAD3300E4A503 /* timer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = timer;
-			sourceTree = "<group>";
-		};
 		217832A72558873C00E0AAD6 = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +391,6 @@
 		217832EC25698B8B00E0AAD6 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				21713C28259AAD3300E4A503 /* timer */,
 				212F3284259A95C4006218B4 /* builder */,
 				215F19B1257B2F6C00C556D0 /* dataAccess */,
 				2178330A256CCAEA00E0AAD6 /* want */,

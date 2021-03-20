@@ -11,6 +11,7 @@ import UserNotifications
 class WantNotificationsManager {
     private static let THIRTY_DAYS = 30.0
     
+    // NOTE: Mockingbird may be suitable to test this
     static func scheduleNotificationFromWant(want: Want) {
         let content = UNMutableNotificationContent()
         content.subtitle = want.getName() + " is due in " + String(want.getDaysLeft()) + " days"
@@ -24,7 +25,7 @@ class WantNotificationsManager {
         UNUserNotificationCenter.current().add(request)
     }
     
-    private static func retrieveDateComponentForWantDaysLeft(notifDaysLeft: Int) -> DateComponents {
+    static func retrieveDateComponentForWantDaysLeft(notifDaysLeft: Int) -> DateComponents {
         let daysToNotify = THIRTY_DAYS - Double(notifDaysLeft)
         let wantDueDate = DateUtils.addDayToDate(date: Date(), days: daysToNotify)
         let calendar = Calendar.current
@@ -36,6 +37,7 @@ class WantNotificationsManager {
         return dateComponents
     }
     
+    // NOTE: Mockingbird may be suitable to test this
     // Removes notification based on the target Want
     static func removeNotificationByWantId(wantId: String) {
         var wantNotifs = [String]()

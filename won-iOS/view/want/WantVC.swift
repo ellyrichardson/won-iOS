@@ -55,6 +55,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         // Write some stuff here
     }
     
+    // NOTE: This probably should be moved out of WantVC
     private func updateTableView(deletions: [Int], insertions: [Int], modifications: [Int]) {
         self.wantsTableView.beginUpdates()
         // Always apply updates in the following order: deletions, insertions, then modifications.
@@ -104,6 +105,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         }
     }
     
+    // NOTE: This probably should be moved out of WantVC
     private func updateDataSourceForSorting() {
         var sortType: WantSortType?
         var sortOrder: WantSortOrder?
@@ -134,6 +136,7 @@ class WantVC: UIViewController, VCDelegate, DataReceivingVCProtocol, UISearchBar
         self.sortConfig.append(WantSortOrder.DEFAULT)
     }
     
+    // NOTE: This probably should be moved out of WantVC
     func createWantRealmNotificationToken() -> NotificationToken {
         return wantRealmManager.createNotificationToken(sortConfig: self.sortConfig, wantNameFilter: wantNameFilter, initialAction: {
             self.wantsTableView.reloadData()
