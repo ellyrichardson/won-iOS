@@ -9,6 +9,8 @@
 import Foundation
 
 class WantModelConverter {
+    
+    // NOTE: Write test for this
     static func convertToViewModel(want: Want) -> WantViewModel {
         let wantViewModelBuilder = WantViewModelBuilder()
         let wantViewModel = wantViewModelBuilder.withId(id: want.getId())

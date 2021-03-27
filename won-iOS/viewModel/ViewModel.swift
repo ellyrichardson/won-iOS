@@ -7,6 +7,6 @@
 //
 
 protocol ViewModel {
-    associatedtype T
-    func getModelType() -> T.Type
+    //associatedtype T
+    //func getModelType() -> T.Type
 }

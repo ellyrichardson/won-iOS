@@ -14,6 +14,7 @@ class WantNotesDetailsVC: UIViewController, UITextViewDelegate {
     
     private var wantViewModel: WantViewModel?
     private var dataAccess: WantRealmViewModelDataAccess?
+    private var vcProcessor: WantNotesDetailsVCProcessor?
     
     func setWantViewModel(wantViewModel: WantViewModel) {
         self.wantViewModel = wantViewModel
@@ -31,18 +32,23 @@ class WantNotesDetailsVC: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
         self.wantNotesView.layer.cornerRadius = 10;
         self.wantNotesView.layer.masksToBounds = true;
+        self.vcProcessor = WantNotesDetailsVCProcessorImpl(dataAccess: self.dataAccess!, viewModel: self.wantViewModel!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.notesTextVew.text = wantViewModel?.getNotes()
+        //self.notesTextVew.text = wantViewModel?.getNotes()
+        self.vcProcessor?.configureNotesTextView(notesTextVew: self.notesTextVew)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        dataAccess?.updateNotesAsViewModel(viewModel: self.wantViewModel!)
+        //dataAccess?.updateNotesAsViewModel(viewModel: self.wantViewModel!)
+        self.vcProcessor?.saveNotesUpdate()
     }
     
-    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
-        self.wantViewModel?.setNotes(notes: textView.text)
+    func textViewDidChange(_ textView: UITextView) {
+        //Handle the text changes here
+        //self.wantViewModel?.setNotes(notes: textView.text)
+        self.vcProcessor?.updateNotesTextView(textView: textView)
     }
     
 

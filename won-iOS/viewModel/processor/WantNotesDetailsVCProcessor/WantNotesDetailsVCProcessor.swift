@@ -6,4 +6,12 @@
 //  Copyright © 2021 EllyRichardson. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol WantNotesDetailsVCProcessor {
+    func setDataAccess(dataAccess: WantRealmViewModelDataAccessProtocol)
+    func setViewModel(viewModel: WantViewModel)
+    func configureNotesTextView(notesTextVew: UITextView)
+    func saveNotesUpdate()
+    func updateNotesTextView(textView: UITextView)
+}

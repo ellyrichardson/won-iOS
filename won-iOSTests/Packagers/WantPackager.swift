@@ -96,4 +96,22 @@ class WantPackager {
             .withNotification(notification: wantNotif)
             .build()
     }
+    
+    static func packageAsObtainedWith(dateCreated: String, dateModified: String, dateObtainedAt: String) -> Want {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        //let dateTime = formatter.date(from: dateCreatedString)
+        
+        let builder = WantBuilder()
+        return builder.withName(name: "TestWant1")
+            .withOwner(owner: "testOwner")
+            .withNotes(notes: "testNotes")
+            .withObtained(obtained: true)
+            .withDaysLeft(daysLeft: 30)
+            .withPoints(points: 76)
+            .withDateCreated(dateCreated: formatter.date(from: dateCreated)!)
+            .withDateModified(dateModified: formatter.date(from: dateModified)!)
+            .withObtainedDate(obtainedDate: formatter.date(from: dateObtainedAt)!)
+            .build()
+    }
 }
