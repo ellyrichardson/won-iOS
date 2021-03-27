@@ -21,6 +21,7 @@ class WantExactDetailsTableVC: UITableViewController, VCDelegate {
     private var wantViewModel: WantViewModel?
     private var delegate: WantExactDetailsTableVCDelegate?
     private var dataAccess: WantRealmViewModelDataAccess?
+    private var vcProcessor: WantExactDetailsTableVCProcessor?
     
     func setDataAccess(dataAccess: WantRealmViewModelDataAccess) {
         self.dataAccess = dataAccess
@@ -38,35 +39,17 @@ class WantExactDetailsTableVC: UITableViewController, VCDelegate {
         super.viewWillAppear(animated)
         self.delegate = WantExactDetailsTableVCDelegate(withDelegate: self, wantViewModel: self.wantViewModel!)
         self.tableView.delegate = self.delegate
-        configureLabels()
         configureUI()
     }
     
     private func configureUI() {
-        //let image = UIImage(named: "dark-blue-ok-image") as UIImage?
-        //let image = UIImage(named: "blank-radio-button") as UIImage?
-        //self.doneButton.setImage(image, for: .normal)
-        //self.obtainedButton.setBackgroundImage(image, for: .normal)
-        wantViewModel?.configureObtainedButton(btn: self.obtainedButton)
-        //self.doneButton.imageView?.contentMode = .scaleAspectFill
-        //self.doneButton.button.setImage(image, for: .normal)
-        //self.doneButton.imageEdgeInsets = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
-    }
-    
-    private func configureLabels() {
-        wantViewModel?.configureWanterestPointsValueLabel(label: interestPointsValueLabel)
-        wantViewModel?.configureWantDateCreatedValueLabel(label: dateCreatedValueLabel)
-        wantViewModel?.configureWantDateModifiedValueLabel(label: dateModifiedValueLabel)
-        wantViewModel?.configureWantObtainedDateValueLabel(label: obtainedAtValueLabel)
-        wantViewModel?.configureWantDaysLeftValueLabel(label: daysLeftValueLabel)
-        wantViewModel?.configureWantObtainedValueLabel(label: obtainedValueLabel)
+        self.vcProcessor = WantExactDetailsTableVCProcessorImpl(dataAccess: self.dataAccess!, viewModel: self.wantViewModel!)
+        vcProcessor?.configureInteractables(btn: self.obtainedButton)
+        vcProcessor?.configureLabels(interestPointsValueLabel: interestPointsValueLabel, dateCreatedValueLabel: dateCreatedValueLabel, dateModifiedValueLabel: dateModifiedValueLabel, obtainedAtValueLabel: obtainedAtValueLabel, daysLeftValueLabel: daysLeftValueLabel, obtainedValueLabel: obtainedValueLabel)
     }
     
     @IBAction func obtainedBtnPressed(_ sender: UIButton) {
-        wantViewModel?.setObtained(obtained: !(wantViewModel?.isObtained())!)
-        wantViewModel?.configureObtainedButton(btn: sender)
-        wantViewModel?.configureWantObtainedValueLabel(label: obtainedValueLabel)
-        self.dataAccess?.updateObtainedAsViewModel(viewModel: wantViewModel!)
+        vcProcessor?.obtainedBtnPressed(btn: sender, label: obtainedValueLabel)
         self.tableView.reloadData()
     }
     

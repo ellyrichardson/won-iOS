@@ -8,5 +8,7 @@
 
 protocol WantRealmViewModelDataAccessProtocol {
     func findAllWants() -> [WantViewModel]
+    func updateObtainedAsViewModel(viewModel: WantViewModel)
+    func updateNotesAsViewModel(viewModel: WantViewModel)
 }
 
