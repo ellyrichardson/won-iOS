@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WantViewModel {
+class WantViewModel: WantViewModelProtocol {
     private var id: String
     private var owner: String
     private var name: String
@@ -22,7 +22,7 @@ class WantViewModel {
     private var dateModified: Date
     private var notificationViewModel: WantNotificationViewModel?
     
-    public init() {
+    init() {
         self.id = ""
         self.owner = ""
         self.name = ""
@@ -35,7 +35,7 @@ class WantViewModel {
         self.image = UIImage()
     }
     
-    public func configureTableViewCell(cell: WantTVCell) {
+    func configureTableViewCell(cell: WantTVCell) {
         cell.wantName.text = self.name
         cell.pointsLabel.text = String(self.points)
         cell.timeLeftLabel.text = String(self.daysLeft) + " days left"
@@ -52,28 +52,30 @@ class WantViewModel {
         }
     }
     
-    public func configureWanterestPointsValueLabel(label: UILabel) {
+    /*
+    func configureWanterestPointsValueLabel(label: UILabel) {
         label.text = String(self.points)
     }
     
-    public func configureWantDateCreatedValueLabel(label: UILabel) {
+    func configureWantDateCreatedValueLabel(label: UILabel) {
         label.text = DateTimeFunctions.dateToStringDMmmY(date: self.dateCreated)
     }
     
-    public func configureWantDateModifiedValueLabel(label: UILabel) {
+    func configureWantDateModifiedValueLabel(label: UILabel) {
         label.text = DateTimeFunctions.dateToStringDMmmY(date: self.dateModified)
     }
     
-    public func configureWantDaysLeftValueLabel(label: UILabel) {
+    func configureWantDaysLeftValueLabel(label: UILabel) {
         label.text = String(self.daysLeft)
-    }
+    }*/
     
-    public func configureWantNameButtonLabel(button: UIButton) {
+    func configureWantNameButtonLabel(button: UIButton) {
         //label.text = "< " + self.name
         button.setTitle("< " + self.name, for: .normal)
     }
     
-    public func configureWantObtainedValueLabel(label: UILabel) {
+    /*
+    func configureWantObtainedValueLabel(label: UILabel) {
         if self.obtained {
             label.text = "OBTAINED"
         } else {
@@ -81,22 +83,22 @@ class WantViewModel {
         }
     }
     
-    public func configureWantObtainedDateValueLabel(label: UILabel) {
+    func configureWantObtainedDateValueLabel(label: UILabel) {
         if self.obtainedDate == nil {
             label.text = "---------"
         } else {
             label.text = DateTimeFunctions.dateToStringDMmmY(date: self.obtainedDate!)
         }
-    }
+    }*/
     
-    public func configureWantImageView(imageView: UIImageView) {
+    func configureWantImageView(imageView: UIImageView) {
         if image.size.width > 0 {
             imageView.image = self.image
         }
     }
     
     // Only for WantExactDetailsTableVC use
-    public func configureObtainedBackgroundColorFor(cell: UITableViewCell) {
+    func configureObtainedBackgroundColorFor(cell: UITableViewCell) {
         if self.obtained {
             cell.contentView.backgroundColor = UIColor(named: "won-dark-blue")
         } else {
@@ -105,7 +107,7 @@ class WantViewModel {
     }
     
     // Only for WantExactDetailsTableVC use
-    public func configureGeneralBackgroundColorFor(cell: UITableViewCell) {
+    func configureGeneralBackgroundColorFor(cell: UITableViewCell) {
         if !self.obtained && self.daysLeft < 1 {
             cell.contentView.backgroundColor = UIColor(named: "won-red-orange")
         } else {
@@ -113,7 +115,7 @@ class WantViewModel {
         }
     }
     
-    public func configureObtainedButton(btn: UIButton) {
+    func configureObtainedButton(btn: UIButton) {
         if self.obtained {
             let image = UIImage(named: "dark-blue-ok-image") as UIImage?
             btn.setBackgroundImage(image, for: .normal)
@@ -123,7 +125,7 @@ class WantViewModel {
         }
     }
     
-    public func configureObtainedValueLabel(label: UILabel) {
+    func configureObtainedValueLabel(label: UILabel) {
         if self.obtained {
             label.text = "OBTAINED"
         } else {
@@ -131,54 +133,54 @@ class WantViewModel {
         }
     }
     
-    public func setOwner(owner: String) {
+    func setOwner(owner: String) {
         self.owner = owner
     }
     
-    public func getOwner() -> String {
+    func getOwner() -> String {
         return owner
     }
     
-    public func setName(name: String) {
+    func setName(name: String) {
         self.name = name
     }
     
-    public func getName() -> String {
+    func getName() -> String {
         return name
     }
     
-    public func setPoints(points: String) {
+    func setPoints(points: String) {
         self.points = Int(points)!
     }
     
-    public func getPoints() -> String {
+    func getPoints() -> String {
         return String(points)
     }
     
-    public func setNotes(notes: String) {
+    func setNotes(notes: String) {
         self.notes = notes
     }
     
-    public func getNotes() -> String {
+    func getNotes() -> String {
         return notes
     }
     
-    public func setDaysLeft(daysLeft: Int) {
+    func setDaysLeft(daysLeft: Int) {
         self.daysLeft = daysLeft
     }
     
-    public func getDaysLeft() -> Int {
+    func getDaysLeft() -> Int {
         if daysLeft < 1 {
             return 0
         }
         return daysLeft
     }
     
-    public func setId(id: String) {
+    func setId(id: String) {
         self.id = id
     }
     
-    public func getId() -> String {
+    func getId() -> String {
         return id
     }
     
@@ -190,15 +192,15 @@ class WantViewModel {
         return image
     }
     
-    public func setObtained(obtained: Bool) {
+    func setObtained(obtained: Bool) {
         self.obtained = obtained
     }
     
-    public func isObtained() -> Bool {
+    func isObtained() -> Bool {
         return obtained
     }
     
-    public func getObtainedDate() -> Date? {
+    func getObtainedDate() -> Date? {
         if obtainedDate != nil {
             return obtainedDate!
         } else {
@@ -206,31 +208,31 @@ class WantViewModel {
         }
     }
     
-    public func setObtainedDate(obtainedDate: Date) {
+    func setObtainedDate(obtainedDate: Date) {
         self.obtainedDate = obtainedDate
     }
     
-    public func setDateCreated(dateCreated: Date) {
+    func setDateCreated(dateCreated: Date) {
         self.dateCreated = dateCreated
     }
     
-    public func getDateCreated() -> Date {
+    func getDateCreated() -> Date {
         return dateCreated
     }
     
-    public func setDateModified(dateModified: Date) {
+    func setDateModified(dateModified: Date) {
         self.dateModified = dateModified
     }
     
-    public func getDateModified() -> Date {
+    func getDateModified() -> Date {
         return dateModified
     }
     
-    public func setNotificationViewModel(notificationViewModel: WantNotificationViewModel) {
+    func setNotificationViewModel(notificationViewModel: WantNotificationViewModel) {
         self.notificationViewModel = notificationViewModel
     }
     
-    public func getNotificationViewModel() -> WantNotificationViewModel? {
+    func getNotificationViewModel() -> WantNotificationViewModel? {
         if self.notificationViewModel != nil {
             return self.notificationViewModel!
         }
@@ -242,12 +244,12 @@ class WantViewModel {
     }
     
     // To update WantDetailsTableVC when a Want is being edited
-    public func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC) {
+    func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC) {
         detailsTableVC.setWantViewModel(wantViewModel: wantViewModel)
         detailsTableVC.tableView.reloadData()
     }
     
-    public func createNotification() {
+    func createNotification() {
         
     }
     
