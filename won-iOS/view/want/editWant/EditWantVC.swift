@@ -9,7 +9,8 @@
 import UIKit
 import SwiftEntryKit
 
-class EditWantVC: UIViewController {
+class EditWantVC: UIViewController, DetachedVC {
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var interestPointTextField: UITextField!
@@ -57,4 +58,12 @@ class EditWantVC: UIViewController {
     @objc func interestPointsFieldDidChange(_ textField: UITextField) {
         wantViewModel?.setPoints(points: textField.text!)
     }*/
+    
+    func setDetachedVCDelegate(delegate: DetachedVCDelegate) {
+        self.detachedVCDelegate = delegate
+    }
+    
+    func getDetachedVCDelegate() -> DetachedVCDelegate {
+        return self.detachedVCDelegate!
+    }
 }

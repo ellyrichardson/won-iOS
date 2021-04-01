@@ -23,10 +23,15 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
     @IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var deleteButton: CircleButton!
     
+    private var vcProcessor: WantDetailsVCProcessor?
+    
+    // MOVE OUT PARTS to vcProcessor
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
+        //wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
+        vcProcessor = WantDetailsVCProcessorImpl(viewModel: self.wantViewModel!)
+        vcProcessor?.configureDismissPageBtn(dismissPageBtn: self.dismissPageBtn)
     }
     
     func setWantViewModel(wantViewModel: WantViewModel) {
@@ -48,24 +53,28 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MOVE OUT some parts to vcProcessor (the part that is not self.keyBoard)
     @IBAction func optionsBtnPressed(_ sender: UIButton) {
         self.hideKeyboard()
         // Hides keyboard if it is present
-        let vc = EditWantVC()
-        vc.detachedVCDelegate = self
-        vc.setWantViewModel(wantViewModel: wantViewModel!)
-        SwiftEntryKit.display(entry: vc, using: PresetsDataSource.getPopupPreset())
+        //utilize vcProcessor
+        //let vc = EditWantVC()
+        //vc.detachedVCDelegate = self
+        //vc.setWantViewModel(wantViewModel: wantViewModel!)
+        SwiftEntryKit.display(entry: (vcProcessor?.configureDetachedEditWantVC(detachedVC: EditWantVC(), delegateVC: self))!, using: PresetsDataSource.getPopupPreset())
     }
     
     @IBAction func deleteBtnPressed(_ sender: UIButton) {
         
     }
     
+    // MOVE OUT all parts to vcProcessor
     func action(sender: Any) {
         // Do something
         //performSegue(withIdentifier: "segueToEditWantVC", sender: self)
         self.wantViewModel = (sender as! WantViewModel)
-        wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
-        wantViewModel?.updateWantDetails(wantViewModel: self.wantViewModel!, detailsTableVC: detailsTVC!)
+        vcProcessor?.saveWantDetailsChanges(dismissPageBtn: self.dismissPageBtn, detailsTableVC: self.detailsTVC!)
+        //wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
+        //wantViewModel?.updateWantDetails(wantViewModel: self.wantViewModel!, detailsTableVC: detailsTVC!)
     }
 }

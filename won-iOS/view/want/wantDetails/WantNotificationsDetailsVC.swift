@@ -23,6 +23,7 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
     private let FIRST = 0
     private var didSwitchChange = false
     
+    // MOVE OUT some parts to vcProcessor
     override func viewDidLoad() {
         super.viewDidLoad()
         notifyWithDaysLeftPickerView.delegate = self
@@ -42,6 +43,7 @@ class WantNotificationsDetailsVC: UIViewController, UIPickerViewDelegate, UIPick
         enabledSwitch.setOn((wantNotif?.isNotifying())!, animated: true)
     }
     
+    // MOVE OUT all parts to vcProcessor
     // NOTE: Optimize this by only saving if the data actually changed
     override func viewWillDisappear(_ animated: Bool) {
         wantViewModel?.getNotificationViewModel()?.setRepeating(repeating: repeatingSwitch.isOn)
