@@ -9,6 +9,7 @@
 import UIKit
 
 class WantViewModel: WantViewModelProtocol {
+    
     private var id: String
     private var owner: String
     private var name: String
@@ -69,10 +70,11 @@ class WantViewModel: WantViewModelProtocol {
         label.text = String(self.daysLeft)
     }*/
     
+    /*
     func configureWantNameButtonLabel(button: UIButton) {
         //label.text = "< " + self.name
         button.setTitle("< " + self.name, for: .normal)
-    }
+    }*/
     
     /*
     func configureWantObtainedValueLabel(label: UILabel) {
@@ -243,11 +245,12 @@ class WantViewModel: WantViewModelProtocol {
         
     }
     
+    /*
     // To update WantDetailsTableVC when a Want is being edited
     func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC) {
         detailsTableVC.setWantViewModel(wantViewModel: wantViewModel)
         detailsTableVC.tableView.reloadData()
-    }
+    }*/
     
     func createNotification() {
         

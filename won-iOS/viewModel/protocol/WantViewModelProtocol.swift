@@ -16,7 +16,7 @@ protocol WantViewModelProtocol {
     func configureWantDateModifiedValueLabel(label: UILabel)
     func configureWantDaysLeftValueLabel(label: UILabel)
  */
-    func configureWantNameButtonLabel(button: UIButton)
+    //func configureWantNameButtonLabel(button: UIButton)
     /*
     func configureWantObtainedValueLabel(label: UILabel)
     func configureWantObtainedDateValueLabel(label: UILabel)
@@ -54,6 +54,6 @@ protocol WantViewModelProtocol {
     func getNotificationViewModel() -> WantNotificationViewModel?
     func save()
     // To update WantDetailsTableVC when a Want is being edited
-    func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC)
+    //func updateWantDetails(wantViewModel: WantViewModel, detailsTableVC: WantDetailsTableVC)
     func createNotification()
 }

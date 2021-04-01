@@ -25,6 +25,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         self.wantViewModel = wantViewModel
     }
     
+    // MOVE OUT the setting of wantViewModel and dataAccess to vcProcessor
     private lazy var wantExactDetailsTableVC: WantExactDetailsTableVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -36,6 +37,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         return vc
     }()
     
+    // MOVE OUT the setting of wantViewModel and dataAccess to vcProcessor
     private lazy var wantNotificationsDetailsVC: WantNotificationsDetailsVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -48,6 +50,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         return vc
     }()
     
+    // MOVE OUT the setting of wantViewModel and dataAccess to vcProcessor
     private lazy var wantNotesDetailsVC: WantNotesDetailsVC = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -60,6 +63,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         return vc
     }()
     
+    // MOVE OUT some parts to vcProcessor
     override func viewDidLoad() {
         super.viewDidLoad()
         wantExactDetailsTableVC.setWantViewModel(wantViewModel: wantViewModel!)
@@ -68,6 +72,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         prepareImage()
     }
     
+    // MOVE OUT all parts to vcProcessor
     func prepareImage() {
         wantImage.layer.cornerRadius = 190//wantImage.frame.size.width/2.1
         wantImage.clipsToBounds = true
@@ -125,6 +130,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
+    // MOVE OUT some parts here to vcProcessors
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
@@ -140,6 +146,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
+    // MOVE OUT all parts here to vcProcessors
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         wantImage.addGestureRecognizer(tap)
@@ -152,6 +159,7 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         }*/
     }
     
+    // MOVE OUT some parts here to vcProcessors
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         // handling code
         let imagePickerController = UIImagePickerController()
