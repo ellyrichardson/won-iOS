@@ -74,6 +74,7 @@ class WantDetailsVC: UIViewController, DetachedVCDelegate {
         //performSegue(withIdentifier: "segueToEditWantVC", sender: self)
         self.wantViewModel = (sender as! WantViewModel)
         vcProcessor?.saveWantDetailsChanges(dismissPageBtn: self.dismissPageBtn, detailsTableVC: self.detailsTVC!)
+        self.detailsTVC!.tableView.reloadData()
         //wantViewModel?.configureWantNameButtonLabel(button: dismissPageBtn)
         //wantViewModel?.updateWantDetails(wantViewModel: self.wantViewModel!, detailsTableVC: detailsTVC!)
     }

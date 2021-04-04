@@ -270,8 +270,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "WantDetailsTableVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -654,8 +654,8 @@
             filePath = "won-iOS/view/want/editWant/EditWantVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -766,8 +766,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "WantDetailsTableVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -782,8 +782,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "notesBtnPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -798,8 +798,8 @@
             filePath = "won-iOS/view/want/wantDetails/WantDetailsTableVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "notificationBtnPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -852,7 +852,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8EDE3D52-B7A8-4111-B829-6FD05A4C5917 - 51dd9d4dea289325"
+                  uuid = "8EDE3D52-B7A8-4111-B829-6FD05A4C5917 - 51dd9d4dea289304"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -862,12 +862,12 @@
                   urlString = "file:///Users/ellyrichardson/Desktop%20-%20Sleeper%20Null/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/wantDetails/WantNotificationsDetailsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
                   offsetFromSymbolStart = "3186">
                </Location>
                <Location
-                  uuid = "8EDE3D52-B7A8-4111-B829-6FD05A4C5917 - 51dd9d4dea289325"
+                  uuid = "8EDE3D52-B7A8-4111-B829-6FD05A4C5917 - 51dd9d4dea289304"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -877,8 +877,8 @@
                   urlString = "file:///Users/ellyrichardson/Desktop%20-%20Sleeper%20Null/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOS/view/want/wantDetails/WantNotificationsDetailsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
                   offsetFromSymbolStart = "3886">
                </Location>
             </Locations>
@@ -1248,6 +1248,102 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
+            landmarkName = "spec()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D40A56B-6FEA-4A1E-A2EE-059473FD3AF7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "spec()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D40A56B-6FEA-4A1E-A2EE-059473FD3AF7 - 4bf342b658aeea7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in won_iOSTests.WantDetailsVCProcessorSpec.spec() -&gt; ()"
+                  moduleName = "won-iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ellyrichardson/Desktop%20-%20Sleeper%20Null/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "165">
+               </Location>
+               <Location
+                  uuid = "9D40A56B-6FEA-4A1E-A2EE-059473FD3AF7 - bf35d9d95b865164"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; () in won_iOSTests.WantDetailsVCProcessorSpec.spec() -&gt; ()"
+                  moduleName = "won-iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ellyrichardson/Desktop%20-%20Sleeper%20Null/Projects/Software%20Development/iOS/won-iOS/won-iOS/won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B8FB157-55CA-4493-8239-56352A121B02"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "spec()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C6F1F6A-EC9E-4773-9CEF-C1CD08E0AD15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "spec()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "353E41EB-C472-4B28-B5BA-D13756721BF3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "won-iOSTests/ViewModelTests/WantDetailsVCProcessor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "spec()"
             landmarkType = "7">
          </BreakpointContent>

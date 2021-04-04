@@ -38,7 +38,7 @@ class WantDetailsVCProcessorImpl: WantDetailsVCProcessor {
         self.configureDismissPageBtn(dismissPageBtn: dismissPageBtn)
         // To update WantDetailsTableVC when a Want is being edited
         detailsTableVC.setWantViewModel(wantViewModel: self.viewModel)
-        detailsTableVC.tableView.reloadData()
+        //detailsTableVC.tableView.reloadData()
     }
     
     func configureDismissPageBtn(dismissPageBtn: UIButton) {
