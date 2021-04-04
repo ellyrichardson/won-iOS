@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05346AEC65353CD60A0A25DB /* Pods_won_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9840DD6270C83D5E7258362A /* Pods_won_iOS.framework */; };
+		211086EA26196684004891AA /* WantDetailsVCProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211086E926196684004891AA /* WantDetailsVCProcessor.swift */; };
 		212E8802259ADE4500EE2046 /* DateTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */; };
 		212F3286259A95D7006218B4 /* WantViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */; };
 		213BDD6D25F551E5005F3B21 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */; };
@@ -110,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		054CE36B51D69DBAF1CC1637 /* Pods-won-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-won-iOS.release.xcconfig"; path = "Target Support Files/Pods-won-iOS/Pods-won-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		211086E926196684004891AA /* WantDetailsVCProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantDetailsVCProcessor.swift; sourceTree = "<group>"; };
 		212E8801259ADE4500EE2046 /* DateTimeFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeFunctions.swift; sourceTree = "<group>"; };
 		212F3285259A95D7006218B4 /* WantViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantViewModelBuilder.swift; sourceTree = "<group>"; };
 		213BDD6C25F551E5005F3B21 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 				213BDDAB25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift */,
 				2172AA1426084A5C001F6AF0 /* WantExactDetailsTableVCProcessorSpec.swift */,
 				21D7E102260EDE9E000DFCDC /* WantNotesDetailsVCProcessorSpec.swift */,
+				211086E926196684004891AA /* WantDetailsVCProcessor.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				21A5D7A625F54F1A008CF0A7 /* WantManagerSpec.swift in Sources */,
 				213BDDAC25FD802D005F3B21 /* WantRealmViewModelDataAccessSpec.swift in Sources */,
 				213BDD9325F86CED005F3B21 /* WantPackager.swift in Sources */,
+				211086EA26196684004891AA /* WantDetailsVCProcessor.swift in Sources */,
 				213BDD9825F878F4005F3B21 /* WantRealmManagerSpec.swift in Sources */,
 				21D7E103260EDE9E000DFCDC /* WantNotesDetailsVCProcessorSpec.swift in Sources */,
 				217832CE2558874100E0AAD6 /* won_iOSTests.swift in Sources */,

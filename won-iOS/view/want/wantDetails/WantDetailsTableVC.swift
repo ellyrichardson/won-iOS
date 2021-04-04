@@ -25,6 +25,10 @@ class WantDetailsTableVC: UITableViewController, UIImagePickerControllerDelegate
         self.wantViewModel = wantViewModel
     }
     
+    func getWantViewModel() -> WantViewModel {
+        return self.wantViewModel!
+    }
+    
     // MOVE OUT the setting of wantViewModel and dataAccess to vcProcessor
     private lazy var wantExactDetailsTableVC: WantExactDetailsTableVC = {
         // Load Storyboard

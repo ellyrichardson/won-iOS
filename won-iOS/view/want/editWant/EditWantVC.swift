@@ -25,6 +25,10 @@ class EditWantVC: UIViewController, DetachedVC {
         self.wantViewModel = wantViewModel
     }
     
+    func getWantViewModel() -> WantViewModel {
+        return self.wantViewModel!
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         wantViewModel?.setName(name: nameTextField.text!)
         wantViewModel?.setPoints(points: interestPointTextField.text!)
