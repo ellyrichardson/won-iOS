@@ -7,6 +7,5 @@
 //
 
 protocol ViewModel {
-    //associatedtype T
-    //func getModelType() -> T.Type
+    func syncWithServer()
 }

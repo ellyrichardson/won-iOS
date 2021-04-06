@@ -1,4 +1,5 @@
 PODS:
+  - AnimatedField (2.4.4)
   - DLRadioButton (1.4.12)
   - Nimble (9.0.0)
   - Quick (3.0.0)
@@ -12,6 +13,7 @@ PODS:
     - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
+  - AnimatedField
   - DLRadioButton (~> 1.4)
   - Nimble
   - Quick
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AnimatedField
     - DLRadioButton
     - Nimble
     - Quick
@@ -29,6 +32,7 @@ SPEC REPOS:
     - SwiftEntryKit
 
 SPEC CHECKSUMS:
+  AnimatedField: af48a2d59a50b33b30446267f7f2af274296203c
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
 
-PODFILE CHECKSUM: 25f6308e890bdf8c2286e0737ac7c2b84dca7aa4
+PODFILE CHECKSUM: 7b89482afeee702ca6e58891b56243a4823cd026
 
 COCOAPODS: 1.10.0

@@ -56,6 +56,16 @@
 		217AD9EE25BBD698008A4C53 /* NewWantTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9ED25BBD698008A4C53 /* NewWantTVCell.swift */; };
 		217AD9F225BCA23F008A4C53 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD9F125BCA23F008A4C53 /* OvalButton.swift */; };
 		219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219DA1EA25A410F2002D4A9E /* TimerProcess.swift */; };
+		21A2A026261BE2E1000FA167 /* UserDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A025261BE2E1000FA167 /* UserDetailsVC.swift */; };
+		21A2A02B261BE30A000FA167 /* UserCredentialsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A02A261BE30A000FA167 /* UserCredentialsVC.swift */; };
+		21A2A033261BE32D000FA167 /* UserBirthdayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A032261BE32D000FA167 /* UserBirthdayVC.swift */; };
+		21A2A03A261BE7E4000FA167 /* UserDetailsVCProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A039261BE7E4000FA167 /* UserDetailsVCProcessor.swift */; };
+		21A2A043261BE804000FA167 /* UserCredentialsVCProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A042261BE804000FA167 /* UserCredentialsVCProcessor.swift */; };
+		21A2A048261BE813000FA167 /* UserBirthdayVCProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A047261BE813000FA167 /* UserBirthdayVCProcessor.swift */; };
+		21A2A050261BE838000FA167 /* UserDetailsVCProcessorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A04F261BE838000FA167 /* UserDetailsVCProcessorImpl.swift */; };
+		21A2A055261BE88E000FA167 /* UserCredentialsVCProcessorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A054261BE88E000FA167 /* UserCredentialsVCProcessorImpl.swift */; };
+		21A2A05A261BE89D000FA167 /* UserBirthdayVCProcessorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A059261BE89D000FA167 /* UserBirthdayVCProcessorImpl.swift */; };
+		21A2A06A261BEAB1000FA167 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2A069261BEAB1000FA167 /* UserViewModel.swift */; };
 		21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */; };
 		21A5D78325F49055008CF0A7 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */; };
 		21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */; };
@@ -165,6 +175,16 @@
 		217AD9ED25BBD698008A4C53 /* NewWantTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWantTVCell.swift; sourceTree = "<group>"; };
 		217AD9F125BCA23F008A4C53 /* OvalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
 		219DA1EA25A410F2002D4A9E /* TimerProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProcess.swift; sourceTree = "<group>"; };
+		21A2A025261BE2E1000FA167 /* UserDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsVC.swift; sourceTree = "<group>"; };
+		21A2A02A261BE30A000FA167 /* UserCredentialsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVC.swift; sourceTree = "<group>"; };
+		21A2A032261BE32D000FA167 /* UserBirthdayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBirthdayVC.swift; sourceTree = "<group>"; };
+		21A2A039261BE7E4000FA167 /* UserDetailsVCProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsVCProcessor.swift; sourceTree = "<group>"; };
+		21A2A042261BE804000FA167 /* UserCredentialsVCProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVCProcessor.swift; sourceTree = "<group>"; };
+		21A2A047261BE813000FA167 /* UserBirthdayVCProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBirthdayVCProcessor.swift; sourceTree = "<group>"; };
+		21A2A04F261BE838000FA167 /* UserDetailsVCProcessorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsVCProcessorImpl.swift; sourceTree = "<group>"; };
+		21A2A054261BE88E000FA167 /* UserCredentialsVCProcessorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsVCProcessorImpl.swift; sourceTree = "<group>"; };
+		21A2A059261BE89D000FA167 /* UserBirthdayVCProcessorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBirthdayVCProcessorImpl.swift; sourceTree = "<group>"; };
+		21A2A069261BEAB1000FA167 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		21A3704025C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantExactDetailsTableVCDelegate.swift; sourceTree = "<group>"; };
 		21A5D78225F49055008CF0A7 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		21A5D78725F49114008CF0A7 /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
@@ -343,6 +363,7 @@
 		2172AA0B26083F07001F6AF0 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				215F19AD2578844400C556D0 /* ViewModel.swift */,
 				2172AA0C26083F19001F6AF0 /* WantViewModelProtocol.swift */,
 				21DF3D8F26154BF000AD079B /* DetachedVC.swift */,
 			);
@@ -442,6 +463,7 @@
 		217832EB25698B8400E0AAD6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				21A2A013261BDCB4000FA167 /* account */,
 				217832FD2569D2F800E0AAD6 /* want */,
 			);
 			path = view;
@@ -450,12 +472,12 @@
 		217832EC25698B8B00E0AAD6 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21A2A037261BE7BB000FA167 /* userAccounts */,
 				2172AA0B26083F07001F6AF0 /* protocol */,
 				215CB6D7260838940095FEEE /* processor */,
 				212F3284259A95C4006218B4 /* builder */,
 				215F19B1257B2F6C00C556D0 /* dataAccess */,
 				2178330A256CCAEA00E0AAD6 /* want */,
-				215F19AD2578844400C556D0 /* ViewModel.swift */,
 				21C22F2125B3D66F00215F42 /* DataReceivingVCProtocol.swift */,
 			);
 			path = viewModel;
@@ -552,6 +574,54 @@
 				21BC785425D37441003B77F5 /* WantNotificationViewModel.swift */,
 			);
 			path = want;
+			sourceTree = "<group>";
+		};
+		21A2A013261BDCB4000FA167 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				21A2A014261BDCC1000FA167 /* registration */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
+		21A2A014261BDCC1000FA167 /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				21A2A025261BE2E1000FA167 /* UserDetailsVC.swift */,
+				21A2A02A261BE30A000FA167 /* UserCredentialsVC.swift */,
+				21A2A032261BE32D000FA167 /* UserBirthdayVC.swift */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		21A2A037261BE7BB000FA167 /* userAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				21A2A038261BE7D1000FA167 /* registration */,
+				21A2A069261BEAB1000FA167 /* UserViewModel.swift */,
+			);
+			path = userAccounts;
+			sourceTree = "<group>";
+		};
+		21A2A038261BE7D1000FA167 /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				21A2A041261BE7F4000FA167 /* protocols */,
+				21A2A04F261BE838000FA167 /* UserDetailsVCProcessorImpl.swift */,
+				21A2A054261BE88E000FA167 /* UserCredentialsVCProcessorImpl.swift */,
+				21A2A059261BE89D000FA167 /* UserBirthdayVCProcessorImpl.swift */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		21A2A041261BE7F4000FA167 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				21A2A039261BE7E4000FA167 /* UserDetailsVCProcessor.swift */,
+				21A2A042261BE804000FA167 /* UserCredentialsVCProcessor.swift */,
+				21A2A047261BE813000FA167 /* UserBirthdayVCProcessor.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 		21A3704225C58DAF003D1929 /* exact */ = {
@@ -866,6 +936,7 @@
 				21F6B7ED25CB889D0082DE0E /* DetachedVCDelegate.swift in Sources */,
 				21C22F2225B3D66F00215F42 /* DataReceivingVCProtocol.swift in Sources */,
 				215F19BC257C8C1300C556D0 /* VCDelegate.swift in Sources */,
+				21A2A05A261BE89D000FA167 /* UserBirthdayVCProcessorImpl.swift in Sources */,
 				21A5D78D25F4915D008CF0A7 /* UISearchBarExtension.swift in Sources */,
 				21DF3D9026154BF000AD079B /* DetachedVC.swift in Sources */,
 				217832F225698C7100E0AAD6 /* Want.swift in Sources */,
@@ -873,8 +944,10 @@
 				21BC784B25D23EDF003B77F5 /* NewWantNotificationsVC.swift in Sources */,
 				217832E92562360500E0AAD6 /* WantVC.swift in Sources */,
 				21F6B7BD25CA5E990082DE0E /* PresetDescription.swift in Sources */,
+				21A2A06A261BEAB1000FA167 /* UserViewModel.swift in Sources */,
 				213BDDA725FD7DA7005F3B21 /* WantModelConverter.swift in Sources */,
 				21783303256B37D000E0AAD6 /* CircleButton.swift in Sources */,
+				21A2A050261BE838000FA167 /* UserDetailsVCProcessorImpl.swift in Sources */,
 				21BC786F25D9E961003B77F5 /* NotificationUtil.swift in Sources */,
 				215CB6D9260838B30095FEEE /* WantExactDetailsTableVCProcessorProtocol.swift in Sources */,
 				21C947FF2591A7BE009D0279 /* WantViewModel.swift in Sources */,
@@ -890,6 +963,7 @@
 				2172AA24260ABCC0001F6AF0 /* WantNotesDetailsVCProcessorImpl.swift in Sources */,
 				219DA1EB25A410F2002D4A9E /* TimerProcess.swift in Sources */,
 				21A3704125C58C67003D1929 /* WantExactDetailsTableVCDelegate.swift in Sources */,
+				21A2A043261BE804000FA167 /* UserCredentialsVCProcessor.swift in Sources */,
 				21BC787E25DC964F003B77F5 /* SortWantsVC.swift in Sources */,
 				2172AA1F260ABB81001F6AF0 /* WantNotesDetailsVCProcessor.swift in Sources */,
 				217833002569D46800E0AAD6 /* WantTVCell.swift in Sources */,
@@ -897,10 +971,12 @@
 				21BC785A25D4E190003B77F5 /* WantNotificationBuilder.swift in Sources */,
 				21F6B7B825CA5E1D0082DE0E /* PresetsDataSource.swift in Sources */,
 				21BC785025D3694D003B77F5 /* WantNotification.swift in Sources */,
+				21A2A02B261BE30A000FA167 /* UserCredentialsVC.swift in Sources */,
 				21A5D78825F49114008CF0A7 /* UITextViewExtension.swift in Sources */,
 				215F19B8257C7AB600C556D0 /* WantDelegate.swift in Sources */,
 				21BC787425DC951A003B77F5 /* WantSortCategories.swift in Sources */,
 				21BC785525D37441003B77F5 /* WantNotificationViewModel.swift in Sources */,
+				21A2A055261BE88E000FA167 /* UserCredentialsVCProcessorImpl.swift in Sources */,
 				217832FC2569CF6500E0AAD6 /* WantHistoryBuilder.swift in Sources */,
 				213BDD6D25F551E5005F3B21 /* UIViewControllerExtension.swift in Sources */,
 				21BC786725D9DD24003B77F5 /* WantNotificationsManager.swift in Sources */,
@@ -914,10 +990,13 @@
 				21DF3D862615478600AD079B /* WantDetailsVCProcessor.swift in Sources */,
 				215F19AA2578796800C556D0 /* NewWantVC.swift in Sources */,
 				21A66928258057A800A75F2C /* NewWantAttributesTableVC.swift in Sources */,
+				21A2A033261BE32D000FA167 /* UserBirthdayVC.swift in Sources */,
 				2172AA0D26083F19001F6AF0 /* WantViewModelProtocol.swift in Sources */,
 				21F6B7D525CA61D70082DE0E /* DeviceTypeDetector.swift in Sources */,
+				21A2A03A261BE7E4000FA167 /* UserDetailsVCProcessor.swift in Sources */,
 				21713C2C259AB7BD00E4A503 /* WantManager.swift in Sources */,
 				21C22F2025AC16F300215F42 /* WantNotesDetailsVC.swift in Sources */,
+				21A2A026261BE2E1000FA167 /* UserDetailsVC.swift in Sources */,
 				215F19AC25787C1600C556D0 /* WantDetailsVC.swift in Sources */,
 				217832B62558873C00E0AAD6 /* SceneDelegate.swift in Sources */,
 				21F6B7DB25CB7CD10082DE0E /* EditWantVC.swift in Sources */,
@@ -927,6 +1006,7 @@
 				215F19AE2578844400C556D0 /* ViewModel.swift in Sources */,
 				215F19A52570194200C556D0 /* BaseRealmDataAccess.swift in Sources */,
 				21783305256B455800E0AAD6 /* WantDataSource.swift in Sources */,
+				21A2A048261BE813000FA167 /* UserBirthdayVCProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
